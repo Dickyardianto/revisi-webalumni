@@ -51,6 +51,7 @@ class ForumBisnis extends MY_Controller
         $deskripsiBisnis = $this->input->post('deskripsiBisnisUsahaModal');
         $alamatBisnis = $this->input->post('alamatBisnisUsahaModal');
         $noTelpBisnis = $this->input->post('noTelpBisnisUsahaModal');
+        $urlBisnis = $this->input->post('urlBisnisModal');
         $pemilikBisnis = $this->input->post('pemilikBisnisUsahaModal');
 
         $filename = "logo-" . $namaBisnisUsaha . "-" . time();
@@ -73,6 +74,7 @@ class ForumBisnis extends MY_Controller
             $data['deskripsi_bisnis'] = $deskripsiBisnis;
             $data['alamat_bisnis'] = $alamatBisnis;
             $data['no_telp_bisnis'] = $noTelpBisnis;
+            $data['url_bisnis'] = 'http://' . $urlBisnis;
             $data['nama_foto_bisnis'] = $upload_data['file_name'];
             $data['pemilik_id'] = $pemilikBisnis;
             $data['stat_forbis'] = 0;
@@ -101,6 +103,7 @@ class ForumBisnis extends MY_Controller
         $deskripsiBisnisEdit = $this->input->post('deskripsiBisnisEdit');
         $alamatBisnisEdit = $this->input->post('alamatBisnisEdit');
         $noTelpBisnisEdit = $this->input->post('noTelpBisnisEdit');
+        $urlBisnisEdit = $this->input->post('urlBisnisEdit');
         $pemilikBisnisEdit = $this->input->post('pemilikBisnisEdit');
 
         $data['nama_bisnis_usaha'] = $namaBisnisEdit;
@@ -108,6 +111,7 @@ class ForumBisnis extends MY_Controller
         $data['deskripsi_bisnis'] = $deskripsiBisnisEdit;
         $data['alamat_bisnis'] = $alamatBisnisEdit;
         $data['no_telp_bisnis'] = $noTelpBisnisEdit;
+        $data['url_bisnis'] = 'http://' . $urlBisnisEdit;
         $data['pemilik_id'] = $pemilikBisnisEdit;
         $data['stat_forbis'] = 1;
 
@@ -194,14 +198,29 @@ class ForumBisnis extends MY_Controller
         $data['info'] = $this->M_anggota->findAnggotaAndUser(array('tb_anggota.user_id = ' => $this->session->userdata('uid')));
 
         $id_pemilik = $data['info'];
+
         $id = $id_pemilik[0]->id_anggota;
 
         $data['jenisBisnis'] = $this->M_jenisBisnis->getAllJenisBisnis();
+
         $data['forumBisnis'] = $this->M_forumBisnis->getAllForbisByIdNonaktif($id);
 
         if ($this->session->userdata('role') == 4) {
-            $this->alumni_render('alumni/forumBisnisNonaktif', $data);
+            $this->anggota_render('alumni/forumBisnisNonaktif', $data);
         }
+
+        // $data['title'] = 'Forum Bisnis Nonaktif';
+        // $data['info'] = $this->M_anggota->findAnggotaAndUser(array('tb_anggota.user_id = ' => $this->session->userdata('uid')));
+
+        // $id_pemilik = $data['info'];
+        // $id = $id_pemilik[0]->id_anggota;
+
+        // $data['jenisBisnis'] = $this->M_jenisBisnis->getAllJenisBisnis();
+        // $data['forumBisnis'] = $this->M_forumBisnis->getAllForbisByIdNonaktif($id);
+
+        // if ($this->session->userdata('role') == 4) {
+        //     $this->alumni_render('alumni/forumBisnisNonaktif', $data);
+        // }
     }
 
     public function setDeleteForumBisnisNonaktif()

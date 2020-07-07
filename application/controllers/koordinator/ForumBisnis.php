@@ -111,6 +111,7 @@ class ForumBisnis extends MY_Controller
         $deskripsiBisnis = $this->input->post('deskripsiBisnisUsahaModal');
         $alamatBisnis = $this->input->post('alamatBisnisUsahaModal');
         $noTelpBisnis = $this->input->post('noTelpBisnisUsahaModal');
+        $urlBisnis = $this->input->post('urlBisnisModal');
         $pemilikBisnis = $this->input->post('pemilikBisnisUsahaModal');
 
         $filename = "logo-" . $namaBisnisUsaha . "-" . time();
@@ -133,6 +134,7 @@ class ForumBisnis extends MY_Controller
             $data['deskripsi_bisnis'] = $deskripsiBisnis;
             $data['alamat_bisnis'] = $alamatBisnis;
             $data['no_telp_bisnis'] = $noTelpBisnis;
+            $data['url_bisnis'] = 'http://' . $urlBisnis;
             $data['nama_foto_bisnis'] = $upload_data['file_name'];
             $data['pemilik_id'] = $pemilikBisnis;
             $data['stat_forbis'] = 1;

@@ -78,6 +78,12 @@
                                     <p><small>Alamat Bisnis</small><br><?= $B->alamat_bisnis; ?></p>
                                 <?php } ?>
 
+                                <?php if ($B->url_bisnis == "") { ?>
+                                    <p><small>Alamat Website Bisnis</small><br>Belum di isi</p>
+                                <?php } else { ?>
+                                    <p><small>Alamat Website Bisnis</small><br><a href="<?= $B->url_bisnis; ?>"><?= $B->url_bisnis; ?></a></p>
+                                <?php } ?>
+
                             </div>
                         </div>
                         <!-- END CONTACT ITEM -->

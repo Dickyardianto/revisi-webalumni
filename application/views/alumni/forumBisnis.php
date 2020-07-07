@@ -67,7 +67,7 @@
                                 </div>
 
                             </div>
-                            <div class="panel-body" style="height: 200px;">
+                            <div class="panel-body" style="height: 100%;">
                                 <div class="contact-info">
                                     <?php if ($A->deskripsi_bisnis == "") { ?>
                                         <p><small>Deskripsi Bisnis</small><br>Belum di isi</p>
@@ -81,11 +81,16 @@
                                         <p><small>Alamat Bisnis</small><br><?= $A->alamat_bisnis; ?></p>
                                     <?php } ?>
 
+                                    <?php if ($A->url_bisnis == "") { ?>
+                                        <p><small>Alamat Website Bisnis</small><br>Belum di isi</p>
+                                    <?php } else { ?>
+                                        <p><small>Alamat Website Bisnis</small><br><a href="<?= $A->url_bisnis; ?>"><?= $A->url_bisnis; ?></a></p>
+                                    <?php } ?>
 
                                 </div>
                             </div>
                             <div class="panel-footer text-center">
-                                <a class="btn btn-primary btn-rounded btn-block btn-ubah-forbis" title="Ubah Forum Bisnis" id="<?= $A->id_forbis; ?>" data-toggle="modal" data-target="#ubahForbis"><span class="fa fa-edit"></span></a>
+                                <a class="btn btn-primary btn-rounded btn-block btn-ubah-forbis" title="Ubah Forum Bisnis" id="<?= $A->id_forbis; ?>" data-toggle="modal" data-target="#ubahForbis"><span class="fa fa-edit"></span>Ubah</a>
                             </div>
                             <!-- END CONTACT ITEM -->
                         </div>
@@ -214,6 +219,13 @@
                         </div>
                     </div>
 
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Alamat Website Bisnis :</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" name="urlBisnisEdit" id="urlBisnisEdit" placeholder="Contoh: ikasma3bdg.com" />
+                        </div>
+                    </div>
+
                     <input type="hidden" class="form-control" id="pemilikBisnisEdit" name="pemilikBisnisEdit">
 
                 </div>
@@ -305,6 +317,7 @@
                 document.getElementById('deskripsiBisnisEdit').value = data_obj.forbis[0].deskripsi_bisnis;
                 document.getElementById('alamatBisnisEdit').value = data_obj.forbis[0].alamat_bisnis;
                 document.getElementById('noTelpBisnisEdit').value = data_obj.forbis[0].no_telp_bisnis;
+                document.getElementById('urlBisnisEdit').value = data_obj.forbis[0].url_bisnis;
                 // document.getElementById('fileLogoEdit').value = data_obj.forbis[0].nama_foto_bisnis;
 
                 $("#jenisBisnisEdit").val(data_obj.forbis[0].id_jenis_bisnis).change();

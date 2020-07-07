@@ -66,7 +66,14 @@
                                     </div>
                                 </div>
 
-                                <input type="hidden" class="form-control" name="pemilikBisnisUsahaModal" value="<?= $info[0]->id_anggota ?>">
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">Alamat Website Bisnis :</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" name="urlBisnisModal" placeholder="Contoh: ikasma3bdg.com" />
+                                    </div>
+                                </div>
+
+                                <input type="hidden" class="form-control" name="pemilikBisnisUsahaModal" value="<?= $info[0]->id_anggota; ?>">
 
                                 <div class="form-group">
                                     <label class="col-md-2 control-label">* Logo Bisnis / Usaha</label>

@@ -100,6 +100,12 @@
                                             <p><small>Nomor Telepon Pemilik</small><br><?= $forbis->no_telp_bisnis; ?></p>
                                         <?php } ?>
 
+                                        <?php if ($forbis->url_bisnis == "") { ?>
+                                            <p><small>Alamat Website Bisnis</small><br>Belum di isi</p>
+                                        <?php } else { ?>
+                                            <p><small>Alamat Website Bisnis</small><br><a href="<?= $forbis->url_bisnis; ?>"><?= $forbis->url_bisnis; ?></a></p>
+                                        <?php } ?>
+
                                     </div>
                                 </div>
                                 <div class="panel-footer text-center">
@@ -187,6 +193,13 @@
                         <label class="col-md-3 control-label">* No. Telepon :</label>
                         <div class="col-md-9">
                             <input type="text" class="form-control" name="noTelpBisnisEdit" id="noTelpBisnisEdit" placeholder="No Telepon Bisnis / Usaha" required />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Alamat Website Bisnis :</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" name="urlBisnisEdit" id="urlBisnisEdit" placeholder="Contoh: ikasma3bdg.com" />
                         </div>
                     </div>
 
@@ -318,6 +331,7 @@
                 document.getElementById('deskripsiBisnisEdit').value = data_obj.forbis[0].deskripsi_bisnis;
                 document.getElementById('alamatBisnisEdit').value = data_obj.forbis[0].alamat_bisnis;
                 document.getElementById('noTelpBisnisEdit').value = data_obj.forbis[0].no_telp_bisnis;
+                document.getElementById('urlBisnisEdit').value = data_obj.forbis[0].url_bisnis;
                 // document.getElementById('fileLogoEdit').value = data_obj.forbis[0].nama_foto_bisnis;
 
                 $("#jenisBisnisEdit").val(data_obj.forbis[0].id_jenis_bisnis).change();
