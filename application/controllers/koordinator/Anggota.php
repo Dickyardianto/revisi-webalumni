@@ -545,9 +545,9 @@ class Anggota extends MY_Controller
 
         $config['mailtype'] = 'html';
         $config['protocol'] = 'smtp';
-        $config['smtp_host'] = 'ssl://mail.ikasma3bdg.com';
-        $config['smtp_user'] = 'email@ikasma3bdg.com';
-        $config['smtp_pass'] = 'ww3P}y+)7Q$t';
+        $config['smtp_host'] = 'ssl://smtp.googlemail.com';
+        $config['smtp_user'] = 'iika.sma3.bandung@gmail.com';
+        $config['smtp_pass'] = 'ikasma3bdg';
         $config['smtp_port'] = 465;
         $config['newline'] = "\r\n";
 
@@ -587,9 +587,9 @@ class Anggota extends MY_Controller
 
         $config['mailtype'] = 'html';
         $config['protocol'] = 'smtp';
-        $config['smtp_host'] = 'ssl://mail.ikasma3bdg.com';
-        $config['smtp_user'] = 'email@ikasma3bdg.com';
-        $config['smtp_pass'] = 'ww3P}y+)7Q$t';
+        $config['smtp_host'] = 'ssl://smtp.googlemail.com';
+        $config['smtp_user'] = 'iika.sma3.bandung@gmail.com';
+        $config['smtp_pass'] = 'ikasma3bdg';
         $config['smtp_port'] = 465;
         $config['newline'] = "\r\n";
 
@@ -621,9 +621,9 @@ class Anggota extends MY_Controller
 
         $config['mailtype'] = 'html';
         $config['protocol'] = 'smtp';
-        $config['smtp_host'] = 'ssl://mail.ikasma3bdg.com';
-        $config['smtp_user'] = 'email@ikasma3bdg.com';
-        $config['smtp_pass'] = 'ww3P}y+)7Q$t';
+        $config['smtp_host'] = 'ssl://smtp.googlemail.com';
+        $config['smtp_user'] = 'iika.sma3.bandung@gmail.com';
+        $config['smtp_pass'] = 'ikasma3bdg';
         $config['smtp_port'] = 465;
         $config['newline'] = "\r\n";
 
