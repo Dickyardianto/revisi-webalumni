@@ -203,27 +203,31 @@
     <footer class="bg-dark" style="padding: 50px;">
         <div class="container">
             <div class="row">
-                <div class="col-md-6" style="margin-bottom: 50px;">
-                    <p class="text-primary">Dikembangkan oleh FANCY SOFTWARE : </p>
+                <div class="col-md-4" style="margin-bottom: 50px;">
                     <ul>
-                        <li>Adhy Wiranto Sudjana</li>
-                        <li>Dicky Ardianto</li>
-                        <li>Rafly Yunandi Aliansyah</li>
+                        <ol><h5><a href="<?= base_url('');?>" style="text-decoration: none;">Beranda</a></h5></ol>
+                        <ol><h5><a href="<?= base_url('berita');?>" style="text-decoration: none;">Berita</a></h5></ol>
+                        <ol><h5><a href="<?= base_url('forumBisnis');?>" style="text-decoration: none;">Forum Bisnis</a></h5></ol>
                     </ul>
                 </div>
-                <div class="col-md-6" style="margin-bottom: 50px;">
-                    <p class="text-primary">Kontak</p>
+                <div class="col-md-4" style="margin-bottom: 50px;">
                     <ul>
-                        <li>+62 819 1143 7177 (Adhy)</li>
-                        <li>+62 821 6838 0859 (Dicky)</li>
-                        <li>+62 896 6227 3550 (Rafly)</li>
+                        <ol><h5><a href="<?= base_url('komunitas');?>" style="text-decoration: none;">Komunitas</a></h5></ol>
+                        <ol><h5><a href="<?= base_url('home/cariAnggota');?>" style="text-decoration: none;">Teman</a></h5></ol>
+                        <ol><h5><a href="<?= base_url('');?>" style="text-decoration: none;">Modul</a></h5></ol>
+                    </ul>
+                </div>
+                <div class="col-md-4" style="margin-bottom: 50px;">
+                    <ul>
+                        <ol><h5><a href="<?= base_url('register');?>" style="text-decoration: none;">Registrasi</a></h5></ol>
+                        <ol><h5><a href="<?= base_url('login');?>" style="text-decoration: none;">Login</a></h5></ol>
                     </ul>
                 </div>
             </div>
             <hr>
             <div class="row">
                 <div class="col-md-12 text-faded text-center">
-                    <span>Copyright &copy; FANCY SOFTWARE. 2020 untuk IKASMA3BDG</span>
+                    <span>Copyright &copy; IKASMA3BDG. All rights reserved.</span>
                 </div>
             </div>
         </div>

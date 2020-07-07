@@ -39,9 +39,8 @@
         </ul>
         <!-- END BREADCRUMB -->
 
-        <?= showFlashMessage(); ?>
 
-        <div class="row" style="margin-top: 60px;">
+        <div class="row" style="margin-top: 30px;">
             <div class="col-md-8">
 
                 <div class="row" style="margin-bottom: 30px;">
