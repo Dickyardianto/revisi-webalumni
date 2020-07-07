@@ -9,6 +9,7 @@ class NotifRegisterForAnggota extends MY_Controller
     {
         parent::__construct();
         $this->load->model('LoginModel');
+        $this->load->model('M_anggota');
     }
 
     function index()
@@ -18,5 +19,13 @@ class NotifRegisterForAnggota extends MY_Controller
 
         $data['id_user'] = $this->LoginModel->getIdAnggota();
         $this->login_render('login/NotifRegisterForAnggota', $data);
+    }
+
+    function notif()
+    {
+        $data['title'] = 'Menu Pembayaran';
+        $data['info'] = $this->M_anggota->findAnggota('*', array('tb_anggota.user_id' => $this->session->userdata('uid')));
+        $data['id_user'] = $this->LoginModel->getIdAnggota();
+        $this->admin_render('admin/anggotaBayar', $data);
     }
 }

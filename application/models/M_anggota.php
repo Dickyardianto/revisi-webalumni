@@ -36,6 +36,12 @@ class M_anggota extends CI_Model
         return $this->db->query($query)->result();
     }
 
+    function findForAnggotaBerbayarFoto($id)
+    {
+        $query = "SELECT * FROM tb_anggota JOIN `tb_bukti_bayar` ON `tb_anggota`.`id_anggota` = `tb_bukti_bayar`.`id_user` WHERE `tb_anggota`.`id_anggota` = $id ORDER BY `id_anggota` DESC";
+        return $this->db->query($query)->result();
+    }
+
     function findForAlumni()
     {
         $query = "SELECT * FROM tb_anggota WHERE tb_anggota.user_id = 4 ORDER BY `id_anggota` DESC";

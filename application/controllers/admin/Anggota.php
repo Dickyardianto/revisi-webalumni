@@ -64,6 +64,7 @@ class Anggota extends MY_Controller
         $data['calonAnggota'] = $this->M_anggota->findForAnggotaBerbayar();
         $data['calonAlumni'] = $this->M_anggota->findForAlumni();
         $data['daftarHakAkses'] = $this->M_anggota->getAllRole();
+
         $data['info'] = $this->M_anggota->findAnggota('*', array('tb_anggota.user_id' => $this->session->userdata('uid')));
 
         if ($this->session->userdata('role') == 1) {
@@ -158,6 +159,54 @@ class Anggota extends MY_Controller
             $data['email'] = $email;
             $data['nama_foto'] = $upload_data['file_name'];
             $data['status_anggota'] = '0';
+
+            $sukses = $this->M_anggota->insertNewAnggota($data);
+
+            if (!$sukses) {
+                flashMessage('success', 'Calon Anggota Baru berhasil di daftarkan. Silahkan verifikasi di Permohonan Calon Anggota');
+                redirect('login/NotifRegisterForAnggota/notif');
+            } else {
+                flashMessage('error', 'Calon Anggota Baru gagal di daftarkan! Silahkan coba lagi');
+                redirect('admin/Anggota');
+            }
+        }
+    }
+
+
+    public function tambahCalonAlumni()
+    {
+        $namaLengkap = $this->input->post('namaLengkap');
+        $namaPanggilan = $this->input->post('namaPanggilanAlias');
+        $angkatan = $this->input->post('angkatan');
+        $noTelepon = $this->input->post('noTelepon');
+        $email = $this->input->post('email');
+
+        $filename = "IKA-SMA3-" . $namaLengkap . "-" . time();
+
+        // Set preferences
+        $config['upload_path'] = './uploads/avatars';
+        $config['allowed_types'] = 'png|jpg|jpeg';
+        $config['file_name'] = $filename;
+
+
+        //load upload class library
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload('fileSaya')) {
+            flashMessage('error', 'Maaf, Upload gambar calon anggota gagal! Silahkan coba lagi');
+            redirect('admin/Anggota');
+        } else {
+            $upload_data = $this->upload->data();
+
+            $data['nama_lengkap'] = $namaLengkap;
+            $data['nama_panggilan_alias'] = $namaPanggilan;
+            $data['tanggal_lahir'] = $this->input->post('tglLahir');
+            $data['angkatan'] = $angkatan;
+            $data['no_telp'] = $noTelepon;
+            $data['email'] = $email;
+            $data['nama_foto'] = $upload_data['file_name'];
+            $data['status_anggota'] = '0';
+            $data['user_id'] = 4;
 
             $sukses = $this->M_anggota->insertNewAnggota($data);
 
@@ -513,6 +562,15 @@ class Anggota extends MY_Controller
 
         $data['anggota'] = $this->M_anggota->findAnggota('*', array('tb_anggota.id_anggota = ' => $id));
 
+        echo json_encode($data);
+    }
+
+    function anggotaJSONFoto()
+    {
+        $id = $this->input->post('id');
+
+        // $data['anggota'] = $this->M_anggota->findAnggota('*', array('tb_anggota.id_anggota = ' => $id));
+        $data['anggota'] = $this->M_anggota->findForAnggotaBerbayarFoto($id);
         echo json_encode($data);
     }
 
