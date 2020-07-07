@@ -32,7 +32,7 @@ class M_anggota extends CI_Model
 
     function findForAnggotaBerbayar()
     {
-        $query = "SELECT * FROM tb_anggota JOIN `tb_bukti_bayar` ON `tb_anggota`.`id_anggota` = `tb_bukti_bayar`.`id_user` ORDER BY `id_anggota` DESC";
+        $query = "SELECT * FROM tb_anggota JOIN `tb_bukti_bayar` ON `tb_anggota`.`id_anggota` = `tb_bukti_bayar`.`id_user` WHERE `tb_anggota`.`status_anggota` = 0 ORDER BY `id_anggota` DESC";
         return $this->db->query($query)->result();
     }
 
@@ -44,7 +44,7 @@ class M_anggota extends CI_Model
 
     function findForAlumni()
     {
-        $query = "SELECT * FROM tb_anggota WHERE tb_anggota.user_id = 4 ORDER BY `id_anggota` DESC";
+        $query = "SELECT * FROM tb_anggota WHERE tb_anggota.user_id = 4 AND tb_anggota.status_anggota = 0 ORDER BY `id_anggota` DESC";
         return $this->db->query($query)->result();
     }
 
