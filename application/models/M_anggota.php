@@ -75,7 +75,7 @@ class M_anggota extends CI_Model
     function updateAnggota($anggota, $id)
     {
         $this->db->where('id_anggota', $id);
-        $this->db->update('tb_anggota', $anggota);
+        return $this->db->update('tb_anggota', $anggota);
     }
 
     function deleteAnggota($id)

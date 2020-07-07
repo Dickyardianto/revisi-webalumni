@@ -45,7 +45,6 @@
     <div class="row">
         <?php if ($forumBisnis) : ?>
             <?php foreach ($forumBisnis as $B) : ?>
-
                 <div class="col-md-4">
                     <!-- CONTACT ITEM -->
                     <div class="panel panel-default">
@@ -79,13 +78,18 @@
                                     <p><small>Alamat Bisnis</small><br><?= $B->alamat_bisnis; ?></p>
                                 <?php } ?>
 
+                                <?php if ($B->url_bisnis == "") { ?>
+                                    <p><small>Alamat Website Bisnis</small><br>Belum di isi</p>
+                                <?php } else { ?>
+                                    <p><small>Alamat Website Bisnis</small><br><a href="<?= $B->url_bisnis; ?>"><?= $B->url_bisnis; ?></a></p>
+                                <?php } ?>
+
                             </div>
                         </div>
                         <!-- END CONTACT ITEM -->
                     </div>
                 </div>
             <?php endforeach; ?>
-
         <?php else : ?>
             <div class="row">
                 <div class="col-md-6">

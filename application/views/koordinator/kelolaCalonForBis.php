@@ -50,6 +50,7 @@
                                                 <th width="100">Alamat Bisnis / Usaha</th>
                                                 <th width="100">Jenis Bisnis</th>
                                                 <th width="100">No. Telepon</th>
+                                                <th width="100">Url Bisnis</th>
                                                 <th width="100">actions</th>
                                             </tr>
                                         </thead>
@@ -75,6 +76,7 @@
                                                     <td><?= $forbis->alamat_bisnis; ?></td>
                                                     <td><?= $forbis->nama_jenis_bisnis; ?></td>
                                                     <td><?= $forbis->no_telp_bisnis; ?></td>
+                                                    <td><a href="<?= $forbis->url_bisnis; ?>"><?= $forbis->url_bisnis; ?></a></td>
                                                     <td>
                                                         <button type="button" class="btn btn-primary mb-control btn-terima" data-box="#message-box-terima" id="<?= $forbis->id_forbis; ?>">Terima</button>
                                                         <button type="button" class="btn btn-danger mb-control btn-tolak" data-box="#message-box-tolak" id="<?= $forbis->id_forbis; ?>">Tolak</button>
@@ -138,6 +140,13 @@
                                         <label class="col-md-3 control-label">* No. Telepon :</label>
                                         <div class="col-md-7">
                                             <input type="text" class="form-control" name="noTelpBisnisUsahaModal" placeholder="No Telepon Bisnis / Usaha" required />
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label">Alamat Website Bisnis :</label>
+                                        <div class="col-md-7">
+                                            <input type="text" class="form-control" name="urlBisnisModal" placeholder="Contoh: ikasma3bdg.com" />
                                         </div>
                                     </div>
 

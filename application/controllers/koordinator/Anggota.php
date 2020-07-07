@@ -198,7 +198,7 @@ class Anggota extends MY_Controller
 
                 $this->sendEmailKeanggotaan();
 
-                if (!$updateAnggota) {
+                if ($updateAnggota) {
                     flashMessage('success', 'Calon Anggota berhasil di aktifkan dan dapat masuk menggunakan Username & Password sesuai yang tertera pada saat Aktivasi');
                     redirect('koordinator/Anggota');
                 } else {
