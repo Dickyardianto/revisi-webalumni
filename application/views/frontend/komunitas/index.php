@@ -64,16 +64,10 @@
 
         <!-- START BREADCRUMB -->
         <ul class="breadcrumb">
-            <li>Komunitas</li>
-            <li class="active"><a href="<?= base_url('Komunitas'); ?>">Lihat Komunitas</a></li>
+            <li>Beranda</li>
+            <li class="active"><a href="<?= base_url('Komunitas'); ?>">Komunitas</a></li>
         </ul>
         <!-- END BREADCRUMB -->
-
-        <div class="page-title">
-            <h2> Lihat Komunitas</h2>
-        </div>
-
-        <?= showFlashMessage(); ?>
 
         <!-- PAGE CONTENT WRAP -->
         <div class="page-content-wrap">
@@ -150,7 +144,7 @@
                             </div>
                         <?php } ?>
                     <?php else : ?>
-                        <h4 class="text-danger text-center" style="margin-bottom: 30px;">Komunitas tidak ditemukan!</h4>
+                        <h4 class="text-danger text-center" style="margin-top: 40px;">Komunitas tidak ditemukan!</h4>
                     <?php endif; ?>
                 </div>
             </div>

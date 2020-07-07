@@ -34,9 +34,6 @@
         </ul>
         <!-- END BREADCRUMB -->
 
-        <div class="page-title">
-            <h5>Forum Bisnis</h5>
-        </div>
 
         <div class="row" style="margin-bottom: 30px;">
             <div class="col-md-8">
@@ -72,7 +69,7 @@
         <div class="row">
             <div class="col-md-8">
                 <?php if (empty($forumBisnis)) : ?>
-                    <p class="text-danger text-center">Forum Bisnis tidak ditemukan!</p>
+                    <h4 class="text-danger text-center">Forum Bisnis tidak ditemukan!</h4>
                 <?php else : ?>
                     <div class="row">
                         <?php foreach ($forumBisnis as $B) : ?>

@@ -43,6 +43,16 @@
 
                 <div class="form-group">
                     <div class="col-md-12">
+                        <select class="form-control" name="role">
+                            <option value="0">Daftar Sebagai</option>
+                            <option value="3">Anggota</option>
+                            <option value="4">Alumni</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-12">
                         <input type="email" class="form-control" placeholder="Email" name="email" maxlength="75"
                             required />
                     </div>

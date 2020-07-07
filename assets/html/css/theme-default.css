@@ -1082,7 +1082,7 @@ body.page-container-boxed .page-container {
 .x-navigation>li.xn-logo>a:first-child {
 	font-size: 0px;
 	text-indent: -9999px;
-	background: url("../img/logo-ikasma3bdg.png") top center no-repeat #e34724;
+	background: url("") top center no-repeat #e34724;
 	padding: 0px;
 	border-bottom: 0px;
 	color: #FFF;
@@ -4650,7 +4650,8 @@ td.dataTables_empty {
 
 .login-container .login-box .login-body .form-control {
 	border: 0px;
-	background: rgba(0, 0, 0, 0.2);
+	/* background: rgba(0, 0, 0, 0.2); */
+	background-color: #33414e;
 	padding: 10px 15px;
 	color: #CCC;
 	line-height: 20px;
@@ -8740,7 +8741,7 @@ li.ext_zip {
 	}
 
 	.x-navigation>li.xn-logo>a:first-child {
-		background-image: url("../img/logo@2x.png");
+		background-image: url("");
 		background-size: 220px 50px;
 	}
 

@@ -12,6 +12,8 @@ class M_anggota extends CI_Model
 
     function getAllRole()
     {
+        // $query = "SELECT * FROM tb_user_role join tb_anggota ON tb_anggota.user_id = tb_user_role.role";
+        // return $this->db->query($query)->result();
         $this->db->order_by('id', 'DESC');
         return $this->db->get('tb_user_role')->result();
     }
@@ -26,6 +28,18 @@ class M_anggota extends CI_Model
         $this->db->order_by('id_anggota', 'DESC');
 
         return $this->db->get('tb_anggota')->result();
+    }
+
+    function findForAnggotaBerbayar()
+    {
+        $query = "SELECT * FROM tb_anggota JOIN `tb_bukti_bayar` ON `tb_anggota`.`id_anggota` = `tb_bukti_bayar`.`id_user` ORDER BY `id_anggota` DESC";
+        return $this->db->query($query)->result();
+    }
+
+    function findForAlumni()
+    {
+        $query = "SELECT * FROM tb_anggota WHERE tb_anggota.user_id = 4 ORDER BY `id_anggota` DESC";
+        return $this->db->query($query)->result();
     }
 
     function findCalonAnggota($select, $where)
