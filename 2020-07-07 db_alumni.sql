@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 01 Jul 2020 pada 09.45
--- Versi server: 10.1.34-MariaDB
--- Versi PHP: 7.2.7
+-- Generation Time: Jul 07, 2020 at 02:31 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_anggota`
+-- Table structure for table `tb_anggota`
 --
 
 CREATE TABLE `tb_anggota` (
@@ -45,7 +45,7 @@ CREATE TABLE `tb_anggota` (
   `negara` varchar(100) DEFAULT NULL,
   `provinsi` varchar(100) DEFAULT NULL,
   `kabupaten_kota` varchar(100) DEFAULT NULL,
-  `alamat` text,
+  `alamat` text DEFAULT NULL,
   `pendidikan_terakhir` varchar(10) DEFAULT NULL,
   `status_bekerja` varchar(30) DEFAULT NULL,
   `bidang_industri` varchar(100) DEFAULT NULL,
@@ -65,107 +65,11 @@ CREATE TABLE `tb_anggota` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tb_anggota`
+-- Dumping data for table `tb_anggota`
 --
 
 INSERT INTO `tb_anggota` (`id_anggota`, `nama_lengkap`, `nama_panggilan_alias`, `NIK`, `angkatan`, `jenis_kelamin`, `tempat_lahir`, `tanggal_lahir`, `golongan_darah`, `no_telp`, `no_telp_alternatif`, `email`, `nama_foto`, `negara`, `provinsi`, `kabupaten_kota`, `alamat`, `pendidikan_terakhir`, `status_bekerja`, `bidang_industri`, `jabatan`, `nama_perusahaan`, `bisnis_usaha`, `sosial_pendidikan`, `sosial_kemanusiaan`, `pengembangan_sarana_prasarana`, `silaturahim_kebersamaan`, `penawaran_sponsorship_donasi`, `support`, `loyalist`, `iuran_sukarela`, `status_anggota`, `user_id`) VALUES
 (1, 'root', 'admin', '173040046', 2017, '1', 'Bandung', '2020-06-23', 'A', '081911437177', '0', 'root123@gmail.com', 'IKA-SMA3-1592730823.jpeg', 'Indonesia', 'Jawa Barat', 'Kab. Cirebon', 'Jl. Nusa Indah No. 27 Wiratama - Tuparev', 'SMA', '1', 'Informatika', 'CEO Apple', 'Apple, Inc', '1', NULL, '1', NULL, '1', NULL, '1', NULL, 12, '1', 1),
-(4, 'Dedi (Maryun) E Wirahadikusumah', NULL, '3174070606510003', 70, '1', NULL, '1951-06-06', 'A', '0811948436', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Lamandau 2 No 14 Kebayoran Baru, Jakarta Selatan', 'S1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(5, 'Fatsfiar Erfaba Enoch', NULL, '3273111404520003', 70, '1', NULL, '1952-04-14', 'B', '0815222414386', NULL, NULL, NULL, NULL, NULL, NULL, 'Komp. Bumi Parahyangan Kencana  Jl. Rajawali Raya Blok  23 No.29  Rt.03 Rw 07 Desa Nagrak, Kec. Cangkuang Kab. Bandung 40377', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(6, 'Ida Sofia Sidawati (Ida Gursida Djoewarsa)', NULL, '3171075401510001', 70, '2', NULL, '1951-01-14', 'O', '0811854770', '08998854770', NULL, NULL, NULL, NULL, NULL, 'Jl. Pam Baru V NO 15 Pejompongan, Jakarta Pusat 10210', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(7, 'Iip Purnama', NULL, '3273161111510001', 70, '1', NULL, '1951-11-11', 'B', '081320521357', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Mekar Sari 67, Kebaktian Kiaracondong, Bandung', 'S1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(8, 'John B.Tibuludji', NULL, '3175021908520007', 70, '1', NULL, '1952-08-19', 'B', '0816781793', '08118466356', NULL, NULL, NULL, NULL, NULL, 'Jl. Flamboyan Kencana Blok A5 No.14  Puri Flamboyan Rempoa, Ciputat, Jakarta Selatan', 'S1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(9, 'Mieke Rachmiati', NULL, '3174014705520005', 70, '2', NULL, '1952-05-07', 'B', '087877858483', '081280144494', NULL, NULL, NULL, NULL, NULL, 'Jl. Tebet Timur Dalam VIII X/8, Jakarta 12820', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(10, 'Nani Siti Amaliani', NULL, '3674034307570012', 70, '2', NULL, '1952-07-03', 'O', '0818749974', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Pisok VI Blok EB 11 No.20 Sektor V Bintaro Jaya,Tangerang Selatan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(11, 'Rosmalia Mulkan', NULL, '3174055006520003', 70, '2', NULL, '1952-06-10', NULL, '08121034666', NULL, NULL, NULL, NULL, NULL, NULL, 'Komplek Pondok Pinang Centre AR 24, Jakarta (12310)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(12, 'Sulaeman M.Hardjadilaga (Yaya)', NULL, '3204062106520002', 70, '1', NULL, '1952-06-21', 'A', '08562116353', '0818744715', NULL, NULL, NULL, NULL, NULL, 'Jl. Awiligar Blk 201 Bandung (40191)', 'S1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(13, 'Syamsuar', NULL, '3272141706510005', 70, '1', NULL, '1951-06-17', 'AB', '081321883606', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Citamiang 26, Bandung', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(14, 'Ahmad Fauz', NULL, '3271051504510001', 70, '1', NULL, '1951-04-15', 'O', '08128303797', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Drupada 2 No 45 Bumi Indra Pasta 2, Kota Bogor 16152', 'S1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(15, 'Bambang Wuryanto', NULL, '3674030101510001', 70, '1', NULL, '1951-01-01', 'AB', '08128368957', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Magnolia VI Blok G No. 15 Sektor 12 BSD, Tangerang', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(16, 'Dien Alman Natalegawa', NULL, '3273095702520002', 70, '2', NULL, '1952-02-17', 'A', '081236194859', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Bonang 19 Turangga, Kota Bandung', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(17, 'Henny Rusmiati Purwono', NULL, '3273234703530001', 70, '2', NULL, '1954-03-07', 'B', '081322784895', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. VENUS BARAT V NO 11 METRO, Kota Bandung', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(18, 'Ida Farida', NULL, '3272135308530003', 70, '2', NULL, '1953-08-13', 'A', '082218532088', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Suryalaya V NO 34, Kota Bandung', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(19, 'Lily Tjarlina', NULL, '3273134805510002', 70, '2', NULL, '1951-05-08', 'B', '088260036597', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Sekelimus XI no 4 Bandung', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(20, 'Sri Haryati', NULL, '3271065508530004', 70, '2', NULL, '1953-08-15', 'A', '08179808859', NULL, NULL, NULL, NULL, NULL, NULL, 'Perum Taman Cimanggu T2 No. 5, Bogor', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(21, 'Titi Suryati', NULL, '3273024304510002', 70, '2', NULL, '1951-03-03', 'O', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Tubagus Ismail RayaNo. 61, Bandung', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(22, 'Yani Ramasari', NULL, '3272115907500002', 70, '2', NULL, '1950-07-19', 'O', '08161942261', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Pasirjaya IX No. 1A Pasirluyu, Bandung 40254', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(23, 'Yani Sri Roehyani', NULL, '3217027006520002', 70, '2', NULL, '1952-06-30', 'A', '0816607656', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Villa Duta No 11, BANDUNG - 40151', 'D3', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(24, 'Yatie Soedarso', NULL, '3674035101530001', 70, '2', NULL, '1952-01-11', 'A', '08561167173', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Prima Harapan Regency A2/18 Bekasi Utara', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(25, 'Yetty Widjayanti', NULL, '3273025201520006', 70, '2', NULL, '1952-01-12', 'A', '081322910088', '08180222965', NULL, NULL, NULL, NULL, NULL, 'Jl. Piit NO 4, Bandung', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(26, 'Yuhana', NULL, '3273112709490008', 70, '1', NULL, '1949-09-27', 'AB', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Pasirjaya IX no 1A', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(27, 'Aan Nugraha E Sumantri /Anes', NULL, '3273062703520002', 70, '1', NULL, '2013-03-27', 'O', '08128036333', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Ahmad III / 3, Kota Bandung 40173', 'S1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(28, 'Amisani', NULL, '3277035204520003', 70, '2', NULL, '1952-04-12', 'B', '08122014294', NULL, NULL, NULL, NULL, NULL, NULL, 'Kompl.  Cimindi Raya G / 14, Kota Cimahi', 'S1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(29, 'Ashraf Badrulhidur', NULL, '3275015007520017', 70, '1', NULL, '1952-07-10', 'A', '08129061711', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Chairil Anwar, Kompl.  Pengairan Blok F No 3, Kota Bekasi', 'S1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(30, 'Bambang Nugraha / Nuke', NULL, '3674050504520001', 70, '1', NULL, '1952-04-05', 'A', '0816748545', '081212853285', NULL, NULL, NULL, NULL, NULL, 'Jl. Gunung Indah II/50A Cireundeu Ciputat, Tangerang Selatan', 'S2', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(31, 'Bambang Sutiarso / Aso', NULL, '1871052310520002', 70, '1', NULL, '1952-10-23', 'B', '081350227951', NULL, NULL, NULL, NULL, NULL, NULL, 'Komp Bumi Asri Blok H jno 37 Tanjungkarang timur', 'S1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(32, 'Dede Sudarsana', NULL, '3174102403510002', 70, '1', NULL, '1952-03-24', 'A', '08122712905', NULL, NULL, NULL, NULL, NULL, NULL, 'Kompleks Pusri B-7 Petukangan Utara, Jakarta 12260', 'S1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(33, 'Dewi Komalasari Utama / Corrie', NULL, '3273086106520001', 70, '2', NULL, '1952-06-21', 'A', '08122390390', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl.Cipaku Indah VII/7, Bandung 40143', 'S2', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(34, 'Dewi Sukmawati / Eet', NULL, '3273016610510003', 70, '2', NULL, '1951-10-26', 'A', '0811218445', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Setra Murni Tengah 18, Kota Bandung 40152', 'S1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(35, 'Empong Koswara', NULL, '3272012010520001', 70, '1', NULL, '1952-10-20', 'O', '081573244595', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl Fajar 83-B KPAD Gegerkalong, Kota Bandung', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(36, 'Erna Rusita Iyad (Gana) / Nena', NULL, '3273154902530004', 70, '2', NULL, '1953-02-09', 'B', '08122423852', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Holis Permai V/11, Bandung 40212', 'S1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(37, 'Harnawan Hatadji / Entjep', NULL, '3273010908530002', 70, '1', NULL, '1953-08-09', 'O', '083879791127', NULL, NULL, NULL, NULL, NULL, NULL, 'Gandaria VI No. 18 Jakarta Selatan', 'S1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(38, 'Herry Hermana', NULL, '3277012203510001', 70, '1', NULL, '1951-03-22', 'B', '08562244906', '085794540208', NULL, NULL, NULL, NULL, NULL, 'Jl Mukodar 3 Cibeureum Cimahi Selatan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(39, 'Johansjah Sugianto / Djoni', NULL, '3674051410520003', 70, '1', NULL, '1952-10-14', 'A', '085921566612', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Kepodang VI / K-2 No. 6 Bintaro Jaya sektor 2 Ciputat Timur, Tangerang Selatan', 'S1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(40, 'Jusuf Rahmat, Ir', NULL, '3276092808520002', 70, '1', NULL, '1952-08-28', 'O', '0816806136', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Sungai Pasanggrahan I/6 B Cinere, Depok 16514', 'S1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(41, 'Kusdayat Martawidjaja', NULL, '3272150703520001', 70, '1', NULL, '1952-03-07', 'A', '08172343285', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Mekar Indah 21 Cijerah , BANDUNG 40213', 'S1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(42, 'Moch Djumhana ', NULL, '3578022112510003', 70, '1', NULL, '1951-12-21', 'AB', '08155061368', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Bendul Merisi Selatan III/2, Surabaya', 'S1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(43, 'Moh Iksan Tatang / Tatang Kratiem-4', NULL, '3174080505520005', 70, '1', NULL, '1952-05-05', 'O', '0811163490', '08111832835', NULL, NULL, NULL, NULL, NULL, 'Jl. Warung Jati Timur I/2 Kalibata, Jakarta Selatan 12740', 'S1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(44, 'Mulkan Achsan', NULL, '3174053008500001', 70, '1', NULL, '1950-08-30', 'O', '0811942965', NULL, NULL, NULL, NULL, NULL, NULL, 'Kompl. Pinang Center AR 24 Pondok Pinang, Jakarta 12310', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(45, 'Nani Amalia Rachman / Nani Otte', NULL, '3171076006520005', 70, '2', NULL, '1952-06-20', 'O', '0811986971', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Cempaka No 11 Jatipulo Tomang, Jakbar 11430', 'S2', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(46, 'Nani Gunawati', NULL, '3174055006520001', 70, '2', NULL, '1952-06-10', 'B', '0811135106', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Delman Indah VIII/16 Tanah Kusir , Jakarta 12240', 'S2', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(47, 'Nenny Tjuminawati', NULL, '3175076705520002', 70, '2', NULL, '1952-05-27', 'AB', '0817873034', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Kelapa Kuning Raya Blok AN-1 no 10, Billymoon Aninoid, Pondok Kelapa, Jakarta Timur 13450', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(48, 'Nina Kentjanawati Sadeli', NULL, 'Passport A 79488', 70, '2', NULL, '1952-03-23', NULL, '0811933738', '+491628993481', NULL, NULL, NULL, NULL, NULL, 'Hinz Duerrstrasse 9, 40882 Ratingen, Germany', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(49, 'Odie Muradie', NULL, '3208092812510002', 70, '1', NULL, '1951-12-28', 'O', '08122332506', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. RE Martadinata 38, Kuningan', 'S2', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(50, 'Rudianto Djajakusumah, Drs. H. ', NULL, '3674052606510007', 70, '1', NULL, '1951-06-26', 'A', '081908209000', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Punai Raya M3/1 Bintaro Jaya sektor 2 Ciputat, Jakarta 12330', 'S1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(51, 'Rudy Ridwan Rahardja', NULL, '3201132202520001', 70, '1', NULL, '1952-02-22', 'A', '082126066611', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Pertanian I Blok C No. 2 Citayam, Bj. Gede Bogor', 'S1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(52, 'Siti Utami / Emi', NULL, '3277036604520007', 70, '2', NULL, '1952-04-26', 'A', '08122094216', NULL, NULL, NULL, NULL, NULL, NULL, 'Komp. Dosen Jurusan Gizi No. 2 Jl. Babakan Loa Cimindi Cimahi Utara', 'S1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(53, 'Sujanto Wignjodipuro/ Gante', NULL, '3275092110510006', 70, '1', NULL, '1951-10-21', 'B', '081310112400', NULL, NULL, NULL, NULL, NULL, NULL, 'Kampung RawaBogo Jatimekar Jatiasih', 'S1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(54, 'Suparmo', NULL, '3273131204520002', 70, '1', NULL, '1952-04-12', 'B', '081272292999', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Kayu Agung C53 Bandung', 'S1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(55, 'Tatty Triana', NULL, '3217026111510001', 70, '2', NULL, '1951-11-21', 'A', '08889452590', NULL, NULL, NULL, NULL, NULL, NULL, 'Cihanjuang Indah Blok A no 25 Parongpong, Bandung Barat', 'D3', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(56, 'Teti Kartini', NULL, '3273164703520001', 70, '2', NULL, '1952-03-07', 'A', '0811227417', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Citra II/3 Antapani, Bandung', 'S2', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(57, 'Kusmulyati D. Saptodewo', NULL, '3174106905520001', 70, '2', NULL, '1952-05-29', 'O', '0818706563', '081213250096', NULL, NULL, NULL, NULL, NULL, 'Jl. Cempaka IV/10 Bintaro, Jakarta 12330', 'S1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(58, 'Sri Hidayati Ida Djoeffan,Ir. M.T', NULL, '3273015106520002', 70, '2', NULL, '1952-06-11', 'O', '081320165561', '087824169742', NULL, NULL, NULL, NULL, NULL, 'Jl. Setra Sirna III/3, Bandung, 40152', 'S2', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(59, 'Bambang Permantoro', NULL, '3174100206510005', 70, '1', NULL, '1951-06-02', 'A', '0816825858', '0817856789', NULL, NULL, NULL, NULL, NULL, 'Kejaksaan III No 8 Kereo Ciledug, Kota Jakarta 15156', 'AKABRI', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(60, 'Deden JuhanaSomantri', NULL, '3273222404500001', 70, '1', NULL, '1950-04-24', 'A', '0816623102', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Perunggu no 9 Bandung', 'S1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(61, 'Delano Darkito Soewondo', NULL, '3272142802530002', 70, '1', NULL, '1953-02-28', NULL, '08122040130', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl Sukasenang V / 32, Bandung', 'S2', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(62, 'Eddy Yanto', NULL, '3276062202520003', 70, '1', NULL, '1952-02-22', 'O', '08161801156', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Kacang No. 65 Rt. 2/07 Perum Depok Utara 16421', 'S1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(63, 'Ela Turmala Tarmidi, Dra, Msi', NULL, '3273135510520001', 70, '2', NULL, '1952-10-15', 'O', '08122331807', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Suryalaya III/27, Kota Bandung', 'S2', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(64, 'Elizar Siallagan', NULL, '3275081201520023', 70, '1', NULL, '1952-01-12', 'O', '0811154476', NULL, NULL, NULL, NULL, NULL, NULL, 'Jatibening SST D8/14, Kota Bekasi', 'AKABRI', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(65, 'Eutik Syarifah Syamsudin', NULL, '3175076811510002', 70, '2', NULL, '1951-11-28', 'B', '081511147050', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Delima IV No.14, Rt 005/08 Curug, Pondok Kelapa Jakarta Timur - 13450', 'S1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(66, 'Iman Budiman', NULL, '3674050604510001', 70, '1', NULL, '1951-04-06', 'O', '0821009729', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Gresik FB 2 No 3 Pondok Ranji', 'Pilot', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(67, 'Nafril Nazir', NULL, '3674061806520003', 70, '1', NULL, '1952-06-18', 'B', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Pamulang Permai II D-18/12', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(68, 'Sukmayadi', NULL, '3302241010510005', 70, '1', NULL, '1951-10-10', 'A', '082371233328', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Patriot 22, Purwokerto', 'S1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(69, 'Sutan Syahrizal', NULL, '3674072007510001', 70, '1', NULL, '1951-07-20', 'O', '081611092261', NULL, NULL, NULL, NULL, NULL, NULL, 'Kompleks PUSPITEKBLOK II D/26 Serpong', 'S1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(70, 'Syahbudin Muis', NULL, '3174042005500004', 70, '1', NULL, '1950-05-20', 'O', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Cinere Raya no 8 D Depok', 'S1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(71, 'Yayah Rohayah', NULL, '3273116605520001', 70, '2', NULL, '1952-05-26', 'B', '081320789953', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Kembar Sari Indah III / 14', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(72, 'Yuly Yafri Razak, Dr', NULL, '3171051007520001', 70, '1', NULL, '1952-07-10', 'B', '0818724578', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Cempaka Putih Timur VII / 7, Jakarta', 'S2', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(73, 'Ibnu Siswanto', NULL, '3204050112520002', 70, '1', NULL, '1952-12-01', 'O', '083820341118', NULL, NULL, NULL, NULL, NULL, NULL, 'Villa Bandung Indah A 6 - 5 Cileunyi, Kota Bandung 40393', 'S1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(74, 'Iwan Hermawan', NULL, '3272052801530006', 70, '1', NULL, '1953-01-28', 'AB', '083821146670', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl Rancakendal Luhur no 5 B Dagopakar Bdg', 'S1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(75, 'Janti Damajanti Soni', NULL, '3172015310520002', 70, '2', NULL, '1952-10-13', 'A', '0816721433', NULL, NULL, NULL, NULL, NULL, NULL, 'Pluit Murni IV / 6, Jakarta Utara', 'S1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(76, 'Lono Sumargono', NULL, '3277032204510004', 70, '1', NULL, '1951-04-22', 'AB', '0817290404', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Gn Cikuray No 9 / Kompl. Citra Asri I-6 Gn Batu Dalam, Kota Cimahi 40514', 'S1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(77, 'Moh. Najib', NULL, '3174011811520001', 70, '1', NULL, '1952-11-18', 'AB', '0818700469', '0818883122', NULL, NULL, NULL, NULL, NULL, 'Perumahan Graha Indah Blok A9/11, Bekasi 17422\nJl. Tebet Barat Dalam 2F/21, Jakarta 12810', 'S1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(78, 'Moh. Sanusi', NULL, '3273220708520004', 70, '1', NULL, '1952-08-07', 'O', '085220877401', NULL, NULL, NULL, NULL, NULL, NULL, 'jl. Ciwastra blk 263 no 10 buah batu Bandung', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(79, 'Sonny Achmad Sobana', NULL, '3172012905520002', 70, '1', NULL, '1952-05-29', 'A', '0816840928', NULL, NULL, NULL, NULL, NULL, NULL, 'Pluit Murni IV / 6, Jakarta Utara', 'S1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(80, 'Sri Suwardhani', NULL, '3273026104530001', 70, '2', NULL, '1953-04-21', 'O', '08122386929', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Dago Pojok 61/161 B Kompl BATAN, Bandung', 'S1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(81, 'Didie Bambang Tedjosumirat, Ir', NULL, '3173082208520002', 70, '1', NULL, '1952-08-22', 'B', '0818118228', NULL, NULL, NULL, NULL, NULL, NULL, 'Meruya Indah Blok D/3 Jakarta', 'S1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(82, 'Fahmedy Jazid', NULL, '3175072802510010', 70, '1', NULL, '1951-02-28', NULL, '081808135678', '0811848946', NULL, NULL, NULL, NULL, NULL, 'Terrassv 18 19144 Sollenjuna Stockholm, Swedia', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(83, 'Tri Hermini Mudji Hardjadi', NULL, '3174055412510001', 70, '2', NULL, '1951-12-14', 'O', '0811194970', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Bendi VIII no 11 Tanah Kusir, Jakarta Selatan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(84, 'Siti Ameriawati Atmadibrata', 'Merry', NULL, 77, NULL, 'Bandung', '1959-02-17', NULL, '+6285353637359', '+6281910694959', 'merry.atma@gmail.com', NULL, NULL, NULL, NULL, 'Jl. Kalimantan 11 Bandung  40113', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(85, 'Yusron Fauzi', 'Yusron', NULL, 77, NULL, 'Bandung', '1958-06-19', NULL, '+6287882249755', NULL, 'yfauzy@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(86, 'Like D/7/ani', 'Like', NULL, 77, NULL, 'Bandung', '1958-08-06', NULL, '+628157121535', '022 - 7208569', NULL, NULL, NULL, NULL, NULL, 'Jl. Atletik V no 6 Bandung', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(87, 'Akhmad Hidayat', 'lyet/Dayat', NULL, 77, NULL, 'Bandung ', '1957-09-24', NULL, '+6285956240726', '022 - 7305573', NULL, NULL, NULL, NULL, NULL, 'Jl. Saledri no 8 Bandung', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(88, 'Meilani Bekti', 'Mei', NULL, 77, NULL, 'Bandung', '1959-05-15', NULL, '+628122331578', '022- 2014803', 'meilanib@yahoo.com', NULL, NULL, NULL, NULL, 'Sarijadi Blok 17 M-70 no 4 Bandung', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(89, 'Rahman  Hikmat', 'Rahman', NULL, 77, NULL, 'Kuningan ', '1959-06-01', NULL, '+6287823596416', NULL, 'rahman.hikmat@gmail.com', NULL, NULL, NULL, NULL, 'Jl Gagak Tilil 11 no 327', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(90, 'Endang Thresnawaty', 'Endang', NULL, 77, NULL, 'Cirebon ', '1959-01-24', NULL, '+628122443934', '+82218871879', 'NOTARISHERISUHERMAN@gmail.com', NULL, NULL, NULL, NULL, 'Jl. Nusa lndah 1/15 Garut', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(91, 'Adam Ginanjar', 'Adam', NULL, 77, NULL, 'Bandung', '1959-07-10', NULL, '+6281289418962', '+85624111159', 'adamginanjar10@gmail.com', NULL, NULL, NULL, NULL, 'Kompleks GBA II H-5 no 12 Bandung', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(92, 'Dodoy Turgana Tarmidi', 'Dodoy', NULL, 77, NULL, NULL, NULL, NULL, '+6282116321728', '-', 'doysite123@gmail.com', NULL, NULL, NULL, NULL, 'Teratai Mekar 3 No 6', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(93, 'Yulia Dekritawati', 'Yuli', NULL, 77, NULL, 'Bandung', '1959-07-05', NULL, '+62811138084', '+62811168967', 'dekritawatiyulia@yahoo.com', NULL, NULL, NULL, NULL, 'BatununggaI Jl. Abadi 11/42 Bandung', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(94, 'R.A Poppy Yuliati', 'Poppy', NULL, 77, NULL, 'Bandung', '1959-07-20', NULL, '+6282126785953', '+62818228061', NULL, NULL, NULL, NULL, NULL, 'Kompleks GBI Blok 01- 31 Bandung', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(95, 'Moro Sujatmiko', 'Moro', NULL, 77, NULL, 'Malang', '1959-09-16', NULL, '+62811237820', NULL, 'moro@bdg.centrin.net.id / morosujat@gmai', NULL, NULL, NULL, NULL, 'Jl. Marakas No 1 Bandung 40264', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(96, 'Henny Helliana', 'Henny', NULL, 77, NULL, 'Bandung', '1959-02-14', NULL, '+6281324088059', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Merkuri Tengah 1/8 Bandung', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(97, 'Subiyakto', 'Biak', NULL, 77, NULL, 'Sumedang ', '1958-08-24', NULL, '+6281321801958', NULL, 'subiyakto.Biak@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(98, 'Respaty Mulyanto', 'Respaty', NULL, 77, NULL, 'Bandung ', '1959-05-20', NULL, '+6185863481095', NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Gudang Utara no 31 BLK Bandung', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(99, 'Wieke Dewi Purnama', 'Wieke', NULL, 77, NULL, 'Bandung ', '1959-09-17', NULL, '+6282116880500', NULL, 'yuyusmulia@yahoo.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (100, 'Elsy Kurniasih', 'Elsy', NULL, 77, NULL, 'Bandung', '1959-05-01', NULL, '+628122119352', '+6281221391215', 'elsykurniasih@gmail.com', NULL, NULL, NULL, NULL, 'Jl. Cikutra Barat no 46 Bandung', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (101, 'Harry Fadillah', 'Harry', NULL, 77, NULL, 'Bandung', '1959-09-11', NULL, '+6285314380352', '+6281572993433', 'fadillah.harry1959@gmail.com', NULL, NULL, NULL, NULL, 'TKI F-45', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (102, 'Endang /7/astuti', '/7/', NULL, 77, NULL, 'Bandung', '1959-07-24', NULL, '+6281572222490', '022 - 2503115', 'yuliast@Ef.itb.ac.id', NULL, NULL, NULL, NULL, 'Jl. Sigma No 3 Cigadung Bandung 40191', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
@@ -262,8 +166,7 @@ INSERT INTO `tb_anggota` (`id_anggota`, `nama_lengkap`, `nama_panggilan_alias`, 
 (216, 'Erna Tri Herdiani', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (217, 'Evy Endah Purwadani', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (218, 'Fajar Alam', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(219, 'Isni Kusarini', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0);
-INSERT INTO `tb_anggota` (`id_anggota`, `nama_lengkap`, `nama_panggilan_alias`, `NIK`, `angkatan`, `jenis_kelamin`, `tempat_lahir`, `tanggal_lahir`, `golongan_darah`, `no_telp`, `no_telp_alternatif`, `email`, `nama_foto`, `negara`, `provinsi`, `kabupaten_kota`, `alamat`, `pendidikan_terakhir`, `status_bekerja`, `bidang_industri`, `jabatan`, `nama_perusahaan`, `bisnis_usaha`, `sosial_pendidikan`, `sosial_kemanusiaan`, `pengembangan_sarana_prasarana`, `silaturahim_kebersamaan`, `penawaran_sponsorship_donasi`, `support`, `loyalist`, `iuran_sukarela`, `status_anggota`, `user_id`) VALUES
+(219, 'Isni Kusarini', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (220, 'Lukman Herry Wahyono', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (221, 'Muhammad Yusa', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (222, 'Mursyidah Mahmud', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
@@ -394,7 +297,8 @@ INSERT INTO `tb_anggota` (`id_anggota`, `nama_lengkap`, `nama_panggilan_alias`, 
 (347, 'Haryana', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (348, 'Ibrahim Faizal Burhan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (349, 'Indira Miranti', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(350, 'Intan Kencana Dewi', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
+(350, 'Intan Kencana Dewi', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0);
+INSERT INTO `tb_anggota` (`id_anggota`, `nama_lengkap`, `nama_panggilan_alias`, `NIK`, `angkatan`, `jenis_kelamin`, `tempat_lahir`, `tanggal_lahir`, `golongan_darah`, `no_telp`, `no_telp_alternatif`, `email`, `nama_foto`, `negara`, `provinsi`, `kabupaten_kota`, `alamat`, `pendidikan_terakhir`, `status_bekerja`, `bidang_industri`, `jabatan`, `nama_perusahaan`, `bisnis_usaha`, `sosial_pendidikan`, `sosial_kemanusiaan`, `pengembangan_sarana_prasarana`, `silaturahim_kebersamaan`, `penawaran_sponsorship_donasi`, `support`, `loyalist`, `iuran_sukarela`, `status_anggota`, `user_id`) VALUES
 (351, 'Isnen Ambar Santosa', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (352, 'I Nengah Yoga W', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (353, 'Maria Christina', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
@@ -505,8 +409,7 @@ INSERT INTO `tb_anggota` (`id_anggota`, `nama_lengkap`, `nama_panggilan_alias`, 
 (458, 'Rasidi', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (459, 'Ismail Hidayat', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (460, 'Nieke Dewi R Kriswandi', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(461, 'Rd Gumilar', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0);
-INSERT INTO `tb_anggota` (`id_anggota`, `nama_lengkap`, `nama_panggilan_alias`, `NIK`, `angkatan`, `jenis_kelamin`, `tempat_lahir`, `tanggal_lahir`, `golongan_darah`, `no_telp`, `no_telp_alternatif`, `email`, `nama_foto`, `negara`, `provinsi`, `kabupaten_kota`, `alamat`, `pendidikan_terakhir`, `status_bekerja`, `bidang_industri`, `jabatan`, `nama_perusahaan`, `bisnis_usaha`, `sosial_pendidikan`, `sosial_kemanusiaan`, `pengembangan_sarana_prasarana`, `silaturahim_kebersamaan`, `penawaran_sponsorship_donasi`, `support`, `loyalist`, `iuran_sukarela`, `status_anggota`, `user_id`) VALUES
+(461, 'Rd Gumilar', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (462, 'Renta Frianty', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (463, 'Sigit Purwanto', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (464, 'Yosefien Kunti Talibroto', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
@@ -637,7 +540,8 @@ INSERT INTO `tb_anggota` (`id_anggota`, `nama_lengkap`, `nama_panggilan_alias`, 
 (589, 'Mia Amelia', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (590, 'Niken Wulandari', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (591, 'Nino Puriando', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(592, 'Retna Ismiaty', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
+(592, 'Retna Ismiaty', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0);
+INSERT INTO `tb_anggota` (`id_anggota`, `nama_lengkap`, `nama_panggilan_alias`, `NIK`, `angkatan`, `jenis_kelamin`, `tempat_lahir`, `tanggal_lahir`, `golongan_darah`, `no_telp`, `no_telp_alternatif`, `email`, `nama_foto`, `negara`, `provinsi`, `kabupaten_kota`, `alamat`, `pendidikan_terakhir`, `status_bekerja`, `bidang_industri`, `jabatan`, `nama_perusahaan`, `bisnis_usaha`, `sosial_pendidikan`, `sosial_kemanusiaan`, `pengembangan_sarana_prasarana`, `silaturahim_kebersamaan`, `penawaran_sponsorship_donasi`, `support`, `loyalist`, `iuran_sukarela`, `status_anggota`, `user_id`) VALUES
 (593, 'Reby Kusumajaya', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (594, 'Santi Prihastuti', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (595, 'Rani Chairani', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
@@ -725,8 +629,7 @@ INSERT INTO `tb_anggota` (`id_anggota`, `nama_lengkap`, `nama_panggilan_alias`, 
 (677, 'Pipin Noviati ', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '087873131491', NULL, 'pn.sadikin@gmail.com', NULL, NULL, NULL, NULL, 'Jl. Belitung 19 Bogor', NULL, NULL, '1.LSM bidang Lingkungan/2. Tour n event organizer', 'Operational Manager', '1. Yayasan Konsepsi-Mataram/2. Bluegreen Holidays Lombok', NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (678, 'Pramadie Pudjayanto ', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '087822881155', NULL, 'pramadiasli@yahoo.com ; pramadiasli@gmai', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (679, 'Pujo Wijayanto ', 'Pujo', NULL, NULL, NULL, NULL, '1971-07-19', NULL, '0818225997', NULL, 'pujo.wijayanto@outlook.com', NULL, NULL, NULL, NULL, 'Jl. Galunggung Dalam II no. 1 Bandung', NULL, NULL, 'Teknologi Informasi', 'IT. Project Manager', 'PT. Sidola', NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(680, 'Rd. Hanusa Prahara ', 'Hanusa', NULL, NULL, NULL, NULL, '1971-09-22', NULL, '082208225059', '081808185059', 'hanusaprahara@yahoo.com', NULL, NULL, NULL, NULL, 'Komp.Sawo Griya Kencana D-10 Jl. Limo Raya Depok', NULL, NULL, 'Perbankan', 'Chief of Staff Office', 'PT. Bank Mega Tbk', NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0);
-INSERT INTO `tb_anggota` (`id_anggota`, `nama_lengkap`, `nama_panggilan_alias`, `NIK`, `angkatan`, `jenis_kelamin`, `tempat_lahir`, `tanggal_lahir`, `golongan_darah`, `no_telp`, `no_telp_alternatif`, `email`, `nama_foto`, `negara`, `provinsi`, `kabupaten_kota`, `alamat`, `pendidikan_terakhir`, `status_bekerja`, `bidang_industri`, `jabatan`, `nama_perusahaan`, `bisnis_usaha`, `sosial_pendidikan`, `sosial_kemanusiaan`, `pengembangan_sarana_prasarana`, `silaturahim_kebersamaan`, `penawaran_sponsorship_donasi`, `support`, `loyalist`, `iuran_sukarela`, `status_anggota`, `user_id`) VALUES
+(680, 'Rd. Hanusa Prahara ', 'Hanusa', NULL, NULL, NULL, NULL, '1971-09-22', NULL, '082208225059', '081808185059', 'hanusaprahara@yahoo.com', NULL, NULL, NULL, NULL, 'Komp.Sawo Griya Kencana D-10 Jl. Limo Raya Depok', NULL, NULL, 'Perbankan', 'Chief of Staff Office', 'PT. Bank Mega Tbk', NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (681, 'Ricky Kusmawan ', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '08157000348', NULL, 'ricky.k.natadipura@gmail.com', NULL, NULL, NULL, NULL, 'Jl. Mekar Hegar 56, Cijerah Bandung 40213', NULL, NULL, 'Pendidikan', 'Dosen', 'Universitas Persada Indonesia YAI', NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (682, 'Rika Priyatman ', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '08129417262', NULL, 'rikasyafril@yahoo.com', NULL, NULL, NULL, NULL, 'Jl. Pondok Bambu Asri Selatan V no. 16 Pondok Bambu, Duren Sawit, Jakarta Timur', NULL, NULL, NULL, 'Fungsional auditor', 'Kantor Perwakilan BPKP Prov. DKI Jakarta', NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (683, 'Robertus Heru Triharjanto ', 'Heru', NULL, NULL, NULL, NULL, '1971-10-22', NULL, '081317970546', NULL, 'rtriharjanto@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'R & D', 'LAPAN', NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
@@ -816,7 +719,8 @@ INSERT INTO `tb_anggota` (`id_anggota`, `nama_lengkap`, `nama_panggilan_alias`, 
 (767, 'Henky Oktavianus', 'Henky ', NULL, NULL, NULL, NULL, NULL, NULL, '08117716999', NULL, 'henky.oktavianus@gmail.com', NULL, NULL, NULL, NULL, 'Komp. Bharata Karya IV NO. 297 Karang Tengah Ciledug', NULL, NULL, 'Insurance', 'Director of Alternative Channel', 'AXA Mandiri Financial Service', NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (768, 'Heny Harjani', 'Heny', NULL, NULL, NULL, NULL, NULL, NULL, '0818659956', NULL, 'harjani_heny@yahoo.com', NULL, NULL, NULL, NULL, 'Jl. Tebet Timur Dlm IX E No. 25 Jaksel', NULL, NULL, NULL, 'Mengurus rumah tangga', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (769, 'Herry M. Syapari', 'uwo', NULL, NULL, NULL, NULL, NULL, NULL, '082180140579', NULL, 'herimuhammadsyapari@gmail.com', NULL, NULL, NULL, NULL, 'Jl. Swadaya 6 no.21A, Gunung Terang, Kota Bandar Lampung', NULL, NULL, 'Distributor Pupuk Organik', 'Direktur', 'CV Mitra Mandiri', NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(770, 'Hunain Beunot', 'Inong', NULL, NULL, NULL, NULL, '1971-08-30', NULL, '0816720920', NULL, 'Inong_h@yahoo.com', NULL, NULL, NULL, NULL, 'Jl. Kalibata Selatan Ia No. 8a', NULL, NULL, 'Human Resources Mgt Consultant', 'Senior Consultant', 'PT. Daya Dimensi Indonesia (DDI)', NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
+(770, 'Hunain Beunot', 'Inong', NULL, NULL, NULL, NULL, '1971-08-30', NULL, '0816720920', NULL, 'Inong_h@yahoo.com', NULL, NULL, NULL, NULL, 'Jl. Kalibata Selatan Ia No. 8a', NULL, NULL, 'Human Resources Mgt Consultant', 'Senior Consultant', 'PT. Daya Dimensi Indonesia (DDI)', NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0);
+INSERT INTO `tb_anggota` (`id_anggota`, `nama_lengkap`, `nama_panggilan_alias`, `NIK`, `angkatan`, `jenis_kelamin`, `tempat_lahir`, `tanggal_lahir`, `golongan_darah`, `no_telp`, `no_telp_alternatif`, `email`, `nama_foto`, `negara`, `provinsi`, `kabupaten_kota`, `alamat`, `pendidikan_terakhir`, `status_bekerja`, `bidang_industri`, `jabatan`, `nama_perusahaan`, `bisnis_usaha`, `sosial_pendidikan`, `sosial_kemanusiaan`, `pengembangan_sarana_prasarana`, `silaturahim_kebersamaan`, `penawaran_sponsorship_donasi`, `support`, `loyalist`, `iuran_sukarela`, `status_anggota`, `user_id`) VALUES
 (771, 'Ingrit Ranagustiany', 'Iing', NULL, NULL, NULL, NULL, NULL, NULL, '08119457790', NULL, 'ingrit.ranagustiany@id.mcd.com', NULL, NULL, NULL, NULL, 'Jl. Kancra II no. 1 Bandung', NULL, NULL, 'Fastfood Resto', 'Operation Consultant', 'PT. Rekso Nasional Food/Mc. Donalds', NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (772, 'Ivano Syarief', 'Ivan', NULL, NULL, NULL, NULL, NULL, NULL, '0818631277', NULL, 'ivansarief@gmail.com', NULL, NULL, NULL, NULL, 'TJl. Talaga bodas 78 Bandung', NULL, NULL, 'Institusi Pendidikan', 'Dosen ', 'Telkom University', NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (773, 'Iyan Suryana', 'Iyan', NULL, NULL, NULL, NULL, '1971-01-25', NULL, '081294204698', NULL, 'isur234@gmail.com', NULL, NULL, NULL, NULL, 'Puri Beta Cluster Tanjung V no. 36 Larangan Tangerang 15154', NULL, NULL, NULL, 'HSE Enviromental and SD', 'Conoco Phillips Indonesia', NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
@@ -889,8 +793,7 @@ INSERT INTO `tb_anggota` (`id_anggota`, `nama_lengkap`, `nama_panggilan_alias`, 
 (840, 'Oktavia Ester Pangaribuan', 'Othenk', NULL, NULL, NULL, NULL, '1971-10-15', NULL, '08161460713', NULL, 'okepan@gmail.com', NULL, NULL, NULL, NULL, 'Tangerang Selatan', NULL, NULL, 'Pendidikan', NULL, 'Kementerian Keuangan', NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (841, 'Purnama Sendjaja', 'Purnama', NULL, NULL, NULL, NULL, '1970-12-14', NULL, '08122491438', NULL, 'pppurs@yahoo.com', NULL, NULL, NULL, NULL, 'Jl. Gegerkalong Lebak I no. 4, Bandung', NULL, NULL, 'PNS', NULL, 'Badan Geologi KESDM', NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (842, 'Randi Permana', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '081321445571', NULL, 'randi@telkom.co.id', NULL, NULL, NULL, NULL, 'Bandung', NULL, NULL, 'Telekomunikasi', NULL, 'TELKOM', NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(843, 'Ria Purnamasari', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0);
-INSERT INTO `tb_anggota` (`id_anggota`, `nama_lengkap`, `nama_panggilan_alias`, `NIK`, `angkatan`, `jenis_kelamin`, `tempat_lahir`, `tanggal_lahir`, `golongan_darah`, `no_telp`, `no_telp_alternatif`, `email`, `nama_foto`, `negara`, `provinsi`, `kabupaten_kota`, `alamat`, `pendidikan_terakhir`, `status_bekerja`, `bidang_industri`, `jabatan`, `nama_perusahaan`, `bisnis_usaha`, `sosial_pendidikan`, `sosial_kemanusiaan`, `pengembangan_sarana_prasarana`, `silaturahim_kebersamaan`, `penawaran_sponsorship_donasi`, `support`, `loyalist`, `iuran_sukarela`, `status_anggota`, `user_id`) VALUES
+(843, 'Ria Purnamasari', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (844, 'Roni Hartawan Ariyanto', 'Onyon', NULL, NULL, NULL, NULL, '1970-09-30', NULL, '08127059290', NULL, 'roni_h_ariyanto@yahoo.com.sg', NULL, NULL, NULL, NULL, 'Villa Panbil Residence, Blok N 46, Mukakuning, Batam, Kep. Riau', NULL, NULL, 'PT. Adhya Tirta Batam, Batam', NULL, 'Water Treatment Company', NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (845, 'Roniana', 'Roni/Sinjo', NULL, NULL, NULL, NULL, '1971-07-23', NULL, '08128196080', NULL, 'ronidachlan@gmail.com', NULL, NULL, NULL, NULL, 'Legenda Wisata A24/25', NULL, NULL, 'Wiraswasta, Property', NULL, 'Mustika Hegar Rekataman', NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (846, 'R. Au Djaka Sembada', 'Au', NULL, NULL, NULL, NULL, '1971-11-03', NULL, '081513023237', NULL, 'au_djamhoer@yahoo.com', NULL, NULL, NULL, NULL, 'Jakarta', NULL, NULL, 'FMCG', NULL, 'Danone Indonesia', NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
@@ -979,7 +882,8 @@ INSERT INTO `tb_anggota` (`id_anggota`, `nama_lengkap`, `nama_panggilan_alias`, 
 (929, 'Ervy Sinoranti', 'Ervy', NULL, NULL, NULL, NULL, '1972-08-06', NULL, '+6281809264173', NULL, 'ervysinoranti@gmail.com', NULL, NULL, NULL, NULL, 'Jl. Batununggal Indah 5 no. 117 Bdg', NULL, NULL, 'Perbankan', 'Kadiv HC', 'Bank Woori Saudara', NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (930, 'Fauziah', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '+628128540742', NULL, 'ipong161@yahoo.co.id', NULL, NULL, NULL, NULL, 'jl Curug Agung 13A Tanah Baru Depok', NULL, NULL, 'Konsultan Engineering', NULL, 'PT Aurecon Indonesia', NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (931, 'Fetty Fathonah', 'Fetty', NULL, NULL, NULL, NULL, '1972-11-03', NULL, '+6282124147650', NULL, 'fettyfth@yahoo.com', NULL, NULL, NULL, NULL, 'Mahagoni Park B3-10 Bintaro Jaya Tangsel', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(932, 'Imam Bambang Bayeri Kristanto', 'Imam', NULL, NULL, NULL, NULL, '1972-01-02', NULL, '+6281311351245', NULL, NULL, NULL, NULL, NULL, NULL, 'Apart. Green Parkview Jl. Daan Mogot Jakbar', NULL, NULL, 'Distributor Kimia', 'Import Manager', 'PT. Brataco', NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
+(932, 'Imam Bambang Bayeri Kristanto', 'Imam', NULL, NULL, NULL, NULL, '1972-01-02', NULL, '+6281311351245', NULL, NULL, NULL, NULL, NULL, NULL, 'Apart. Green Parkview Jl. Daan Mogot Jakbar', NULL, NULL, 'Distributor Kimia', 'Import Manager', 'PT. Brataco', NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0);
+INSERT INTO `tb_anggota` (`id_anggota`, `nama_lengkap`, `nama_panggilan_alias`, `NIK`, `angkatan`, `jenis_kelamin`, `tempat_lahir`, `tanggal_lahir`, `golongan_darah`, `no_telp`, `no_telp_alternatif`, `email`, `nama_foto`, `negara`, `provinsi`, `kabupaten_kota`, `alamat`, `pendidikan_terakhir`, `status_bekerja`, `bidang_industri`, `jabatan`, `nama_perusahaan`, `bisnis_usaha`, `sosial_pendidikan`, `sosial_kemanusiaan`, `pengembangan_sarana_prasarana`, `silaturahim_kebersamaan`, `penawaran_sponsorship_donasi`, `support`, `loyalist`, `iuran_sukarela`, `status_anggota`, `user_id`) VALUES
 (933, 'Indra Tjahjadi', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '+628119105926', NULL, 'indiedun@yahoo.com', NULL, NULL, NULL, NULL, 'Perum. De Latinos Centro Havana Blok M-6/12 Tawa Buntu, Tangsel', NULL, NULL, 'Power Solution Provider', 'HR Head', 'PT Sumberdaya Sewatama', NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (934, 'Ipmawan Sukarpiana', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '+6281586500228', NULL, 'ipmawan@hotmail.com', NULL, NULL, NULL, NULL, 'Komp. Tanjungsari asri residence  B17 Bandung', NULL, NULL, 'Perbankan', NULL, 'Bank Danamon', NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (935, 'Irene Dwi Sari', 'Iren', NULL, NULL, NULL, NULL, '1972-06-05', NULL, '+628129040180', NULL, 'irifaie@gmail.com', NULL, NULL, NULL, NULL, 'Jl. Cikini II Blok FG2/27 Bintaro Sekot 7 Tangerang', NULL, NULL, NULL, NULL, 'Nestley', NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
@@ -1053,8 +957,7 @@ INSERT INTO `tb_anggota` (`id_anggota`, `nama_lengkap`, `nama_panggilan_alias`, 
 (1003, 'Oktavianus Juswantoro', 'Iyus', NULL, NULL, NULL, NULL, '1971-10-13', NULL, '08128421242', NULL, 'juswantoro@gmail.com', NULL, NULL, NULL, NULL, 'Perum Jatimulya, Jl. Cendrawasih III No 83, Bekasi Timur', NULL, NULL, 'IT', 'Business Manager', 'PT. Integra Teknologi', NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (1004, 'Ridha Musadya.', 'Agam', NULL, NULL, NULL, NULL, '1971-08-09', NULL, '0811828500', NULL, 'agams77@yahoo.com', NULL, NULL, NULL, NULL, 'Kebayoran Garden Blok A No 11, Tangerang Selatan, 15224', NULL, NULL, 'Telekomunikasi', 'Direktur Operasional', 'PT. Raztel Solusindo Telematika', NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (1005, 'Rijanthina Nur', 'Rijan', NULL, NULL, NULL, NULL, '1971-04-01', NULL, '08159191514', NULL, 'rijanthina@yahoo.com', NULL, NULL, NULL, NULL, 'Kebayoran Garden Blok A No 11, Tangerang Selatan, 15224', NULL, NULL, 'Tidak Bekerja', 'Ibu Rumah Tangga', 'Tidak Bekerja', NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(1006, 'Rizki Budiman', 'Rizki', NULL, NULL, NULL, NULL, '1971-07-21', NULL, '085222539735', NULL, 'rizki.budiman@yahoo.com', NULL, NULL, NULL, NULL, 'Kompleks Fajar Raya Blok A3 No 6, Cibabat, Cimahi 40513', NULL, NULL, 'Kesehatan', 'Marketing', 'PT Prima Karya Guna Husada', NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0);
-INSERT INTO `tb_anggota` (`id_anggota`, `nama_lengkap`, `nama_panggilan_alias`, `NIK`, `angkatan`, `jenis_kelamin`, `tempat_lahir`, `tanggal_lahir`, `golongan_darah`, `no_telp`, `no_telp_alternatif`, `email`, `nama_foto`, `negara`, `provinsi`, `kabupaten_kota`, `alamat`, `pendidikan_terakhir`, `status_bekerja`, `bidang_industri`, `jabatan`, `nama_perusahaan`, `bisnis_usaha`, `sosial_pendidikan`, `sosial_kemanusiaan`, `pengembangan_sarana_prasarana`, `silaturahim_kebersamaan`, `penawaran_sponsorship_donasi`, `support`, `loyalist`, `iuran_sukarela`, `status_anggota`, `user_id`) VALUES
+(1006, 'Rizki Budiman', 'Rizki', NULL, NULL, NULL, NULL, '1971-07-21', NULL, '085222539735', NULL, 'rizki.budiman@yahoo.com', NULL, NULL, NULL, NULL, 'Kompleks Fajar Raya Blok A3 No 6, Cibabat, Cimahi 40513', NULL, NULL, 'Kesehatan', 'Marketing', 'PT Prima Karya Guna Husada', NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (1007, 'Sekti Setiono', 'Sekti', NULL, NULL, NULL, NULL, '1971-04-23', NULL, '08122282759', NULL, 'ssetion@yahoo.com', NULL, NULL, NULL, NULL, 'Buah Batu Regency Blok G1 no 5A, Jl Terusan Buah Batu Bandung 40287', NULL, NULL, 'Pertambangan', 'Operations Engineer', 'Chevron Geothermal Indonesia', NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (1008, 'Sulistiyadi Rahman', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '08111905023', NULL, 'pakyadi@yahoo.com', NULL, NULL, NULL, NULL, 'Citra Raya R2/35, Tangerang', NULL, NULL, 'Kontraktor', 'Project Manager', 'PT Transproperty', NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (1009, 'Trio Firman', 'Trio', NULL, NULL, NULL, NULL, '1971-11-18', NULL, '081210009447', NULL, 'trio.firman@yahoo.com', NULL, NULL, NULL, NULL, 'Blossom Ville blok J21 No 6, the Green BSD, 15310', NULL, NULL, 'Telekomunikasi', 'Project Manager', 'PT. Hutchison 3', NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
@@ -1149,7 +1052,8 @@ INSERT INTO `tb_anggota` (`id_anggota`, `nama_lengkap`, `nama_panggilan_alias`, 
 (1098, 'Nina Nur\'Aini Sy.', 'Nina', NULL, NULL, NULL, NULL, NULL, NULL, '081312000123', NULL, 'nina.nuraini@yahoo.co.id', NULL, NULL, NULL, NULL, 'Jl. KH Akhso no 10 Majalengka 45472', NULL, NULL, 'Kesehatan', 'Kapus', 'Puskesmas DTP Sumberjaya Kab Majalengka', NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (1099, 'Nippy Infante CK', 'Nippy', NULL, NULL, NULL, NULL, NULL, NULL, '0818818258', NULL, NULL, NULL, NULL, NULL, NULL, 'Bogor Lakeside Blok TH 10/6', NULL, NULL, 'Volunteer guru SLB', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (1100, 'Nisfie Masithach Hoesein', 'Nisfie', NULL, NULL, NULL, NULL, '1971-10-05', NULL, '081286491914', NULL, 'nisfiehoesein71@gmail.com', NULL, NULL, NULL, NULL, 'Cibubur Garden A3/2 Harjamukti Cimanggis Depok', NULL, NULL, 'Konsultan Psikologis (Psikolog/Konselor), hypnotherapist, Staf pengajar UI, Motivational trainer/ Co', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(1101, 'Novitri', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '08156005071', NULL, 'novitris@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
+(1101, 'Novitri', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '08156005071', NULL, 'novitris@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0);
+INSERT INTO `tb_anggota` (`id_anggota`, `nama_lengkap`, `nama_panggilan_alias`, `NIK`, `angkatan`, `jenis_kelamin`, `tempat_lahir`, `tanggal_lahir`, `golongan_darah`, `no_telp`, `no_telp_alternatif`, `email`, `nama_foto`, `negara`, `provinsi`, `kabupaten_kota`, `alamat`, `pendidikan_terakhir`, `status_bekerja`, `bidang_industri`, `jabatan`, `nama_perusahaan`, `bisnis_usaha`, `sosial_pendidikan`, `sosial_kemanusiaan`, `pengembangan_sarana_prasarana`, `silaturahim_kebersamaan`, `penawaran_sponsorship_donasi`, `support`, `loyalist`, `iuran_sukarela`, `status_anggota`, `user_id`) VALUES
 (1102, 'Nurcholidah S.', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '08122123214', NULL, 'nurcholidah@yahoo.com', NULL, NULL, NULL, NULL, 'Komp. Casa Jardin Blok D6 no. 18A Jakarta Barat', NULL, NULL, NULL, NULL, 'RSHS Bandung', NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (1103, 'Phan Kap Fu', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (1104, 'Puspa Yuwi', 'Puspa', NULL, NULL, NULL, NULL, NULL, NULL, '087821341945', NULL, 'puspa.yuwiku@gmail.com', NULL, NULL, NULL, NULL, 'Jl. Jinggacampaka Kidul no. 1 Jingganagara, Kota Baru Parahyangan Bandung', NULL, NULL, 'Kesehatan', NULL, 'Bidokkes Polda Jabar', NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
@@ -1226,8 +1130,7 @@ INSERT INTO `tb_anggota` (`id_anggota`, `nama_lengkap`, `nama_panggilan_alias`, 
 (1175, 'Dini Hadriana', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '08122126561', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (1176, 'Doddy Achmad Nawawi', 'Doddy', NULL, NULL, NULL, NULL, '2008-01-26', NULL, '08122312215', NULL, 'dody.sagir@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Pendidikan', 'Dosen', 'FSRD ITB', NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (1177, 'Elizabeth Agustina', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '08164211725', NULL, 'tintinwibowobdg@yahoo.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Barang Antik & Tua', NULL, 'Bantu Suami beli jam2 tua original, merk Rolex, Patek Philippe, Omega, furniture tua, Porcelain, bat', NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
-(1178, 'Elsa Diana', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0811102522', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0);
-INSERT INTO `tb_anggota` (`id_anggota`, `nama_lengkap`, `nama_panggilan_alias`, `NIK`, `angkatan`, `jenis_kelamin`, `tempat_lahir`, `tanggal_lahir`, `golongan_darah`, `no_telp`, `no_telp_alternatif`, `email`, `nama_foto`, `negara`, `provinsi`, `kabupaten_kota`, `alamat`, `pendidikan_terakhir`, `status_bekerja`, `bidang_industri`, `jabatan`, `nama_perusahaan`, `bisnis_usaha`, `sosial_pendidikan`, `sosial_kemanusiaan`, `pengembangan_sarana_prasarana`, `silaturahim_kebersamaan`, `penawaran_sponsorship_donasi`, `support`, `loyalist`, `iuran_sukarela`, `status_anggota`, `user_id`) VALUES
+(1178, 'Elsa Diana', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0811102522', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (1179, 'Ersal Budi Rahman', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '085603015120', '08176090927', 'budirahman@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Perdagangan Umum', NULL, 'PT Dapenta Eka Karya', NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (1180, 'Erwin Triawan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '081311114826', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Asset Management', 'Asset Management', 'Mandiri Manajemen Investasi', NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
 (1181, 'Pey Li', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', NULL, '0', 0),
@@ -1270,12 +1173,20 @@ INSERT INTO `tb_anggota` (`id_anggota`, `nama_lengkap`, `nama_panggilan_alias`, 
 (1266, '&lt;h1&gt;Nama&lt;/h1&gt;', 'Dicky Ardianto', NULL, 2019, NULL, NULL, '2020-06-26', NULL, '021', NULL, 'dikiardianto19@gmail.com', 'anggota-amplth1ampgtNamaamplth1ampgt-1593411445.JPG', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', 0),
 (1269, 'asmkask', 'sas', NULL, 0, NULL, NULL, '2020-06-26', NULL, '010', NULL, '010@mail.com', 'IKA-SMA3-asmkask-1593522793.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', 0),
 (1270, 'My Alumni Cobaasas', 'sas', NULL, 0, NULL, NULL, '2020-06-30', NULL, 'sas', NULL, 'root123@gmail.com', 'IKA-SMA3-My_Alumni_Cobaasas-1593524018.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', 0),
-(1273, '12', '12', NULL, 2017, NULL, NULL, '2020-07-01', NULL, '12', NULL, 'dicky_173040046@mail.unpas.ac.id', 'IKA-SMA3-12-1593588929.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', 0);
+(1274, 'Anggota Nih', 'Dicky Ardianto', NULL, 2001, NULL, NULL, '2020-07-07', NULL, '021', NULL, 'dikiardianto19@gmail.com', 'anggota-Anggota_Nih-1594099827.PNG', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', 0),
+(1275, 'Asmka', 'amskam', NULL, 0, NULL, NULL, '2020-07-07', NULL, '1', NULL, 'root123@gmail.com', 'anggota-Asmka-1594103579.png', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', 3),
+(1276, 'asmk', 'amsk', NULL, 0, NULL, NULL, '2020-07-07', NULL, '001', NULL, 'asmk@a.com', 'anggota-asmk-1594104042.png', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', 3),
+(1277, 'root', 'toro', NULL, 201, NULL, NULL, '2020-07-07', NULL, '012', NULL, '010@mail.com', 'anggota-root-1594104651.PNG', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', 3),
+(1278, 'amsk', 'amskas', NULL, 0, NULL, NULL, '2020-07-07', NULL, '010', NULL, 'dicky_173040046@mail.unpas.ac.id', 'anggota-amsk-1594110412.PNG', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', 3),
+(1279, 'amskamcoba', 'coba', NULL, 0, NULL, NULL, '2020-07-07', NULL, '122', NULL, 'coba@gmail.com', 'anggota-amskamcoba-1594113079.PNG', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', 3),
+(1280, 'rott', 'ottoo', NULL, 2010, NULL, NULL, '2020-07-07', NULL, '021', NULL, 'dikiardianto19@gmail.com', 'anggota-rott-1594115222.png', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', 3),
+(1281, 'root', 'alumni', NULL, 2010, NULL, NULL, '2020-07-07', NULL, '001', NULL, 'dikiardianto19@gmail.com', 'anggota-root-1594115869.PNG', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', 4),
+(1282, 'Dicky Ardianto', 'Dicky', NULL, 2019, NULL, NULL, '2020-07-07', NULL, '000010', NULL, 'dikiardianto19@gmail.com', 'anggota-Dicky_Ardianto-1594117230.PNG', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', 3);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_berita`
+-- Table structure for table `tb_berita`
 --
 
 CREATE TABLE `tb_berita` (
@@ -1295,16 +1206,37 @@ CREATE TABLE `tb_berita` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_forum_bisnis`
+-- Table structure for table `tb_bukti_bayar`
+--
+
+CREATE TABLE `tb_bukti_bayar` (
+  `id` int(11) NOT NULL,
+  `gambar_bukti_bayar` varchar(256) NOT NULL,
+  `id_user` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_bukti_bayar`
+--
+
+INSERT INTO `tb_bukti_bayar` (`id`, `gambar_bukti_bayar`, `id_user`) VALUES
+(1, 'bukti-bayar-1594115231.PNG', 1280),
+(2, 'bukti-bayar-1594117237.png', 1282);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_forum_bisnis`
 --
 
 CREATE TABLE `tb_forum_bisnis` (
   `id_forbis` int(11) NOT NULL,
   `nama_bisnis_usaha` varchar(255) NOT NULL,
   `id_jenis_bisnis` int(11) NOT NULL,
-  `deskripsi_bisnis` text,
+  `deskripsi_bisnis` text DEFAULT NULL,
   `alamat_bisnis` text NOT NULL,
   `no_telp_bisnis` varchar(16) DEFAULT NULL,
+  `url_bisnis` varchar(255) DEFAULT NULL,
   `nama_foto_bisnis` varchar(255) DEFAULT NULL,
   `pemilik_id` int(11) NOT NULL,
   `stat_forbis` int(11) NOT NULL
@@ -1313,7 +1245,7 @@ CREATE TABLE `tb_forum_bisnis` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_jenis_bisnis`
+-- Table structure for table `tb_jenis_bisnis`
 --
 
 CREATE TABLE `tb_jenis_bisnis` (
@@ -1322,7 +1254,7 @@ CREATE TABLE `tb_jenis_bisnis` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tb_jenis_bisnis`
+-- Dumping data for table `tb_jenis_bisnis`
 --
 
 INSERT INTO `tb_jenis_bisnis` (`id_jenis_bisnis`, `nama_jenis_bisnis`) VALUES
@@ -1334,7 +1266,7 @@ INSERT INTO `tb_jenis_bisnis` (`id_jenis_bisnis`, `nama_jenis_bisnis`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_kategori_berita`
+-- Table structure for table `tb_kategori_berita`
 --
 
 CREATE TABLE `tb_kategori_berita` (
@@ -1343,7 +1275,7 @@ CREATE TABLE `tb_kategori_berita` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tb_kategori_berita`
+-- Dumping data for table `tb_kategori_berita`
 --
 
 INSERT INTO `tb_kategori_berita` (`id`, `kategori`) VALUES
@@ -1354,7 +1286,7 @@ INSERT INTO `tb_kategori_berita` (`id`, `kategori`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_komunitas`
+-- Table structure for table `tb_komunitas`
 --
 
 CREATE TABLE `tb_komunitas` (
@@ -1376,7 +1308,7 @@ CREATE TABLE `tb_komunitas` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_pemulihan`
+-- Table structure for table `tb_pemulihan`
 --
 
 CREATE TABLE `tb_pemulihan` (
@@ -1391,7 +1323,7 @@ CREATE TABLE `tb_pemulihan` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_user`
+-- Table structure for table `tb_user`
 --
 
 CREATE TABLE `tb_user` (
@@ -1403,7 +1335,7 @@ CREATE TABLE `tb_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tb_user`
+-- Dumping data for table `tb_user`
 --
 
 INSERT INTO `tb_user` (`id_user`, `username`, `password`, `status_akun`, `role`) VALUES
@@ -1413,7 +1345,7 @@ INSERT INTO `tb_user` (`id_user`, `username`, `password`, `status_akun`, `role`)
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_user_role`
+-- Table structure for table `tb_user_role`
 --
 
 CREATE TABLE `tb_user_role` (
@@ -1422,7 +1354,7 @@ CREATE TABLE `tb_user_role` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tb_user_role`
+-- Dumping data for table `tb_user_role`
 --
 
 INSERT INTO `tb_user_role` (`id`, `role`) VALUES
@@ -1436,114 +1368,126 @@ INSERT INTO `tb_user_role` (`id`, `role`) VALUES
 --
 
 --
--- Indeks untuk tabel `tb_anggota`
+-- Indexes for table `tb_anggota`
 --
 ALTER TABLE `tb_anggota`
   ADD PRIMARY KEY (`id_anggota`);
 
 --
--- Indeks untuk tabel `tb_berita`
+-- Indexes for table `tb_berita`
 --
 ALTER TABLE `tb_berita`
   ADD PRIMARY KEY (`id_berita`);
 
 --
--- Indeks untuk tabel `tb_forum_bisnis`
+-- Indexes for table `tb_bukti_bayar`
+--
+ALTER TABLE `tb_bukti_bayar`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tb_forum_bisnis`
 --
 ALTER TABLE `tb_forum_bisnis`
   ADD PRIMARY KEY (`id_forbis`),
   ADD UNIQUE KEY `nama_foto_bisnis` (`nama_foto_bisnis`);
 
 --
--- Indeks untuk tabel `tb_jenis_bisnis`
+-- Indexes for table `tb_jenis_bisnis`
 --
 ALTER TABLE `tb_jenis_bisnis`
   ADD PRIMARY KEY (`id_jenis_bisnis`);
 
 --
--- Indeks untuk tabel `tb_kategori_berita`
+-- Indexes for table `tb_kategori_berita`
 --
 ALTER TABLE `tb_kategori_berita`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_komunitas`
+-- Indexes for table `tb_komunitas`
 --
 ALTER TABLE `tb_komunitas`
   ADD PRIMARY KEY (`id_komunitas`);
 
 --
--- Indeks untuk tabel `tb_pemulihan`
+-- Indexes for table `tb_pemulihan`
 --
 ALTER TABLE `tb_pemulihan`
   ADD PRIMARY KEY (`id_pemulihan`);
 
 --
--- Indeks untuk tabel `tb_user`
+-- Indexes for table `tb_user`
 --
 ALTER TABLE `tb_user`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- Indeks untuk tabel `tb_user_role`
+-- Indexes for table `tb_user_role`
 --
 ALTER TABLE `tb_user_role`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `tb_anggota`
+-- AUTO_INCREMENT for table `tb_anggota`
 --
 ALTER TABLE `tb_anggota`
-  MODIFY `id_anggota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1274;
+  MODIFY `id_anggota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1283;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_berita`
+-- AUTO_INCREMENT for table `tb_berita`
 --
 ALTER TABLE `tb_berita`
   MODIFY `id_berita` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_forum_bisnis`
+-- AUTO_INCREMENT for table `tb_bukti_bayar`
+--
+ALTER TABLE `tb_bukti_bayar`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `tb_forum_bisnis`
 --
 ALTER TABLE `tb_forum_bisnis`
   MODIFY `id_forbis` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_jenis_bisnis`
+-- AUTO_INCREMENT for table `tb_jenis_bisnis`
 --
 ALTER TABLE `tb_jenis_bisnis`
   MODIFY `id_jenis_bisnis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_kategori_berita`
+-- AUTO_INCREMENT for table `tb_kategori_berita`
 --
 ALTER TABLE `tb_kategori_berita`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_komunitas`
+-- AUTO_INCREMENT for table `tb_komunitas`
 --
 ALTER TABLE `tb_komunitas`
   MODIFY `id_komunitas` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_pemulihan`
+-- AUTO_INCREMENT for table `tb_pemulihan`
 --
 ALTER TABLE `tb_pemulihan`
   MODIFY `id_pemulihan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_user`
+-- AUTO_INCREMENT for table `tb_user`
 --
 ALTER TABLE `tb_user`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_user_role`
+-- AUTO_INCREMENT for table `tb_user_role`
 --
 ALTER TABLE `tb_user_role`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
