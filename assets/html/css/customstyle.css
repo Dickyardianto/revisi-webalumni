@@ -1,0 +1,8 @@
+@media (min-width: 768px) .navbar-default {
+    background-color: none;
+    border-color: none;
+}
+.nav-black{
+	background: white !important;
+	    border-color: #e7e7e7;
+}
