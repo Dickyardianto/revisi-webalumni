@@ -55,12 +55,14 @@ class Anggota extends MY_Controller
     {
         $data['title'] = 'Kelola Calon Anggota';
 
-        $where = array(
-            'tb_anggota.status_anggota = ' => '0',
-            'tb_anggota.nama_lengkap != ' => 'admin'
-        );
+        // $where = array(
+        //     'tb_anggota.status_anggota = ' => '0',
+        //     'tb_anggota.nama_lengkap != ' => 'admin'
+        // );
 
-        $data['calonAnggota'] = $this->M_anggota->findAnggota('*', $where);
+        // $data['calonAnggota'] = $this->M_anggota->findAnggota('*', $where);
+        $data['calonAnggota'] = $this->M_anggota->findForAnggotaBerbayar();
+        $data['calonAlumni'] = $this->M_anggota->findForAlumni();
         $data['daftarHakAkses'] = $this->M_anggota->getAllRole();
         $data['info'] = $this->M_anggota->findAnggota('*', array('tb_anggota.user_id' => $this->session->userdata('uid')));
 
@@ -78,6 +80,9 @@ class Anggota extends MY_Controller
             'tb_anggota.user_id != ' => $this->session->userdata('uid')
         );
         $data['anggota'] = $this->M_anggota->findAnggota('*', $where);
+
+
+
         $data['info'] = $this->M_anggota->findAnggota('*', array('tb_anggota.user_id' => $this->session->userdata('uid')));
 
         if ($this->session->userdata('role') == 1) {

@@ -4650,7 +4650,8 @@ td.dataTables_empty {
 
 .login-container .login-box .login-body .form-control {
 	border: 0px;
-	background: rgba(0, 0, 0, 0.2);
+	/* background: rgba(0, 0, 0, 0.2); */
+	background-color: #33414e;
 	padding: 10px 15px;
 	color: #CCC;
 	line-height: 20px;
