@@ -20,8 +20,8 @@
                         <li class="active"><a href="#tab-data-diri" role="tab" data-toggle="tab">Data Diri</a></li>
                         <li><a href="#tab-domisili" role="tab" data-toggle="tab">Domisili</a></li>
                         <li><a href="#tab-profesi" role="tab" data-toggle="tab">Profesi</a></li>
-                        <li><a href="#tab-info-program" role="tab" data-toggle="tab">Info Program</a></li>
-                        <li><a href="#tab-keanggotaan" role="tab" data-toggle="tab">Keanggotaan</a></li>
+                        <!-- <li><a href="#tab-info-program" role="tab" data-toggle="tab">Info Program</a></li>
+                        <li><a href="#tab-keanggotaan" role="tab" data-toggle="tab">Keanggotaan</a></li> -->
                     </ul>
 
                     <div class="panel-body tab-content">
