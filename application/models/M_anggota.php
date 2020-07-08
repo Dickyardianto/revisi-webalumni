@@ -21,7 +21,7 @@ class M_anggota extends CI_Model
     function findAnggota($select, $where)
     {
         $this->db->select($select);
-        $this->db->order_by('id_anggota', 'DESC');
+        // $this->db->order_by('id_anggota', 'DESC');
 
         // $this->db->join('tb_user', 'tb_anggota.user_id = tb_user.id_user');
         $this->db->where($where);
@@ -93,6 +93,12 @@ class M_anggota extends CI_Model
     }
 
     function updateAnggota($anggota, $id)
+    {
+        $this->db->where('id_anggota', $id);
+        return $this->db->update('tb_anggota', $anggota);
+    }
+
+    function updateCalonAnggota($anggota, $id)
     {
         $this->db->where('id_anggota', $id);
         return $this->db->update('tb_anggota', $anggota);

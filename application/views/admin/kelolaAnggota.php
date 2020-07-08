@@ -168,8 +168,8 @@
                             <li class="active"><a href="#tab-data-diri" role="tab" data-toggle="tab">Data Diri</a></li>
                             <li><a href="#tab-domisili" role="tab" data-toggle="tab">Domisili</a></li>
                             <li><a href="#tab-profesi" role="tab" data-toggle="tab">Profesi</a></li>
-                            <li><a href="#tab-info-program" role="tab" data-toggle="tab">Info Program</a></li>
-                            <li><a href="#tab-keanggotaan" role="tab" data-toggle="tab">Keanggotaan</a></li>
+                            <!-- <li><a href="#tab-info-program" role="tab" data-toggle="tab">Info Program</a></li> -->
+                            <!-- <li><a href="#tab-keanggotaan" role="tab" data-toggle="tab">Keanggotaan</a></li> -->
                             <li><a href="#tab-akun" role="tab" data-toggle="tab">Akun</a></li>
                         </ul>
 
@@ -352,39 +352,85 @@
                             <div class="tab-pane" id="tab-info-program">
 
                                 <div class="panel-body" style="z-index: 2000">
-                                    <div class="form-group">
+                                    <div class="form-group hidden">
                                         <div class="col-md-9">
-                                            <input type="checkbox" id="infoProgram1" name="infoProgram1" class="icheckbox" /> <label class="check">Sosial Pendidikan</label>
+                                            <input type="text" name="idAnggotaInfoProgram" id="idAnggotaInfoProgramModal">
                                         </div>
                                     </div>
+                                    <?php if ($anggota[0]->sosial_pendidikan == 1) : ?>
+                                        <div class="form-group">
+                                            <div class="col-md-5">
+                                                <label class="check"><input type="checkbox" checked="checked" value="1" id="infoProgram1Modal" class="icheckbox" name="infoProgram1" /> Sosial
+                                                    Pendidikan</label>
+                                            </div>
+                                        </div>
+                                    <?php else : ?>
+                                        <div class="form-group">
+                                            <div class="col-md-5">
+                                                <label class="check"><input type="checkbox" value="1" id="infoProgram1Modal" class="icheckbox" name="infoProgram1" /> Sosial Pendidikan</label>
+                                            </div>
+                                        </div>
+                                    <?php endif; ?>
 
-                                    <div class="form-group">
-                                        <div class="col-md-9">
-                                            <label class="check"><input type="checkbox" id="infoProgram2" name="infoProgram2" class="icheckbox" checked="" /> Sosial
-                                                Kemanusiaan</label>
+                                    <?php if ($anggota[0]->sosial_kemanusiaan == 1) : ?>
+                                        <div class="form-group">
+                                            <div class="col-md-5">
+                                                <label class="check"><input type="checkbox" checked="checked" value="1" id="infoProgram2Modal" class="icheckbox" name="infoProgram2" /> Sosial
+                                                    Kemanusiaan</label>
+                                            </div>
                                         </div>
-                                    </div>
+                                    <?php else : ?>
+                                        <div class="form-group">
+                                            <div class="col-md-5">
+                                                <label class="check"><input type="checkbox" value="1" id="infoProgram2Modal" class="icheckbox" name="infoProgram2" /> Sosial Kemanusiaan</label>
+                                            </div>
+                                        </div>
+                                    <?php endif; ?>
 
-                                    <div class="form-group">
-                                        <div class="col-md-9">
-                                            <label class="check"><input type="checkbox" id="infoProgram3" name="infoProgram3" class="icheckbox" /> Pengembangan Sarana
-                                                Prasarana</label>
+                                    <?php if ($anggota[0]->pengembangan_sarana_prasarana == 1) : ?>
+                                        <div class="form-group">
+                                            <div class="col-md-5">
+                                                <label class="check"><input type="checkbox" checked="checked" value="1" id="infoProgram3Modal" class="icheckbox" name="infoProgram3" /> Pengembangan Sarana
+                                                    Prasarana</label>
+                                            </div>
                                         </div>
-                                    </div>
+                                    <?php else : ?>
+                                        <div class="form-group">
+                                            <div class="col-md-5">
+                                                <label class="check"><input type="checkbox" value="1" id="infoProgram3Modal" class="icheckbox" name="infoProgram3" /> Pengembangan Sarana Prasarana</label>
+                                            </div>
+                                        </div>
+                                    <?php endif; ?>
 
-                                    <div class="form-group">
-                                        <div class="col-md-9">
-                                            <label class="check"><input type="checkbox" id="infoProgram4" name="infoProgram4" class="icheckbox" /> Silaturahim &
-                                                Kebersamaan</label>
+                                    <?php if ($anggota[0]->silaturahim_kebersamaan == 1) : ?>
+                                        <div class="form-group">
+                                            <div class="col-md-5">
+                                                <label class="check"><input type="checkbox" checked="checked" value="1" id="infoProgram4Modal" class="icheckbox" name="infoProgram4" /> Silaturahim
+                                                    Kebersamaan</label>
+                                            </div>
                                         </div>
-                                    </div>
+                                    <?php else : ?>
+                                        <div class="form-group">
+                                            <div class="col-md-5">
+                                                <label class="check"><input type="checkbox" value="1" id="infoProgram4Modal" class="icheckbox" name="infoProgram4" /> Silaturahim Kebersamaan</label>
+                                            </div>
+                                        </div>
+                                    <?php endif; ?>
 
-                                    <div class="form-group">
-                                        <div class="col-md-9">
-                                            <label class="check"><input type="checkbox" id="infoProgram5" name="infoProgram5" class="icheckbox" /> Penawaran Sponsorship /
-                                                Donasi</label>
+                                    <?php if ($anggota[0]->penawaran_sponsorship_donasi == 1) : ?>
+                                        <div class="form-group">
+                                            <div class="col-md-8">
+                                                <label class="check"><input type="checkbox" checked="checked" value="1" id="infoProgram5Modal" class="icheckbox" name="infoProgram5" /> Penawaran
+                                                    Sponsorship &amp; Donasi</label>
+                                            </div>
                                         </div>
-                                    </div>
+                                    <?php else : ?>
+                                        <div class="form-group">
+                                            <div class="col-md-8">
+                                                <label class="check"><input type="checkbox" value="1" id="infoProgram5Modal" class="icheckbox" name="infoProgram5" /> Penawaran Sponsorship &amp; Donasi</label>
+                                            </div>
+                                        </div>
+                                    <?php endif; ?>
                                 </div>
 
                             </div>
@@ -393,27 +439,27 @@
                             <div class="tab-pane" id="tab-keanggotaan">
 
                                 <div class="panel-body" style="z-index: 2000">
+                                    <div class="form-group hidden">
+                                        <div class="col-md-9">
+                                            <input type="text" name="idAnggotaKeanggotaan" id="idAnggotaKeanggotaanModal">
+                                        </div>
+                                    </div>
                                     <div class="form-group">
                                         <div class="col-md-9">
-                                            <label class="check control-label"><input type="checkbox" class="icheckbox" id="keanggotaan1" name="keanggotaan1" /> Support</label>
+                                            <label class="check"><input type="checkbox" class="icheckbox" id="keanggotaan1" name="support" /> Support</label>
                                         </div>
-                                        <div class="col-md-12">
-                                            <p>Iuran Pendaftaran sebesar Rp. 10.000 (sepuluh ribu rupiah) 1x seumur
-                                                hidup.</p>
+                                        <div class="col-md-9">
+                                            <p>Iuran Pendaftaran sebesar Rp. 10.000 (sepuluh ribu rupiah) 1x seumur hidup.</p>
                                             <p>Iuran Wajib Tahunan sebesar Rp. 25.000 (dua puluh lima ribu rupiah).</p>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <div class="col-md-9">
-                                            <label class="check control-label"><input type="checkbox" class="icheckbox" id="keanggotaan2" name="keanggotaan2" /> Loyalist</label>
+                                        <div class="col-md-5">
+                                            <label class="check"><input type="checkbox" class="icheckbox" id="keanggotaan2" name="loyalist" /> Loyalist</label>
                                         </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="col-md-5 control-label text-left">Iuran sukarela sebesar : Rp.
-                                        </label>
-                                        <div class="col-md-6">
-                                            <input type="number" class="form-control" id="iuranSukarela" name="iuranSukarela" placeholder="Masukkan jumlah uang iuran sukarela" />
+                                        <div class="col-md-9">
+                                            <p>Iuran sukarela sebesar : </p>
+                                            <input type="number" class="form-control" id="iuranSukarelaModal" name="iuranSukarela" />
                                         </div>
                                     </div>
                                 </div>
@@ -582,7 +628,7 @@
             var program5 = data_obj.anggota[0].penawaran_sponsorship_donasi;
             var support = data_obj.anggota[0].support;
             var loyalist = data_obj.anggota[0].loyalist;
-            console.log(program1 + ", " + program2 + ", " + program3 + ", " + program4 + ", " + program5);
+            console.log(support + ", " + loyalist);
 
             document.getElementById('idAnggota').value = data_obj.anggota[0].id_anggota;
             document.getElementById('idUser').value = data_obj.anggota[0].id_user;
@@ -605,52 +651,54 @@
             document.getElementById('jabatan').value = data_obj.anggota[0].jabatan;
             document.getElementById('namaPerusahaan').value = data_obj.anggota[0].nama_perusahaan;
             document.getElementById('username').value = data_obj.anggota[0].username;
-
+            document.getElementById('idAnggotaInfoProgramModal').value = data_obj.anggota[0].id_anggota;
+            document.getElementById('idAnggotaKeanggotaanModal').value = data_obj.anggota[0].id_anggota;
+            document.getElementById('iuranSukarelaModal').value = data_obj.anggota[0].iuran_sukarela;
             // document.getElementById('infoProgram1').checked = true;
-            $('#tab-info-program input[id=infoProgram1]').prop('checked', true);
-            $('input[id=infoProgram1]').is(':checked');
-            $('input[id=infoProgram1]').attr('checked', true);
+            // $('#tab-info-program input[id=infoProgram1]').prop('checked', true);
+            // $('input[id=infoProgram1]').is(':checked');
+            // $('input[id=infoProgram1]').attr('checked', true);
 
-            if (program1 == "1") {
-                // $("#infoProgram1").prop("checked", true);
-                // $('input.type_checkbox[id="infoProgram1"]').prop('checked', true);
-                $('#tab-info-program input[id=infoProgram1]').prop('checked', true);
+            // if (program1 == "1") {
+            //     // $("#infoProgram1").prop("checked", true);
+            //     // $('input.type_checkbox[id="infoProgram1"]').prop('checked', true);
+            //     $('#tab-info-program input[id=infoProgram1]').prop('checked', true);
 
-                console.log(true);
-            } else {
-                // $("#infoProgram1").prop("checked", false);
-                console.log(false);
-            }
+            //     console.log(true);
+            // } else {
+            //     // $("#infoProgram1").prop("checked", false);
+            //     console.log(false);
+            // }
 
-            if (program2 == "1") {
-                $("#infoProgram2").prop("checked", true);
-            } else {
-                $("#infoProgram2").prop("checked", false);
-            }
+            // if (program2 == "1") {
+            //     $("#infoProgram2").prop("checked", true);
+            // } else {
+            //     $("#infoProgram2").prop("checked", false);
+            // }
 
-            if (program3 == "1") {
-                $("#infoProgram3").prop("checked", true);
-            } else {
-                $("#infoProgram3").prop("checked", false);
-            }
+            // if (program3 == "1") {
+            //     $("#infoProgram3").prop("checked", true);
+            // } else {
+            //     $("#infoProgram3").prop("checked", false);
+            // }
 
-            if (program4 == 1) {
-                $("#infoProgram4").prop("checked", true);
-            } else {
-                $("#infoProgram4").prop("checked", false);
-            }
+            // if (program4 == 1) {
+            //     $("#infoProgram4").prop("checked", true);
+            // } else {
+            //     $("#infoProgram4").prop("checked", false);
+            // }
 
-            if (program5 == 1) {
-                $("#infoProgram5").prop("checked", true);
-            } else {
-                $("#infoProgram5").prop("checked", false);
-            }
+            // if (program5 == 1) {
+            //     $("#infoProgram5").prop("checked", true);
+            // } else {
+            //     $("#infoProgram5").prop("checked", false);
+            // }
 
             if (support == 1) {
-                $("#keanggotaan1").prop("checked", true);
-            } else {
-                $("#keanggotaan1").prop("checked", false);
+                // var chek = document.getElementById("keanggotaan1");
+                $("#keanggotaan1").checked == 'checked';
             }
+
 
             if (loyalist == 1) {
                 $("#keanggotaan2").prop("checked", true);

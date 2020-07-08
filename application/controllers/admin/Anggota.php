@@ -81,11 +81,7 @@ class Anggota extends MY_Controller
             'tb_anggota.user_id != ' => $this->session->userdata('uid')
         );
         $data['anggota'] = $this->M_anggota->findAnggota('*', $where);
-
-
-
         $data['info'] = $this->M_anggota->findAnggota('*', array('tb_anggota.user_id' => $this->session->userdata('uid')));
-
         if ($this->session->userdata('role') == 1) {
             $this->admin_render('admin/kelolaAnggota', $data);
         }
@@ -211,10 +207,10 @@ class Anggota extends MY_Controller
             $sukses = $this->M_anggota->insertNewAnggota($data);
 
             if (!$sukses) {
-                flashMessage('success', 'Calon Anggota Baru berhasil di daftarkan. Silahkan verifikasi di Permohonan Calon Anggota');
+                flashMessage('success', 'Calon Alumni Baru berhasil di daftarkan. Silahkan verifikasi di Permohonan Calon Alumni');
                 redirect('admin/Anggota');
             } else {
-                flashMessage('error', 'Calon Anggota Baru gagal di daftarkan! Silahkan coba lagi');
+                flashMessage('error', 'Calon Alumni Baru gagal di daftarkan! Silahkan coba lagi');
                 redirect('admin/Anggota');
             }
         }
@@ -248,6 +244,7 @@ class Anggota extends MY_Controller
 
                 $anggota['user_id'] = $sukses;
                 $anggota['status_anggota'] = '1';
+                $anggota['support'] = '1';
                 $updateAnggota = $this->M_anggota->updateAnggota($anggota, $idAnggota);
 
                 $this->sendEmailKeanggotaan();
@@ -275,13 +272,13 @@ class Anggota extends MY_Controller
 
         $idAnggota = $this->input->post('idAnggota');
         $idUser = $this->input->post('idUser');
-        $sosialPendidikan = $this->input->post('infoProgram1');
-        $sosialKemanusiaan = $this->input->post('infoProgram2');
-        $pengembanganSarPras = $this->input->post('infoProgram3');
-        $silaturahim = $this->input->post('infoProgram4');
-        $sponsorshipDonasi = $this->input->post('infoProgram5');
-        $support = $this->input->post('keanggotaan1');
-        $loyalist = $this->input->post('keanggotaan2');
+        // $sosialPendidikan = $this->input->post('infoProgram1');
+        // $sosialKemanusiaan = $this->input->post('infoProgram2');
+        // $pengembanganSarPras = $this->input->post('infoProgram3');
+        // $silaturahim = $this->input->post('infoProgram4');
+        // $sponsorshipDonasi = $this->input->post('infoProgram5');
+        // $support = $this->input->post('keanggotaan1');
+        // $loyalist = $this->input->post('keanggotaan2');
 
         $anggota['nama_lengkap'] = $this->input->post('namaLengkap');
         $anggota['nama_panggilan_alias'] = $this->input->post('panggilanAlias');
@@ -305,49 +302,17 @@ class Anggota extends MY_Controller
         $anggota['nama_perusahaan'] = $this->input->post('namaPerusahaan');
         $anggota['bisnis_usaha'] = $this->input->post('bisnisUsaha');
 
-        if ($sosialPendidikan == "on") {
-            $anggota['sosial_pendidikan'] = "1";
-        } else {
-            $anggota['sosialPendidikan'] = "0";
-        }
+        $anggota['sosial_pendidikan'] = $this->input->post('infoProgram1');
+        $anggota['sosial_kemanusiaan'] = $this->input->post('infoProgram2');
+        $anggota['pengembangan_sarana_prasarana'] = $this->input->post('infoProgram3');
+        $anggota['silaturahim_kebersamaan'] = $this->input->post('infoProgram4');
+        $anggota['penawaran_sponsorship_donasi'] = $this->input->post('infoProgram5');
 
-        if ($sosialKemanusiaan == "on") {
-            $anggota['sosial_kemanusiaan'] = "1";
-        } else {
-            $anggota['sosial_kemanusiaan'] = "0";
-        }
-
-        if ($pengembanganSarPras == "on") {
-            $anggota['pengembangan_sarana_prasarana'] = "1";
-        } else {
-            $anggota['pengembangan_sarana_prasarana'] = "0";
-        }
-
-        if ($silaturahim == "on") {
-            $anggota['silaturahim_kebersamaan'] = "1";
-        } else {
-            $anggota['silaturahim_kebersamaan'] = "0";
-        }
-
-        if ($sponsorshipDonasi == "on") {
-            $anggota['penawaran_sponsorship_donasi'] = "1";
-        } else {
-            $anggota['penawaran_sponsorship_donasi'] = "0";
-        }
-
-        if ($support == "on") {
-            $anggota['support'] = "1";
-        } else {
-            $anggota['support'] = "0";
-        }
-
-        if ($loyalist == "on") {
-            $anggota['loyalist'] = "1";
-        } else {
-            $anggota['loyalist'] = "0";
-        }
-
+        $anggota['support'] = $this->input->post('support');
+        $anggota['loyalist'] = $this->input->post('loyalist');
         $anggota['iuran_sukarela'] = $this->input->post('iuranSukarela');
+
+        // $anggota['iuran_sukarela'] = $this->input->post('iuranSukarela');
 
         $user['username'] = $this->input->post('username');
         $user['role'] = $this->input->post('hakAkses');
@@ -356,8 +321,7 @@ class Anggota extends MY_Controller
 
         $sukses = $this->AdminAnggotaModel->updateAnggota($anggota, $user, $idAnggota, $idUser);
 
-        if (!$updateAnggota) {
-
+        if ($updateAnggota) {
             $updateUser = $this->M_user->updateUser($user, $idUser);
 
             if (!$updateUser) {
@@ -404,7 +368,7 @@ class Anggota extends MY_Controller
 
             $sukses = $this->M_anggota->updateAnggota($anggota, $idAnggota);
 
-            if (!$sukses) {
+            if ($sukses) {
                 flashMessage('success', 'Foto berhasil di ubah.');
                 redirect('admin/anggota/kelolaAnggota');
             } else {
