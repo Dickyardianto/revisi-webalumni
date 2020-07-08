@@ -5,8 +5,7 @@
         <div class="login-body">
             <strong><?= showFlashMessage(); ?></strong>
 
-            <form action="<?= base_url('login/Register/createBayar'); ?>" class="form-horizontal" method="post"
-                id="form-register-anggota-validate" enctype="multipart/form-data">
+            <form action="<?= base_url('login/Register/createBayar'); ?>" class="form-horizontal" method="post" id="form-register-anggota-validate" enctype="multipart/form-data">
                 <div class="form-group">
                     <div class="form-group">
                         <input type="hidden" name="idUser" value="<?= $id_user[0]->id_anggota ?>">
@@ -53,14 +52,6 @@
                     </div>
                 </div>
             </form>
-
-            <div class="row text-center" style="margin-top: 20px;">
-
-
-                <div class="col-md-12">
-                    <a href="<?= base_url('login'); ?>" title="Login" style="color: white;">Login</a>
-                </div>
-            </div>
         </div>
 
         <div class="login-footer">
@@ -71,12 +62,12 @@
     </div>
 
     <script type="text/javascript">
-    $("#form-register-anggota-validate").validate();
+        $("#form-register-anggota-validate").validate();
 
-    $("#file-simple").fileinput({
-        showUpload: false,
-        showCaption: false,
-        browseClass: "btn btn-danger",
-        fileType: "any"
-    });
+        $("#file-simple").fileinput({
+            showUpload: false,
+            showCaption: false,
+            browseClass: "btn btn-danger",
+            fileType: "any"
+        });
     </script>

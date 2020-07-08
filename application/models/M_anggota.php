@@ -44,7 +44,7 @@ class M_anggota extends CI_Model
 
     function findForAlumni()
     {
-        $query = "SELECT * FROM tb_anggota WHERE tb_anggota.user_id = 4 AND tb_anggota.status_anggota = 0 ORDER BY `id_anggota` DESC";
+        $query = "SELECT * FROM tb_anggota WHERE tb_anggota.role_id = 4 AND tb_anggota.status_anggota = 0 ORDER BY `id_anggota` DESC";
         return $this->db->query($query)->result();
     }
 
@@ -98,7 +98,7 @@ class M_anggota extends CI_Model
         return $this->db->update('tb_anggota', $anggota);
     }
 
-    function updateCalonAnggota($anggota, $id)
+    function updateCalonAlumni($anggota, $id)
     {
         $this->db->where('id_anggota', $id);
         return $this->db->update('tb_anggota', $anggota);

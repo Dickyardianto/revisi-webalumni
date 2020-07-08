@@ -65,6 +65,13 @@ class Anggota extends MY_Controller
         $data['calonAlumni'] = $this->M_anggota->findForAlumni();
         $data['daftarHakAkses'] = $this->M_anggota->getAllRole();
 
+        $where = array(
+            'tb_anggota.status_anggota !=' => '0',
+            'tb_anggota.user_id != ' => $this->session->userdata('uid')
+        );
+        $data['role_anggota'] = $this->M_anggota->findAnggota('*', $where);
+
+
         $data['info'] = $this->M_anggota->findAnggota('*', array('tb_anggota.user_id' => $this->session->userdata('uid')));
 
         if ($this->session->userdata('role') == 1) {
@@ -155,6 +162,7 @@ class Anggota extends MY_Controller
             $data['email'] = $email;
             $data['nama_foto'] = $upload_data['file_name'];
             $data['status_anggota'] = '0';
+            $data['role_id'] = 3;
 
             $sukses = $this->M_anggota->insertNewAnggota($data);
 
@@ -202,7 +210,7 @@ class Anggota extends MY_Controller
             $data['email'] = $email;
             $data['nama_foto'] = $upload_data['file_name'];
             $data['status_anggota'] = '0';
-            $data['user_id'] = 4;
+            $data['role_id'] = 4;
 
             $sukses = $this->M_anggota->insertNewAnggota($data);
 
@@ -245,6 +253,48 @@ class Anggota extends MY_Controller
                 $anggota['user_id'] = $sukses;
                 $anggota['status_anggota'] = '1';
                 $anggota['support'] = '1';
+                $updateAnggota = $this->M_anggota->updateAnggota($anggota, $idAnggota);
+
+                $this->sendEmailKeanggotaan();
+
+                if ($updateAnggota) {
+                    flashMessage('success', 'Calon Anggota berhasil di aktifkan dan dapat masuk menggunakan Username & Password sesuai yang tertera pada saat Aktivasi');
+                    redirect('admin/Anggota');
+                } else {
+                    flashMessage('error', 'Aktivasi Calon Anggota gagal! Silahkan coba lagi...');
+                    redirect('admin/Anggota');
+                }
+            } else {
+                flashMessage('error', 'Maaf, Terjadi kesalahan pada saat proses pembuatan akun anggota baru');
+                redirect('admin/Anggota');
+            }
+        } else {
+            flashMessage('error', 'Mohon pilih kolom keanggotaan !');
+            redirect('admin/Anggota');
+        }
+    }
+
+    function aktivasiCalonAlumni()
+    {
+        $this->load->model('M_user');
+
+        $pass = $this->input->post('password');
+        $idAnggota = $this->input->post('idAnggota');
+
+        $user['username'] = $this->input->post('username');
+        $user['password'] = md5($pass);
+        $user['status_akun'] = '1';
+        $user['role'] = $this->input->post('role');
+
+        if ($user['role'] != "") {
+
+            $sukses = $this->M_user->insertUser($user);
+
+            if ($sukses != 0) {
+
+                $anggota['user_id'] = $sukses;
+                $anggota['status_anggota'] = '1';
+
                 $updateAnggota = $this->M_anggota->updateAnggota($anggota, $idAnggota);
 
                 $this->sendEmailKeanggotaan();

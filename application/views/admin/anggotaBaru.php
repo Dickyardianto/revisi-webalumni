@@ -157,7 +157,7 @@
                                                     <?php } ?>
 
                                                     <td>
-                                                        <button type="button" class="btn btn-primary mb-control btn-terima" data-box="#message-box-terima" id="<?= $CA->id_anggota; ?>">Terima</button>
+                                                        <button type="button" class="btn btn-primary mb-control btn-terima-alumni" data-box="#message-box-terima-alumni" id="<?= $CA->id_anggota; ?>">Terima</button>
                                                         <button type="button" class="btn btn-danger mb-control btn-tolak" data-box="#message-box-tolak" id="<?= $CA->id_anggota; ?>">Tolak</button>
                                                     </td>
                                                 </tr>
@@ -394,14 +394,96 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group hidden">
                             <label class="col-md-3 control-label">Keanggotaan : </label>
                             <div class="col-md-3">
                                 <select name="role" id="role" class="select form-control validate[required]">
-                                    <option value="">-- Pilih --</option>
-                                    <?php foreach ($daftarHakAkses as $hakAkses) : ?>
-                                        <option value="<?= $hakAkses->id; ?>"><?= $hakAkses->role; ?></option>
-                                    <?php endforeach; ?>
+                                    <!-- <option value="">-- Pilih --</option> -->
+                                    <option value="3">Anggota</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="mb-footer">
+                    <div class="pull-right">
+                        <button type="submit" class="btn btn-info btn-lg mb-control-yes">Terima</button>
+                        <button class="btn btn-default btn-lg mb-control-close">Batal</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+<!-- END MESSAGE BOX ACCEPT CALON ANGGOTA -->
+
+
+<!-- MESSAGE BOX ACCEPT CALON ALUMNI -->
+<div class="message-box animated zoomIn" data-sound="alert" id="message-box-terima-alumni" style="margin-top: -100px;">
+
+    <div class="mb-container">
+        <div class="mb-middle">
+            <div class="mb-title">
+                <span class="fa fa-check"></span> Terima <strong> Sebagai Keanggotaan</strong>
+            </div>
+            <form action="<?= base_url('admin/Anggota/aktivasiCalonAlumni'); ?>" class="form-horizontal" method="post">
+                <div class="mb-content">
+                    <div class="panel-body">
+                        <p>Apakah benar bahwa Calon Anggota di bawah ini akan di aktifkan sebagai Keanggotaan IKASMA3BDG
+                            dan merupakan Alumni SMA 3 Bandung dengan identitas sebagai berikut: </p><br>
+
+                        <div class="form-group hidden">
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" name="idAnggota" id="idAnggotas" />
+                                <input type="text" class="form-control" name="username" id="userNames">
+                                <input type="password" class="form-control" name="password" id="passWords">
+                                <input type="email" class="form-control" name="emailAnggotaBaru" id="emailAnggotaBarus">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Nama Anggota : </label>
+                            <div class="col-md-9">
+                                <label class="control-label" id="namaAnggotas"></label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Angkatan : </label>
+                            <div class="col-md-9">
+                                <label class="control-label" id="angkatanAnggotas"></label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Email : </label>
+                            <div class="col-md-9">
+                                <label class="control-label" id="emailAnggotas"></label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Username : </label>
+                            <div class="col-md-9">
+                                <label class="control-label" id="usernameAnggotas"></label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Password : </label>
+                            <div class="col-md-9">
+                                <label class="control-label" id="passwordAnggotas">12345678 (default)</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group hidden">
+                            <label class="col-md-3 control-label">Keanggotaan : </label>
+                            <div class="col-md-3">
+                                <select name="role" id="roles" class="select form-control validate[required]">
+                                    <!-- <option value="">-- Pilih --</option> -->
+                                    <option value="4">Alumni</option>
                                 </select>
                             </div>
                         </div>
@@ -595,6 +677,81 @@
                     document.getElementById('userName').value = namaLengkap.split(' ').join('')
                         .toLowerCase();
                     document.getElementById('passWord').value = 12345678;
+                }
+
+            });
+    });
+
+
+    $(".btn-terima-alumni").click(function() {
+        console.log(this.id);
+        var idAnggota = this.id;
+
+        $.post("<?= base_url('admin/Anggota/anggotaJSON/'); ?>", {
+                id: idAnggota
+            },
+            function(data) {
+                var data_obj = JSON.parse(data);
+
+                var email = data_obj.anggota[0].email;
+                var angkatan = data_obj.anggota[0].angkatan;
+                var noTelp = data_obj.anggota[0].no_telp;
+                var namaPanggilan = data_obj.anggota[0].nama_panggilan_alias;
+                var nik = data_obj.anggota[0].NIK;
+                var namaLengkap = data_obj.anggota[0].nama_lengkap;
+
+                document.getElementById('idAnggotas').value = data_obj.anggota[0].id_anggota;
+                document.getElementById('namaAnggotas').innerHTML = namaLengkap;
+
+                // if (email == null) {
+                //     console.log("Email is : " + email);
+                //     document.getElementById('emailAnggota').innerHTML = "Email belum diisi";
+                // } else {
+                //     document.getElementById('emailAnggota').innerHTML = email;
+                // }
+
+                // if (angkatan == null) {
+                //     document.getElementById('angkatanAnggota').innerHTML = "Angkatan belum diisi";
+                // } else {
+                document.getElementById('angkatanAnggotas').innerHTML = data_obj.anggota[0].angkatan;
+                // }
+
+                // document.getElementById('usernameAnggota').innerHTML = email.toLowerCase() +
+                //         " (Default Username & Password sesuai yang tertera)";
+                // document.getElementById('angkatanAnggota').innerHTML = angkatan.toLowerCase();
+                document.getElementById('emailAnggotas').innerHTML = email.toLowerCase();
+                document.getElementById('emailAnggotaBarus').value = email;
+
+                // document.getElementById('userName').value = email.toLowerCase();
+                // document.getElementById('passWord').value = 12345678;
+
+                if (noTelp != null) {
+                    document.getElementById('usernameAnggotas').innerHTML = noTelp +
+                        " (Default Username & Password sesuai yang tertera)";
+                    document.getElementById('userNames').value = noTelp;
+                    document.getElementById('passWords').value = 12345678;
+                } else if (email != null) {
+                    document.getElementById('usernameAnggotas').innerHTML = email.toLowerCase() +
+                        " (Default Username & Password sesuai yang tertera)";
+                    document.getElementById('userNames').value = email.toLowerCase();
+                    document.getElementById('passWords').value = 12345678;
+                } else if (nik != null) {
+                    document.getElementById('usernameAnggotas').innerHTML = nik +
+                        " (Default Username & Password sesuai yang tertera)";
+                    document.getElementById('userNames').value = nik;
+                    document.getElementById('passWords').value = 12345678;
+                } else if (namaPanggilan != null) {
+                    document.getElementById('usernameAnggotas').innerHTML = namaPanggilan.toLowerCase() +
+                        " (Default Username & Password sesuai yang tertera)";
+                    document.getElementById('userNames').value = namaPanggilan.toLowerCase();
+                    document.getElementById('passWords').value = 12345678;
+                } else if (namaLengkap != null) {
+                    document.getElementById('usernameAnggotas').innerHTML = namaLengkap.split(' ').join('')
+                        .toLowerCase() +
+                        " (Default Username & Password sesuai yang tertera)";
+                    document.getElementById('userNames').value = namaLengkap.split(' ').join('')
+                        .toLowerCase();
+                    document.getElementById('passWords').value = 12345678;
                 }
 
             });
