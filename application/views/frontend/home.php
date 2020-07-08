@@ -200,35 +200,19 @@
         </div>
     </section>
 
-    <footer class="bg-dark" style="padding: 50px;">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4" style="margin-bottom: 50px;">
-                    <ul>
-                        <ol><h5><a href="<?= base_url('');?>" style="text-decoration: none;">Beranda</a></h5></ol>
-                        <ol><h5><a href="<?= base_url('berita');?>" style="text-decoration: none;">Berita</a></h5></ol>
-                        <ol><h5><a href="<?= base_url('forumBisnis');?>" style="text-decoration: none;">Forum Bisnis</a></h5></ol>
-                    </ul>
+    <!-- <footer style="padding: 10px;">
+        <div class="container"> -->
+    <!-- <hr> -->
+    <!-- <div class="row">
+                <div class="col-lg-8 text-faded">
+                    <span class="sr-contact" style="color: black;">Copyright &copy; IKASMA3BDG. All rights reserved.</span>
                 </div>
-                <div class="col-md-4" style="margin-bottom: 50px;">
-                    <ul>
-                        <ol><h5><a href="<?= base_url('komunitas');?>" style="text-decoration: none;">Komunitas</a></h5></ol>
-                        <ol><h5><a href="<?= base_url('home/cariAnggota');?>" style="text-decoration: none;">Teman</a></h5></ol>
-                        <ol><h5><a href="<?= base_url('');?>" style="text-decoration: none;">Modul</a></h5></ol>
-                    </ul>
+                <div class="col-lg-2 text-center">
+                    <i class="fa fa-phone fa-2x sr-contact"></i>
                 </div>
-                <div class="col-md-4" style="margin-bottom: 50px;">
-                    <ul>
-                        <ol><h5><a href="<?= base_url('register');?>" style="text-decoration: none;">Registrasi</a></h5></ol>
-                        <ol><h5><a href="<?= base_url('login');?>" style="text-decoration: none;">Login</a></h5></ol>
-                    </ul>
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-md-12 text-faded text-center">
-                    <span>Copyright &copy; IKASMA3BDG. All rights reserved.</span>
+                <div class="col-lg-2 text-center">
+                    <i class="fa fa-phone fa-2x sr-contact"></i>
                 </div>
             </div>
         </div>
-    </footer>
+    </footer> -->
