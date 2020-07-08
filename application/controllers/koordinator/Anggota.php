@@ -156,6 +156,7 @@ class Anggota extends MY_Controller
             $data['email'] = $email;
             $data['nama_foto'] = $upload_data['file_name'];
             $data['status_anggota'] = '0';
+            $data['role_id'] = 3;
 
             $sukses = $this->M_anggota->insertNewAnggota($data);
 
@@ -202,7 +203,7 @@ class Anggota extends MY_Controller
             $data['email'] = $email;
             $data['nama_foto'] = $upload_data['file_name'];
             $data['status_anggota'] = '0';
-            $data['user_id'] = 4;
+            $data['role_id'] = 4;
 
             $sukses = $this->M_anggota->insertNewAnggota($data);
 
