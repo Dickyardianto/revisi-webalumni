@@ -129,7 +129,7 @@
                     </div>
 
                     <div class="tab-pane" id="tab-second">
-                        <h5>Tambah Calon Berita Baru IKASMA3BDG</h5>
+                        <p>Formulir Calon Berita Baru IKASMA3BDG</p>
 
                         <div class="form-group">
                             <form action="<?= base_url('admin/Berita/tambahCalonBerita'); ?>" class="form-horizontal" id="form-tambah-berita-validate" method="post" enctype="multipart/form-data">
@@ -193,7 +193,7 @@
                                 <div class="panel-footer">
                                     <label class="text-muted">Catatan : </label>
                                     <ol>
-                                        <li>Berita Baru harus diverifikasi terlebih dahulu agar terdaftar sebagai
+                                        <li>Berita baru harus diverifikasi terlebih dahulu agar terdaftar sebagai
                                             Berita aktif.</li>
                                         <li>Kecuali berita ditambahkan oleh Admin dan Koordinator akan otomatis aktif.
                                         </li>
