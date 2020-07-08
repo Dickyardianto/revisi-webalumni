@@ -69,7 +69,7 @@ class Register extends MY_Controller
 				$anggota['tanggal_lahir'] = $tglLahir;
 				$anggota['nama_foto'] = $upload_data['file_name'];
 				$anggota['status_anggota'] = '0';
-				$anggota['user_id'] = $role;
+				$anggota['role_id'] = $role;
 
 
 				$this->LoginModel->saveRegisterAnggota($anggota);
@@ -102,7 +102,7 @@ class Register extends MY_Controller
 				$anggota['tanggal_lahir'] = $tglLahir;
 				$anggota['nama_foto'] = $upload_data['file_name'];
 				$anggota['status_anggota'] = '0';
-				$anggota['user_id'] = $role;
+				$anggota['role_id'] = $role;
 
 
 				$this->LoginModel->saveRegisterAnggota($anggota);
