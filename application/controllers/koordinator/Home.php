@@ -35,6 +35,7 @@ class Home extends MY_Controller
         $data['info'] = $this->M_anggota->findAnggota('*', array('tb_anggota.user_id = ' => $this->session->userdata('uid')));
         $data['jumlah_anggota'] = $this->KoorHomeModel->hitungJumlahAnggota();
         $data['jumlah_anggota_belum_verifikasi'] = $this->KoorHomeModel->hitungJumlahAnggotaBelumVerifikasi();
+        $data['jumlah_alumni_belum_verifikasi'] = $this->KoorHomeModel->hitungJumlahAlumniBelumVerifikasi();
         $data['jumlah_pendaftar_anggota'] = $this->KoorHomeModel->pendaftarAnggota();
         $data['jumlah_pendaftar_alumni'] = $this->KoorHomeModel->pendaftarAlumni();
         $data['berita'] = $this->KoorHomeModel->beritaTerkini();

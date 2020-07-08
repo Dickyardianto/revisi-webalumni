@@ -26,7 +26,14 @@ class KoorHomeModel extends CI_Model
 
 	public function hitungJumlahAnggotaBelumVerifikasi()
 	{
-		$query = $this->db->query("SELECT * FROM tb_anggota WHERE  status_anggota = 0");
+		$query = $this->db->query("SELECT * FROM tb_anggota WHERE status_anggota = 0 AND role_id = 3");
+		$total = $query->num_rows();
+		return $total;
+	}
+
+	public function hitungJumlahAlumniBelumVerifikasi()
+	{
+		$query = $this->db->query("SELECT * FROM tb_anggota WHERE status_anggota = 0 AND role_id = 4");
 		$total = $query->num_rows();
 		return $total;
 	}

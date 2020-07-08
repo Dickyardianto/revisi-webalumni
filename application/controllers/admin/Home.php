@@ -51,6 +51,7 @@ class Home extends MY_Controller
         $data['info'] = $this->AdminHomeModel->getInfoBySessionId();
         $data['jumlah_anggota'] = $this->AdminHomeModel->hitungJumlahAnggota();
         $data['jumlah_anggota_belum_verifikasi'] = $this->AdminHomeModel->hitungJumlahAnggotaBelumVerifikasi();
+        $data['jumlah_alumni_belum_verifikasi'] = $this->AdminHomeModel->hitungJumlahAlumniBelumVerifikasi();
         $data['jumlah_pendaftar_anggota'] = $this->AdminHomeModel->pendaftarAnggota();
         $data['jumlah_pendaftar_alumni'] = $this->AdminHomeModel->pendaftarAlumni();
         $data['berita'] = $this->AdminHomeModel->beritaTerkini();

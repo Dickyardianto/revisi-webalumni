@@ -32,20 +32,31 @@
         </div>
         <div class="col-md-3">
 
-            <!-- START WIDGET REGISTRED -->
-            <div class="widget widget-default widget-item-icon">
-                <div class="widget-item-left">
-                    <span class="fa fa-user"></span>
-                </div>
-                <div class="widget-data">
+            <!-- START WIDGET SLIDER -->
+            <div class="widget widget-default widget-carousel">
+                <div class="owl-carousel" id="owl-example">
                     <a href="<?= base_url('admin/anggota'); ?>" style="color:#33414E;">
-                        <div class="widget-int num-count"><?= $jumlah_anggota_belum_verifikasi ?></div>
-                        <div class="widget-title" style="font-size: 12px;">Pengguna belum terverifikasi</div>
-                        <div class="widget-subtitle">Pada website anda</div>
+                        <div>
+                            <div class="widget-title" style="font-size: 12px;">Anggota Belum Terverifikasi</div>
+                            <!-- <div class="widget-subtitle">27/08/2014 15:23</div> -->
+                            <div class="widget-int"><?= $jumlah_anggota_belum_verifikasi ?></div>
+                        </div>
                     </a>
+                    <a href="<?= base_url('admin/anggota'); ?>" style="color:#33414E;">
+                        <div>
+                            <div class="widget-title" style="font-size: 12px;">Alumni Belum Terverifikasi</div>
+                            <!-- <div class="widget-subtitle">Visitors</div> -->
+                            <div class="widget-int"><?= $jumlah_alumni_belum_verifikasi ?></div>
+                        </div>
+                    </a>
+                    <!-- <div> -->
+                    <!-- <div class="widget-title">New</div>
+                        <div class="widget-subtitle">Visitors</div>
+                        <div class="widget-int">1,977</div> -->
+                    <!-- </div> -->
                 </div>
             </div>
-            <!-- END WIDGET REGISTRED -->
+            <!-- END WIDGET SLIDER -->
 
         </div>
         <div class="col-md-3">
