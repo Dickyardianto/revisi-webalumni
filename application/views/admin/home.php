@@ -1,7 +1,7 @@
 <!-- START BREADCRUMB -->
 <ul class="breadcrumb">
-    <li><a href="#">Home</a></li>
-    <li class="active">Beranda</li>
+    <li class="active">Home</li>
+    <li><a href="<?= base_url('admin'); ?>">Beranda</a></li>
 </ul>
 <!-- END BREADCRUMB -->
 
@@ -20,7 +20,7 @@
                 <div class="widget-data">
                     <a href="<?= base_url('admin/anggota/kelolaAnggota'); ?>" style="color:#33414E;">
                         <div class="widget-int num-count"><?= $jumlah_anggota ?></div>
-                        <div class="widget-title" style="font-size: 12px;">user terdaftar</div>
+                        <div class="widget-title" style="font-size: 12px;">Pengguna terdaftar</div>
                         <div class="widget-subtitle">Pada website anda</div>
                     </a>
                 </div>
@@ -40,7 +40,7 @@
                 <div class="widget-data">
                     <a href="<?= base_url('admin/anggota'); ?>" style="color:#33414E;">
                         <div class="widget-int num-count"><?= $jumlah_anggota_belum_verifikasi ?></div>
-                        <div class="widget-title" style="font-size: 12px;">user belum terverifikasi</div>
+                        <div class="widget-title" style="font-size: 12px;">Pengguna belum terverifikasi</div>
                         <div class="widget-subtitle">Pada website anda</div>
                     </a>
                 </div>
@@ -183,7 +183,7 @@
                 <div class="panel-body padding-0">
                     <div class="chart-holder">
                         <?php if (empty($berita)) : ?>
-                            <h5 style="margin:10px">Uppss .. belum ada berita terjadwal pada hari ini</h5>
+                            <h5 style="margin:10px"><i>Belum ada berita terjadwal pada hari ini</i></h5>
                         <?php else : ?>
                             <?php foreach ($berita as $b) : ?>
                                 <h3 style="margin:10px"><?= $b->judul_berita ?></h3>
@@ -220,7 +220,7 @@
                 <div class="panel-body padding-0">
                     <div class="chart-holder">
                         <?php if (empty($komunitas)) : ?>
-                            <h5 style="margin:10px">Uppss .. belum ada komunitas terjadwal pada hari ini</h5>
+                            <h5 style="margin:10px"><i>Belum ada komunitas terjadwal pada hari ini</i></h5>
                         <?php else : ?>
                             <?php foreach ($komunitas as $k) : ?>
                                 <h3 style="margin:10px"><?= $k->nama_komunitas ?></h3>

@@ -94,7 +94,7 @@
 
                     <!-- Tab First Tambah Calon Forbis -->
                     <div class="tab-pane" id="tab-second">
-                        <h5>Tambah Calon Forum Bisnis Baru IKASMA3BDG</h5>
+                        <p>Formulir Calon Forum Bisnis Baru IKASMA3BDG</p>
 
                         <div class="form-group">
                             <form action="<?= base_url('admin/ForumBisnis/setAddForbis'); ?>" class="form-horizontal" id="tambah-forbis-validate" method="post" enctype="multipart/form-data">

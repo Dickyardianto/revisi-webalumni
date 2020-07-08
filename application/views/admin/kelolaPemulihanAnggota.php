@@ -7,7 +7,7 @@
 <!-- END BREADCRUMB -->
 
 <div class="page-title">
-    <h2>Kelola Pemulihan Anggota</h2>
+    <h2>Kelola Pemulihan Akun</h2>
 </div>
 
 <?= showFlashMessage(); ?>
