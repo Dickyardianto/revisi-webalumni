@@ -168,6 +168,7 @@ class Register extends MY_Controller
 			$anggota['id_user'] = $idUser;
 
 			$this->LoginModel->saveBayarAnggota($anggota);
+			flashMessage('success', 'Registrasi anggota IKASMA3BDG berhasil! Silahkan lakukan verifikasi terhadap akun yang sudah di daftarkan.');
 			redirect('admin/Anggota', $anggota);
 		}
 	}
