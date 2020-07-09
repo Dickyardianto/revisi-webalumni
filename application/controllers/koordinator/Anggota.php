@@ -161,8 +161,8 @@ class Anggota extends MY_Controller
             $sukses = $this->M_anggota->insertNewAnggota($data);
 
             if (!$sukses) {
-                flashMessage('success', 'Calon Anggota Baru berhasil di daftarkan. Silahkan verifikasi di Permohonan Calon Anggota');
-                redirect('koordinator/Anggota');
+                flashMessage('success', 'Calon Anggota Baru berhasil di daftarkan. Silahkan untuk melakukan pembayaran pada daftar di bawah ini.');
+                redirect('login/NotifRegisterForAnggota/notifKoordinator');
             } else {
                 flashMessage('error', 'Calon Anggota Baru gagal di daftarkan! Silahkan coba lagi');
                 redirect('koordinator/Anggota');
