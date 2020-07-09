@@ -99,32 +99,40 @@ class Anggota extends MY_Controller
         //load upload class library
         $this->load->library('upload', $config);
 
-        if (!$this->upload->do_upload('fileSaya')) {
-            flashMessage('error', 'Maaf, Upload gambar calon anggota gagal! Silahkan coba lagi');
-            redirect('anggota/Anggota/kelolaAnggota');
-        } else {
-            $upload_data = $this->upload->data();
+        $where = "tb_anggota.no_telp = '$noTelepon' OR tb_anggota.email = '$email'";
+        $cariAnggota = $this->M_anggota->findAnggota('*', $where);
 
-            $data['nama_lengkap'] = $namaLengkap;
-            $data['nama_panggilan_alias'] = $namaPanggilan;
-            $data['tanggal_lahir'] = $this->input->post('tglLahir');
-            $data['angkatan'] = $angkatan;
-            $data['no_telp'] = $noTelepon;
-            $data['email'] = $email;
-            $data['nama_foto'] = $upload_data['file_name'];
-            $data['status_anggota'] = '0';
-            $data['role_id'] = 3;
-
-            // echo json_encode($data);
-            $sukses = $this->M_anggota->insertNewAnggota($data);
-
-            if (!$sukses) {
-                flashMessage('success', 'Calon Anggota Baru berhasil di daftarkan. Silahkan untuk melakukan pembayaran pada daftar di bawah ini.');
-                redirect('login/NotifRegisterForAnggota/notifForAnggota');
-            } else {
-                flashMessage('error', 'Calon Anggota Baru gagal di daftarkan! Silahkan coba lagi');
+        if (!$cariAnggota) {
+            if (!$this->upload->do_upload('fileSaya')) {
+                flashMessage('error', 'Maaf, Upload gambar calon anggota gagal! Silahkan coba lagi');
                 redirect('anggota/Anggota/kelolaAnggota');
+            } else {
+                $upload_data = $this->upload->data();
+
+                $data['nama_lengkap'] = $namaLengkap;
+                $data['nama_panggilan_alias'] = $namaPanggilan;
+                $data['tanggal_lahir'] = $this->input->post('tglLahir');
+                $data['angkatan'] = $angkatan;
+                $data['no_telp'] = $noTelepon;
+                $data['email'] = $email;
+                $data['nama_foto'] = $upload_data['file_name'];
+                $data['status_anggota'] = '0';
+                $data['role_id'] = 3;
+
+                // echo json_encode($data);
+                $sukses = $this->M_anggota->insertNewAnggota($data);
+
+                if (!$sukses) {
+                    flashMessage('success', 'Calon Anggota Baru berhasil di daftarkan. Silahkan untuk melakukan pembayaran pada daftar di bawah ini.');
+                    redirect('login/NotifRegisterForAnggota/notifForAnggota');
+                } else {
+                    flashMessage('error', 'Calon Anggota Baru gagal di daftarkan! Silahkan coba lagi');
+                    redirect('anggota/Anggota/kelolaAnggota');
+                }
             }
+        } else {
+            flashMessage('error', 'Maaf, Email atau No. Telepon sudah dimiliki pengguna lain.');
+            redirect('anggota/Anggota/kelolaAnggota');
         }
     }
 
@@ -146,32 +154,40 @@ class Anggota extends MY_Controller
         //load upload class library
         $this->load->library('upload', $config);
 
-        if (!$this->upload->do_upload('fileSaya')) {
-            flashMessage('error', 'Maaf, Upload gambar calon anggota gagal! Silahkan coba lagi');
-            redirect('anggota/Anggota/kelolaAlumni');
-        } else {
-            $upload_data = $this->upload->data();
+        $where = "tb_anggota.no_telp = '$noTelepon' OR tb_anggota.email = '$email'";
+        $cariAnggota = $this->M_anggota->findAnggota('*', $where);
 
-            $data['nama_lengkap'] = $namaLengkap;
-            $data['nama_panggilan_alias'] = $namaPanggilan;
-            $data['tanggal_lahir'] = $this->input->post('tglLahir');
-            $data['angkatan'] = $angkatan;
-            $data['no_telp'] = $noTelepon;
-            $data['email'] = $email;
-            $data['nama_foto'] = $upload_data['file_name'];
-            $data['status_anggota'] = '0';
-            $data['role_id'] = 4;
-
-            // echo json_encode($data);
-            $sukses = $this->M_anggota->insertNewAnggota($data);
-
-            if (!$sukses) {
-                flashMessage('success', 'Calon alumni berhasil di daftarkan. Silahkan untuk menunggu verifikasi dari pihak admin.');
+        if (!$cariAnggota) {
+            if (!$this->upload->do_upload('fileSaya')) {
+                flashMessage('error', 'Maaf, Upload gambar calon anggota gagal! Silahkan coba lagi');
                 redirect('anggota/Anggota/kelolaAlumni');
             } else {
-                flashMessage('error', 'Calon alumni gagal di daftarkan! Silahkan coba lagi');
-                redirect('anggota/Anggota/kelolaAlumni');
+                $upload_data = $this->upload->data();
+
+                $data['nama_lengkap'] = $namaLengkap;
+                $data['nama_panggilan_alias'] = $namaPanggilan;
+                $data['tanggal_lahir'] = $this->input->post('tglLahir');
+                $data['angkatan'] = $angkatan;
+                $data['no_telp'] = $noTelepon;
+                $data['email'] = $email;
+                $data['nama_foto'] = $upload_data['file_name'];
+                $data['status_anggota'] = '0';
+                $data['role_id'] = 4;
+
+                // echo json_encode($data);
+                $sukses = $this->M_anggota->insertNewAnggota($data);
+
+                if (!$sukses) {
+                    flashMessage('success', 'Calon alumni berhasil di daftarkan. Silahkan untuk menunggu verifikasi dari pihak admin.');
+                    redirect('anggota/Anggota/kelolaAlumni');
+                } else {
+                    flashMessage('error', 'Calon alumni gagal di daftarkan! Silahkan coba lagi');
+                    redirect('anggota/Anggota/kelolaAlumni');
+                }
             }
+        } else {
+            flashMessage('error', 'Maaf, Email atau No. Telepon sudah dimiliki pengguna lain.');
+            redirect('anggota/Anggota/kelolaAlumni');
         }
     }
 

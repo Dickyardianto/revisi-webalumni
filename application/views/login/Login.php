@@ -9,7 +9,7 @@
                     <form action="<?= base_url('auth'); ?>" class="form-horizontal" method="post" id="form-login-validate">
                         <div class="form-group">
                             <div class="col-md-12">
-                                <input type="text" class="form-control" placeholder="Username" name="userName" maxlength="50" required />
+                                <input type="text" class="form-control" placeholder="Username" name="userName" maxlength="50" value="<?= set_value('userName'); ?>" required />
                             </div>
                         </div>
                         <div class="form-group">

@@ -9,7 +9,6 @@ class Login extends MY_Controller
         parent::__construct();
         // load Login Model
         $this->load->model('LoginModel');
-
         //        if ($this->session->userdata('logged_in') == '' && $this->session->userdata('username') == '' && $this->session->userdata('role') == '') {
         //            $data['title'] = 'Login IKASMA3BDG';
         //            $this->login_render('login/Login', $data);

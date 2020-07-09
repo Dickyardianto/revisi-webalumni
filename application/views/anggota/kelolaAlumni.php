@@ -53,7 +53,7 @@
                                     <div class="form-group">
                                         <label class="col-md-2 control-label">Angkatan / Tahun Lulus</label>
                                         <div class="col-md-8">
-                                            <input type="text" class="form-control" name="angkatan" placeholder="Angkatan / Tahun Lulus" required />
+                                            <input type="text" class="form-control" name="angkatan" placeholder="Angkatan / Tahun Lulus" maxlength="4" required />
                                         </div>
                                     </div>
 

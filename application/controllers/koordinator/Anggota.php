@@ -142,31 +142,39 @@ class Anggota extends MY_Controller
         //load upload class library
         $this->load->library('upload', $config);
 
-        if (!$this->upload->do_upload('fileSaya')) {
-            flashMessage('error', 'Maaf, Upload gambar calon anggota gagal! Silahkan coba lagi');
-            redirect('koordinator/Anggota');
-        } else {
-            $upload_data = $this->upload->data();
+        $where = "tb_anggota.no_telp = '$noTelepon' OR tb_anggota.email = '$email'";
+        $cariAnggota = $this->M_anggota->findAnggota('*', $where);
 
-            $data['nama_lengkap'] = $namaLengkap;
-            $data['nama_panggilan_alias'] = $namaPanggilan;
-            $data['tanggal_lahir'] = $this->input->post('tglLahir');
-            $data['angkatan'] = $angkatan;
-            $data['no_telp'] = $noTelepon;
-            $data['email'] = $email;
-            $data['nama_foto'] = $upload_data['file_name'];
-            $data['status_anggota'] = '0';
-            $data['role_id'] = 3;
-
-            $sukses = $this->M_anggota->insertNewAnggota($data);
-
-            if (!$sukses) {
-                flashMessage('success', 'Calon Anggota Baru berhasil di daftarkan. Silahkan untuk melakukan pembayaran pada daftar di bawah ini.');
-                redirect('login/NotifRegisterForAnggota/notifKoordinator');
-            } else {
-                flashMessage('error', 'Calon Anggota Baru gagal di daftarkan! Silahkan coba lagi');
+        if (!$cariAnggota) {
+            if (!$this->upload->do_upload('fileSaya')) {
+                flashMessage('error', 'Maaf, Upload gambar calon anggota gagal! Silahkan coba lagi');
                 redirect('koordinator/Anggota');
+            } else {
+                $upload_data = $this->upload->data();
+
+                $data['nama_lengkap'] = $namaLengkap;
+                $data['nama_panggilan_alias'] = $namaPanggilan;
+                $data['tanggal_lahir'] = $this->input->post('tglLahir');
+                $data['angkatan'] = $angkatan;
+                $data['no_telp'] = $noTelepon;
+                $data['email'] = $email;
+                $data['nama_foto'] = $upload_data['file_name'];
+                $data['status_anggota'] = '0';
+                $data['role_id'] = 3;
+
+                $sukses = $this->M_anggota->insertNewAnggota($data);
+
+                if (!$sukses) {
+                    flashMessage('success', 'Calon Anggota Baru berhasil di daftarkan. Silahkan untuk melakukan pembayaran pada daftar di bawah ini.');
+                    redirect('login/NotifRegisterForAnggota/notifKoordinator');
+                } else {
+                    flashMessage('error', 'Calon Anggota Baru gagal di daftarkan! Silahkan coba lagi');
+                    redirect('koordinator/Anggota');
+                }
             }
+        } else {
+            flashMessage('error', 'Maaf, Email atau No. Telepon sudah dimiliki pengguna lain.');
+            redirect('koordinator/Anggota');
         }
     }
 
@@ -189,31 +197,39 @@ class Anggota extends MY_Controller
         //load upload class library
         $this->load->library('upload', $config);
 
-        if (!$this->upload->do_upload('fileSaya')) {
-            flashMessage('error', 'Maaf, Upload gambar calon anggota gagal! Silahkan coba lagi');
-            redirect('koordinator/Anggota');
-        } else {
-            $upload_data = $this->upload->data();
+        $where = "tb_anggota.no_telp = '$noTelepon' OR tb_anggota.email = '$email'";
+        $cariAnggota = $this->M_anggota->findAnggota('*', $where);
 
-            $data['nama_lengkap'] = $namaLengkap;
-            $data['nama_panggilan_alias'] = $namaPanggilan;
-            $data['tanggal_lahir'] = $this->input->post('tglLahir');
-            $data['angkatan'] = $angkatan;
-            $data['no_telp'] = $noTelepon;
-            $data['email'] = $email;
-            $data['nama_foto'] = $upload_data['file_name'];
-            $data['status_anggota'] = '0';
-            $data['role_id'] = 4;
-
-            $sukses = $this->M_anggota->insertNewAnggota($data);
-
-            if (!$sukses) {
-                flashMessage('success', 'Calon Alumni Baru berhasil di daftarkan. Silahkan verifikasi di Permohonan Calon Alumni');
+        if (!$cariAnggota) {
+            if (!$this->upload->do_upload('fileSaya')) {
+                flashMessage('error', 'Maaf, Upload gambar calon anggota gagal! Silahkan coba lagi');
                 redirect('koordinator/Anggota');
             } else {
-                flashMessage('error', 'Calon Alumni Baru gagal di daftarkan! Silahkan coba lagi');
-                redirect('koordinator/Anggota');
+                $upload_data = $this->upload->data();
+
+                $data['nama_lengkap'] = $namaLengkap;
+                $data['nama_panggilan_alias'] = $namaPanggilan;
+                $data['tanggal_lahir'] = $this->input->post('tglLahir');
+                $data['angkatan'] = $angkatan;
+                $data['no_telp'] = $noTelepon;
+                $data['email'] = $email;
+                $data['nama_foto'] = $upload_data['file_name'];
+                $data['status_anggota'] = '0';
+                $data['role_id'] = 4;
+
+                $sukses = $this->M_anggota->insertNewAnggota($data);
+
+                if (!$sukses) {
+                    flashMessage('success', 'Calon Alumni Baru berhasil di daftarkan. Silahkan verifikasi di Permohonan Calon Alumni');
+                    redirect('koordinator/Anggota');
+                } else {
+                    flashMessage('error', 'Calon Alumni Baru gagal di daftarkan! Silahkan coba lagi');
+                    redirect('koordinator/Anggota');
+                }
             }
+        } else {
+            flashMessage('error', 'Maaf, Email atau No. Telepon sudah dimiliki pengguna lain.');
+            redirect('koordinator/Anggota');
         }
     }
     // ==================================================
@@ -237,31 +253,41 @@ class Anggota extends MY_Controller
         $user['status_akun'] = '1';
         $user['role'] = $this->input->post('role');
 
-        if ($user['role'] != "") {
+        // mengecek username apakah ada yang sama
+        $username = $user['username'];
+        $where = "tb_user.username = '$username'";
+        $cariUser = $this->M_user->findUser($where);
 
-            $sukses = $this->M_user->insertUser($user);
+        if (!$cariUser) {
+            if ($user['role'] != "") {
 
-            if ($sukses != 0) {
+                $sukses = $this->M_user->insertUser($user);
 
-                $anggota['user_id'] = $sukses;
-                $anggota['status_anggota'] = '1';
-                $updateAnggota = $this->M_anggota->updateAnggota($anggota, $idAnggota);
+                if ($sukses != 0) {
 
-                $this->sendEmailKeanggotaan();
+                    $anggota['user_id'] = $sukses;
+                    $anggota['status_anggota'] = '1';
+                    $updateAnggota = $this->M_anggota->updateAnggota($anggota, $idAnggota);
 
-                if ($updateAnggota) {
-                    flashMessage('success', 'Calon Anggota berhasil di aktifkan dan dapat masuk menggunakan Username & Password sesuai yang tertera pada saat Aktivasi');
-                    redirect('koordinator/Anggota');
+                    $this->sendEmailKeanggotaan();
+
+                    if ($updateAnggota) {
+                        flashMessage('success', 'Calon Anggota berhasil di aktifkan dan dapat masuk menggunakan Username & Password sesuai yang tertera pada saat Aktivasi');
+                        redirect('koordinator/Anggota');
+                    } else {
+                        flashMessage('error', 'Aktivasi Calon Anggota gagal! Silahkan coba lagi...');
+                        redirect('koordinator/Anggota');
+                    }
                 } else {
-                    flashMessage('error', 'Aktivasi Calon Anggota gagal! Silahkan coba lagi...');
+                    flashMessage('error', 'Maaf, Terjadi kesalahan pada saat proses pembuatan akun anggota baru');
                     redirect('koordinator/Anggota');
                 }
             } else {
-                flashMessage('error', 'Maaf, Terjadi kesalahan pada saat proses pembuatan akun anggota baru');
+                flashMessage('error', 'Mohon pilih kolom keanggotaan !');
                 redirect('koordinator/Anggota');
             }
         } else {
-            flashMessage('error', 'Mohon pilih kolom keanggotaan !');
+            flashMessage('error', 'Maaf, username sudah dimiliki pengguna lain !');
             redirect('koordinator/Anggota');
         }
     }
@@ -278,32 +304,42 @@ class Anggota extends MY_Controller
         $user['status_akun'] = '1';
         $user['role'] = $this->input->post('role');
 
-        if ($user['role'] != "") {
+        // mengecek username apakah ada yang sama
+        $username = $user['username'];
+        $where = "tb_user.username = '$username'";
+        $cariUser = $this->M_user->findUser($where);
 
-            $sukses = $this->M_user->insertUser($user);
+        if (!$cariUser) {
+            if ($user['role'] != "") {
 
-            if ($sukses != 0) {
+                $sukses = $this->M_user->insertUser($user);
 
-                $anggota['user_id'] = $sukses;
-                $anggota['status_anggota'] = '1';
+                if ($sukses != 0) {
 
-                $updateAnggota = $this->M_anggota->updateAnggota($anggota, $idAnggota);
+                    $anggota['user_id'] = $sukses;
+                    $anggota['status_anggota'] = '1';
 
-                $this->sendEmailKeanggotaan();
+                    $updateAnggota = $this->M_anggota->updateAnggota($anggota, $idAnggota);
 
-                if ($updateAnggota) {
-                    flashMessage('success', 'Calon Alumni berhasil di aktifkan dan dapat masuk menggunakan Username & Password sesuai yang tertera pada saat Aktivasi');
-                    redirect('koordinator/Anggota');
+                    $this->sendEmailKeanggotaan();
+
+                    if ($updateAnggota) {
+                        flashMessage('success', 'Calon Alumni berhasil di aktifkan dan dapat masuk menggunakan Username & Password sesuai yang tertera pada saat Aktivasi');
+                        redirect('koordinator/Anggota');
+                    } else {
+                        flashMessage('error', 'Aktivasi Calon Alumni gagal! Silahkan coba lagi...');
+                        redirect('koordinator/Anggota');
+                    }
                 } else {
-                    flashMessage('error', 'Aktivasi Calon Alumni gagal! Silahkan coba lagi...');
+                    flashMessage('error', 'Maaf, Terjadi kesalahan pada saat proses pembuatan akun alumni baru');
                     redirect('koordinator/Anggota');
                 }
             } else {
-                flashMessage('error', 'Maaf, Terjadi kesalahan pada saat proses pembuatan akun alumni baru');
+                flashMessage('error', 'Mohon pilih kolom keanggotaan !');
                 redirect('koordinator/Anggota');
             }
         } else {
-            flashMessage('error', 'Mohon pilih kolom keanggotaan !');
+            flashMessage('error', 'Maaf, username sudah dimiliki pengguna lain !');
             redirect('koordinator/Anggota');
         }
     }
