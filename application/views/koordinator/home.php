@@ -1,7 +1,7 @@
 <!-- START BREADCRUMB -->
 <ul class="breadcrumb">
-    <li><a href="#">Home</a></li>
-    <li class="active">Beranda</li>
+    <li class="active">Home</li>
+    <li><a href="<?= base_url('koordinator'); ?>">Beranda</a></li>
 </ul>
 <!-- END BREADCRUMB -->
 

@@ -1,6 +1,7 @@
 <!-- START BREADCRUMB -->
 <ul class="breadcrumb">
-    <li class="active"><a href="<?= base_url('admin/Pengaturan'); ?>">Pengaturan</a></li>
+    <li class="active">Home</li>
+    <li><a href="<?= base_url('admin/Pengaturan'); ?>">Pengaturan</a></li>
 </ul>
 <!-- END BREADCRUMB -->
 

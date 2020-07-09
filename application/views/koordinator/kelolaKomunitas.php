@@ -121,7 +121,7 @@
 
                     <!-- TAB 2 -->
                     <div class="tab-pane" id="tab-second">
-                        <h5>Tambah Calon Komunitas Baru IKASMA3BDG</h5>
+                        <p>Formulir Calon Komunitas Baru IKASMA3BDG</p>
 
                         <div class="form-group">
                             <form action="<?= base_url('koordinator/Komunitas/tambahCalonKomunitas'); ?>" class="form-horizontal" id="form-tambah-komunitas-validate" method="post" enctype="multipart/form-data">
@@ -202,13 +202,9 @@
                                 <div class="panel-footer">
                                     <label class="text-muted">Catatan : </label>
                                     <ol>
-                                        <li>Menambahkan Calon Komunitas baru dapat langsung terverifikasi sebagai
-                                            Komunitas aktif.</li>
-                                        <li>Permohonan Calon Komunitas baru harus diverifikasi terlebih dahulu agar
-                                            terdaftar sebagai
-                                            Komunitas aktif.</li>
-                                        <li>Setelah di verifikasi, maka Komunitas baru dapat ditampilkan di halaman
-                                            user</li>
+                                        <li>Calon komunitas baru harus terverifikasi terlebih dahulu agar terdaftar sebagai Komunitas aktif.</li>
+                                        <li>Kecuali komunitas ditambahkan oleh Admin dan Koordinator akan otomatis aktif</li>
+                                        <li>Setelah di verifikasi, maka Komunitas baru dapat ditampilkan di halaman user</li>
                                         <li>Logo harap disesuaikan dengan logo komunitas sebenarnya</li>
                                     </ol>
                                 </div>
