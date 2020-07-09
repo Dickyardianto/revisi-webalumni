@@ -251,7 +251,7 @@
                                         <li>Pastikan calon anggota baru telah memberikan bukti pembayaran terlebih dahulu.
                                         <li>Setelah formulir terisi akan ada sesi permintaan bukti pembayaran calon anggota baru.
                                         <li>Calon anggota baru harus diverifikasi terlebih dahulu agar terdaftar sebagai
-                                            anggota.</li>
+                                            anggota IKASMA3BDG.</li>
                                         <li>Setelah di verifikasi, maka akun anggota baru dapat digunakan.</li>
                                         <li>Akun secara default menggunakan nomor telepon untuk login kedalam website.</li>
                                     </ol>
@@ -336,7 +336,7 @@
                                     <label class="text-muted">Catatan : </label>
                                     <ol>
                                         <li>Calon alumni baru harus diverifikasi terlebih dahulu agar terdaftar sebagai
-                                            anggota.</li>
+                                            alumni IKASMA3BDG.</li>
                                         <li>Setelah di verifikasi, maka akun alumni baru dapat digunakan.</li>
                                         <li>Akun secara default menggunakan nomor telepon untuk login kedalam website.</li>
                                     </ol>

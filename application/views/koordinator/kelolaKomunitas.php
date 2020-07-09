@@ -202,7 +202,7 @@
                                 <div class="panel-footer">
                                     <label class="text-muted">Catatan : </label>
                                     <ol>
-                                        <li>Calon komunitas baru harus terverifikasi terlebih dahulu agar terdaftar sebagai Komunitas aktif.</li>
+                                        <li>Calon komunitas baru harus terverifikasi terlebih dahulu agar terdaftar sebagai Komunitas IKASMA3BDG.</li>
                                         <li>Kecuali komunitas ditambahkan oleh Admin dan Koordinator akan otomatis aktif</li>
                                         <li>Setelah di verifikasi, maka Komunitas baru dapat ditampilkan di halaman user</li>
                                         <li>Logo harap disesuaikan dengan logo komunitas sebenarnya</li>
