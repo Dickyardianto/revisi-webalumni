@@ -446,7 +446,7 @@
     <div class="mb-container">
         <div class="mb-middle">
             <div class="mb-title">
-                <span class="fa fa-check"></span> Terima <strong> Sebagai Keanggotaan</strong>
+                <span class="fa fa-check"></span> Terima <strong> Sebagai Alumni</strong>
             </div>
             <form action="<?= base_url('admin/Anggota/aktivasiCalonAlumni'); ?>" class="form-horizontal" method="post">
                 <div class="mb-content">
@@ -464,7 +464,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="col-md-3 control-label">Nama Anggota : </label>
+                            <label class="col-md-3 control-label">Nama Alumni : </label>
                             <div class="col-md-9">
                                 <label class="control-label" id="namaAnggotas"></label>
                             </div>
