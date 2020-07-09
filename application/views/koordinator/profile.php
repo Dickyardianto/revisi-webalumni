@@ -1,8 +1,10 @@
 <!-- START BREADCRUMB -->
 <ul class="breadcrumb">
-    <li class="active"><a href="<?= base_url('koordinator/Profile'); ?>">Profil</a></li>
+    <li class="active">Home</li>
+    <li><a href="<?= base_url('koordinator/Profile'); ?>">Profil</a></li>
 </ul>
 <!-- END BREADCRUMB -->
+
 <div class="page-title">
     <h2> Profil</h2>
 </div>

@@ -80,12 +80,11 @@
                         <span class="xn-text">Profil</span></a>
                 </li>
                 <li class="xn-openable">
-                    <a href="#"><span class="fa fa-users"></span> <span class="xn-text">Anggota</span></a>
+                    <a href="#"><span class="fa fa-users"></span> <span class="xn-text">Keanggotaan</span></a>
                     <ul>
-                        <li><a href="<?= base_url('koordinator/Anggota') ?>"><span class="fa fa-user"></span> Kelola
-                                Calon Anggota</a></li>
+                        <li><a href="<?= base_url('koordinator/Anggota') ?>"><span class="fa fa-user"></span> Kelola Calon Anggota</a></li>
                         <li><a href="<?= base_url('koordinator/Anggota/kelolaAnggota') ?>"><span class="fa fa-users"></span> Kelola Anggota </a></li>
-                        <li><a href="<?= base_url('koordinator/Anggota/kelolaPemulihanAnggota') ?>"><span class="fa fa-users"></span> Kelola Pemulihan Anggota</a></li>
+                        <li><a href="<?= base_url('koordinator/Anggota/kelolaPemulihanAnggota') ?>"><span class="fa fa-users"></span> Kelola Pemulihan Akun</a></li>
                         <!-- <li><a href="<?= base_url('koordinator/Anggota/dataMaster'); ?>"><span class="fa fa-plus"></span> Data Master</a></li> -->
                     </ul>
                 </li>

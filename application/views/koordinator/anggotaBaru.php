@@ -174,7 +174,7 @@
                     </div>
 
                     <div class="tab-pane" id="tab-second">
-                        <h5>Tambah Calon Anggota Baru IKASMA3BDG</h5>
+                        <p>Formulir Calon Anggota Baru IKASMA3BDG</p>
 
                         <div class="form-group">
                             <form action="<?= base_url('koordinator/Anggota/tambahCalonAnggota'); ?>" class="form-horizontal" id="form-tambah-anggota-validate" method="post" enctype="multipart/form-data">
@@ -225,6 +225,13 @@
                                     </div>
 
                                     <div class="form-group">
+                                        <label class="col-md-2 control-label">Jenis Keanggotaan</label>
+                                        <div class="col-md-1">
+                                            <input type="text" class="form-control" placeholder="Anggota" disabled />
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
                                         <label class="col-md-2 control-label">Foto</label>
                                         <div class="col-md-8">
                                             <input type="file" class="file" id="file-simple" name="fileSaya" required />
@@ -241,10 +248,12 @@
                                 <div class="panel-footer">
                                     <label class="text-muted">Catatan : </label>
                                     <ol>
-                                        <li>Calon Anggota Baru harus diverifikasi terlebih dahulu agar terdaftar sebagai
-                                            anggota.</li>
+                                        <li>Pastikan calon anggota baru telah memberikan bukti pembayaran terlebih dahulu.
+                                        <li>Setelah formulir terisi akan ada sesi permintaan bukti pembayaran calon anggota baru.
+                                        <li>Calon anggota baru harus diverifikasi terlebih dahulu agar terdaftar sebagai
+                                            anggota IKASMA3BDG.</li>
                                         <li>Setelah di verifikasi, maka akun anggota baru dapat digunakan.</li>
-                                        <li>Akun secara default menggunakan nomor telepon untuk masuk.</li>
+                                        <li>Akun secara default menggunakan nomor telepon untuk login kedalam website.</li>
                                     </ol>
                                 </div>
                             </form>
@@ -252,7 +261,7 @@
                     </div>
 
                     <div class="tab-pane" id="tab-end-second">
-                        <h5>Tambah Calon Alumni Baru IKASMA3BDG</h5>
+                        <p>Formulir Calon Alumni Baru IKASMA3BDG</p>
 
                         <div class="form-group">
                             <form action="<?= base_url('koordinator/Anggota/tambahCalonAlumni'); ?>" class="form-horizontal" id="form-tambah-anggota-validate" method="post" enctype="multipart/form-data">
@@ -301,6 +310,13 @@
                                             <input type="email" class="form-control form-email " name="email" id="email" placeholder="Email" required />
                                         </div>
                                     </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">Jenis Keanggotaan</label>
+                                        <div class="col-md-1">
+                                            <input type="text" class="form-control" placeholder="Alumni" disabled />
+                                        </div>
+                                    </div>
 
                                     <div class="form-group">
                                         <label class="col-md-2 control-label">Foto</label>
@@ -319,10 +335,10 @@
                                 <div class="panel-footer">
                                     <label class="text-muted">Catatan : </label>
                                     <ol>
-                                        <li>Calon Anggota Baru harus diverifikasi terlebih dahulu agar terdaftar sebagai
-                                            anggota.</li>
-                                        <li>Setelah di verifikasi, maka akun anggota baru dapat digunakan.</li>
-                                        <li>Akun secara default menggunakan nomor telepon untuk masuk.</li>
+                                        <li>Calon alumni baru harus diverifikasi terlebih dahulu agar terdaftar sebagai
+                                            alumni IKASMA3BDG.</li>
+                                        <li>Setelah di verifikasi, maka akun alumni baru dapat digunakan.</li>
+                                        <li>Akun secara default menggunakan nomor telepon untuk login kedalam website.</li>
                                     </ol>
                                 </div>
                             </form>
