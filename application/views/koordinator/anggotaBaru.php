@@ -411,19 +411,16 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group hidden">
                             <label class="col-md-3 control-label">Keanggotaan : </label>
                             <div class="col-md-3">
-                                <select name="role" id="role" class="select form-control validate[required]">
-                                    <option value="">-- Pilih --</option>
-                                    <?php foreach ($daftarHakAkses as $hakAkses) : ?>
-                                        <option value="<?= $hakAkses->id; ?>"><?= $hakAkses->role; ?></option>
-                                    <?php endforeach; ?>
+                                <select name="role" id="roles" class="select form-control validate[required]">
+                                    <option value="4">Alumni</option>
                                 </select>
                             </div>
                         </div>
-
                     </div>
+                    
                 </div>
                 <div class="mb-footer">
                     <div class="pull-right">

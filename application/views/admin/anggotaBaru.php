@@ -498,7 +498,6 @@
                             <label class="col-md-3 control-label">Keanggotaan : </label>
                             <div class="col-md-3">
                                 <select name="role" id="roles" class="select form-control validate[required]">
-                                    <!-- <option value="">-- Pilih --</option> -->
                                     <option value="4">Alumni</option>
                                 </select>
                             </div>
