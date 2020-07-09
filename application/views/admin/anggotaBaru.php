@@ -57,14 +57,18 @@
                                                     <?php if ($CA->nama_foto == null) { ?>
                                                         <td><img src="<?= base_url('uploads/no-image.jpg'); ?>" alt="<?= $CA->nama_lengkap; ?>" title="<?= $CA->nama_lengkap; ?>" width="80" /></td>
                                                     <?php } else { ?>
-                                                        <td><img src="<?= base_url('uploads/avatars/' . $CA->nama_foto); ?>" alt="<?= $CA->nama_lengkap; ?>" title="<?= $CA->nama_lengkap; ?>" width="80" height="100" />
+                                                        <td><img src="<?= base_url('uploads/avatars/' . $CA->nama_foto); ?>" alt="<?= $CA->nama_lengkap; ?>" title="<?= $CA->nama_lengkap; ?>" width="80" />
                                                         </td>
                                                     <?php } ?>
 
+                                                    <?php if ($CA->gambar_bukti_bayar == null) { ?>
+                                                        <td><img src="<?= base_url('uploads/no-image.jpg'); ?>" alt="" title="Lihat Bukti Bayar" width="80" /></td>
+                                                    <?php } else { ?>
+                                                        <td>
+                                                            <a class="btn-lihat-foto" href="" data-toggle="modal" data-target="#message-box-lihat-foto-bayar" id="<?= $CA->id_anggota; ?>"><img src="<?= base_url('uploads/avatars/' . $CA->gambar_bukti_bayar); ?>" alt="" width="80" title="Lihat Bukti Bayar"></a>
+                                                        </td>
+                                                    <?php } ?>
 
-                                                    <td>
-                                                        <a class="btn-lihat-foto" href="" data-toggle="modal" data-target="#message-box-lihat-foto-bayar" id="<?= $CA->id_anggota; ?>"><img src="<?= base_url('uploads/avatars/' . $CA->gambar_bukti_bayar); ?>" alt="" width="80" height="100" title="Lihat Bukti Bayar"></a>
-                                                    </td>
 
                                                     <td><strong><?= $CA->nama_lengkap; ?></strong></td>
 
@@ -131,7 +135,7 @@
                                                     <?php if ($CA->nama_foto == null) { ?>
                                                         <td><img src="<?= base_url('uploads/no-image.jpg'); ?>" alt="<?= $CA->nama_lengkap; ?>" title="<?= $CA->nama_lengkap; ?>" width="80" /></td>
                                                     <?php } else { ?>
-                                                        <td><img src="<?= base_url('uploads/avatars/' . $CA->nama_foto); ?>" alt="<?= $CA->nama_lengkap; ?>" title="<?= $CA->nama_lengkap; ?>" width="80" height="100" />
+                                                        <td><img src="<?= base_url('uploads/avatars/' . $CA->nama_foto); ?>" alt="<?= $CA->nama_lengkap; ?>" title="<?= $CA->nama_lengkap; ?>" width="80" />
                                                         </td>
                                                     <?php } ?>
 
@@ -447,8 +451,8 @@
             <form action="<?= base_url('admin/Anggota/aktivasiCalonAlumni'); ?>" class="form-horizontal" method="post">
                 <div class="mb-content">
                     <div class="panel-body">
-                        <p>Apakah benar bahwa Akun Calon Alumni di bawah ini akan di aktifkan 
-                        dan merupakan Alumni SMA 3 Bandung dengan identitas sebagai berikut: </p><br>
+                        <p>Apakah benar bahwa Akun Calon Alumni di bawah ini akan di aktifkan
+                            dan merupakan Alumni SMA 3 Bandung dengan identitas sebagai berikut: </p><br>
 
                         <div class="form-group hidden">
                             <div class="col-md-12">
