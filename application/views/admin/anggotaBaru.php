@@ -447,8 +447,8 @@
             <form action="<?= base_url('admin/Anggota/aktivasiCalonAlumni'); ?>" class="form-horizontal" method="post">
                 <div class="mb-content">
                     <div class="panel-body">
-                        <p>Apakah benar bahwa Calon Anggota di bawah ini akan di aktifkan sebagai Keanggotaan IKASMA3BDG
-                            dan merupakan Alumni SMA 3 Bandung dengan identitas sebagai berikut: </p><br>
+                        <p>Apakah benar bahwa Akun Calon Alumni di bawah ini akan di aktifkan 
+                        dan merupakan Alumni SMA 3 Bandung dengan identitas sebagai berikut: </p><br>
 
                         <div class="form-group hidden">
                             <div class="col-md-12">
@@ -516,7 +516,7 @@
     </div>
 
 </div>
-<!-- END MESSAGE BOX ACCEPT CALON ANGGOTA -->
+<!-- END MESSAGE BOX ACCEPT CALON ALUMNI -->
 
 <!-- MESSAGE BOX REJECT CALON ANGGOTA -->
 <div class="message-box message-box-danger animated zoomIn" data-sound="alert" id="message-box-tolak">

@@ -158,7 +158,7 @@
                                                     <?php } ?>
 
                                                     <td>
-                                                        <button type="button" class="btn btn-primary mb-control btn-terima" data-box="#message-box-terima" id="<?= $CA->id_anggota; ?>">Terima</button>
+                                                        <button type="button" class="btn btn-primary mb-control btn-terima-alumni" data-box="#message-box-terima-alumni" id="<?= $CA->id_anggota; ?>">Terima</button>
                                                         <button type="button" class="btn btn-danger mb-control btn-tolak" data-box="#message-box-tolak" id="<?= $CA->id_anggota; ?>">Tolak</button>
                                                     </td>
                                                 </tr>
@@ -435,6 +435,89 @@
 </div>
 <!-- END MESSAGE BOX ACCEPT CALON ANGGOTA -->
 
+<!-- MESSAGE BOX ACCEPT CALON ALUMNI -->
+<div class="message-box animated zoomIn" data-sound="alert" id="message-box-terima-alumni" style="margin-top: -100px;">
+
+    <div class="mb-container">
+        <div class="mb-middle">
+            <div class="mb-title">
+                <span class="fa fa-check"></span> Terima <strong> Sebagai Keanggotaan</strong>
+            </div>
+            <form action="<?= base_url('koordinator/Anggota/aktivasiCalonAlumni'); ?>" class="form-horizontal" method="post">
+                <div class="mb-content">
+                    <div class="panel-body">
+                        <p>Apakah benar bahwa Akun Calon Alumni di bawah ini akan di aktifkan 
+                        dan merupakan Alumni SMA 3 Bandung dengan identitas sebagai berikut: </p><br>
+
+                        <div class="form-group hidden">
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" name="idAnggota" id="idAnggotas" />
+                                <input type="text" class="form-control" name="username" id="userNames">
+                                <input type="password" class="form-control" name="password" id="passWords">
+                                <input type="email" class="form-control" name="emailAnggotaBaru" id="emailAnggotaBarus">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Nama Anggota : </label>
+                            <div class="col-md-9">
+                                <label class="control-label" id="namaAnggotas"></label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Angkatan : </label>
+                            <div class="col-md-9">
+                                <label class="control-label" id="angkatanAnggotas"></label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Email : </label>
+                            <div class="col-md-9">
+                                <label class="control-label" id="emailAnggotas"></label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Username : </label>
+                            <div class="col-md-9">
+                                <label class="control-label" id="usernameAnggotas"></label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Password : </label>
+                            <div class="col-md-9">
+                                <label class="control-label" id="passwordAnggotas">12345678 (default)</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group hidden">
+                            <label class="col-md-3 control-label">Keanggotaan : </label>
+                            <div class="col-md-3">
+                                <select name="role" id="roles" class="select form-control validate[required]">
+                                    <option value="4">Alumni</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="mb-footer">
+                    <div class="pull-right">
+                        <button type="submit" class="btn btn-info btn-lg mb-control-yes">Terima</button>
+                        <button class="btn btn-default btn-lg mb-control-close">Batal</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+<!-- END MESSAGE BOX ACCEPT CALON ALUMNI -->
+
+
 <!-- MESSAGE BOX REJECT CALON ANGGOTA -->
 <div class="message-box message-box-danger animated zoomIn" data-sound="alert" id="message-box-tolak">
 
@@ -500,7 +583,7 @@
 <div class="modal animated zoomIn" id="message-box-lihat-foto-bayar" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="<?= base_url('admin/anggota/setUpdateFoto'); ?>" class="form-horizontal" id="ubah-foto-anggota-validate" method="post" enctype="multipart/form-data">
+            <form action="<?= base_url('koordinator/anggota/setUpdateFoto'); ?>" class="form-horizontal" id="ubah-foto-anggota-validate" method="post" enctype="multipart/form-data">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                     <h4 class="modal-title" id="defModalHead">Lihat Bukti Bayar</h4>
@@ -595,6 +678,63 @@
 
             });
     });
+
+    $(".btn-terima-alumni").click(function() {
+        console.log(this.id);
+        var idAnggota = this.id;
+
+        $.post("<?= base_url('koordinator/Anggota/anggotaJSON/'); ?>", {
+                id: idAnggota
+            },
+            function(data) {
+                var data_obj = JSON.parse(data);
+
+                var email = data_obj.anggota[0].email;
+                var angkatan = data_obj.anggota[0].angkatan;
+                var noTelp = data_obj.anggota[0].no_telp;
+                var namaPanggilan = data_obj.anggota[0].nama_panggilan_alias;
+                var nik = data_obj.anggota[0].NIK;
+                var namaLengkap = data_obj.anggota[0].nama_lengkap;
+
+                document.getElementById('idAnggotas').value = data_obj.anggota[0].id_anggota;
+                document.getElementById('namaAnggotas').innerHTML = namaLengkap;
+
+                document.getElementById('angkatanAnggotas').innerHTML = data_obj.anggota[0].angkatan;
+                document.getElementById('emailAnggotas').innerHTML = email.toLowerCase();
+                document.getElementById('emailAnggotaBarus').value = email;
+
+                if (noTelp != null) {
+                    document.getElementById('usernameAnggotas').innerHTML = noTelp +
+                        " (Default Username & Password sesuai yang tertera)";
+                    document.getElementById('userNames').value = noTelp;
+                    document.getElementById('passWords').value = 12345678;
+                } else if (email != null) {
+                    document.getElementById('usernameAnggotas').innerHTML = email.toLowerCase() +
+                        " (Default Username & Password sesuai yang tertera)";
+                    document.getElementById('userNames').value = email.toLowerCase();
+                    document.getElementById('passWords').value = 12345678;
+                } else if (nik != null) {
+                    document.getElementById('usernameAnggotas').innerHTML = nik +
+                        " (Default Username & Password sesuai yang tertera)";
+                    document.getElementById('userNames').value = nik;
+                    document.getElementById('passWords').value = 12345678;
+                } else if (namaPanggilan != null) {
+                    document.getElementById('usernameAnggotas').innerHTML = namaPanggilan.toLowerCase() +
+                        " (Default Username & Password sesuai yang tertera)";
+                    document.getElementById('userNames').value = namaPanggilan.toLowerCase();
+                    document.getElementById('passWords').value = 12345678;
+                } else if (namaLengkap != null) {
+                    document.getElementById('usernameAnggotas').innerHTML = namaLengkap.split(' ').join('')
+                        .toLowerCase() +
+                        " (Default Username & Password sesuai yang tertera)";
+                    document.getElementById('userNames').value = namaLengkap.split(' ').join('')
+                        .toLowerCase();
+                    document.getElementById('passWords').value = 12345678;
+                }
+
+            });
+    });
+
 
     $(".btn-tolak").click(function() {
         console.log(this.id);

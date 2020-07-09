@@ -266,6 +266,48 @@ class Anggota extends MY_Controller
         }
     }
 
+    function aktivasiCalonAlumni()
+    {
+        $this->load->model('M_user');
+
+        $pass = $this->input->post('password');
+        $idAnggota = $this->input->post('idAnggota');
+
+        $user['username'] = $this->input->post('username');
+        $user['password'] = md5($pass);
+        $user['status_akun'] = '1';
+        $user['role'] = $this->input->post('role');
+
+        if ($user['role'] != "") {
+
+            $sukses = $this->M_user->insertUser($user);
+
+            if ($sukses != 0) {
+
+                $anggota['user_id'] = $sukses;
+                $anggota['status_anggota'] = '1';
+
+                $updateAnggota = $this->M_anggota->updateAnggota($anggota, $idAnggota);
+
+                $this->sendEmailKeanggotaan();
+
+                if ($updateAnggota) {
+                    flashMessage('success', 'Calon Alumni berhasil di aktifkan dan dapat masuk menggunakan Username & Password sesuai yang tertera pada saat Aktivasi');
+                    redirect('koordinator/Anggota');
+                } else {
+                    flashMessage('error', 'Aktivasi Calon Alumni gagal! Silahkan coba lagi...');
+                    redirect('koordinator/Anggota');
+                }
+            } else {
+                flashMessage('error', 'Maaf, Terjadi kesalahan pada saat proses pembuatan akun alumni baru');
+                redirect('koordinator/Anggota');
+            }
+        } else {
+            flashMessage('error', 'Mohon pilih kolom keanggotaan !');
+            redirect('koordinator/Anggota');
+        }
+    }
+
     public function setUpdateAnggota()
     {
         $this->load->model('M_user');
