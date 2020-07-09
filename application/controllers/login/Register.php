@@ -171,4 +171,34 @@ class Register extends MY_Controller
 			redirect('admin/Anggota', $anggota);
 		}
 	}
+
+	public function createBayarInAnggotaLogin()
+	{
+		$idUser = $this->input->post('idUser');
+
+		$filename = htmlspecialchars("bukti-bayar" . "-" . time());
+		//set preferences
+		$config['upload_path'] = './uploads/avatars';
+		$config['allowed_types'] = 'png|jpg|jpeg';
+		$config['file_name'] = $filename;
+
+		//load upload class library
+		$this->load->library('upload', $config);
+
+		if (!$this->upload->do_upload('fileSaya')) {
+			// case - failure
+			flashMessage('error', 'Maaf, Registrasi anggota SMAIKA3BDG gagal! Silahkan coba lagi.');
+			redirect('anggota');
+		} else {
+			// case - success
+			$upload_data = $this->upload->data();
+
+			$anggota['gambar_bukti_bayar'] = $upload_data['file_name'];
+			$anggota['id_user'] = $idUser;
+
+			$this->LoginModel->saveBayarAnggota($anggota);
+			flashMessage('success', 'Registrasi anggota SMAIKA3BDG berhasil! Silahkan tunggu verifikasi dari pihak admin sebagai pengelola.');
+			redirect('anggota/Anggota/kelolaAnggota', $anggota);
+		}
+	}
 }

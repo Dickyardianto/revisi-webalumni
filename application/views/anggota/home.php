@@ -753,7 +753,7 @@
                     </div>
 
                     <?php if ($info[0]->support == 1) : ?>
-                        <div class="form-group">
+                        <div class="form-group hidden">
                             <div class="col-md-9">
                                 <label class="check"><input type="checkbox" class="icheckbox" value="1" checked="checked" id="keanggotaan1" name="support" /> Support</label>
                             </div>
@@ -776,15 +776,15 @@
 
                     <div class="form-group">
                         <?php if ($info[0]->loyalist == 1) : ?>
-                            <div class="col-md-5">
+                            <div class="col-md-12">
                                 <label class="check"><input type="checkbox" class="icheckbox" checked="checked" value="1" id="keanggotaan2" name="loyalist" /> Loyalist</label>
                             </div>
                         <?php else : ?>
-                            <div class="col-md-5">
+                            <div class="col-md-12">
                                 <label class="check"><input type="checkbox" value="1" class="icheckbox" id="keanggotaan2" name="loyalist" /> Loyalist</label>
                             </div>
                         <?php endif; ?>
-                        <div class="col-md-9">
+                        <div class="col-md-5">
                             <p>Iuran sukarela sebesar : </p>
                             <input type="number" class="form-control" id="iuranSukarelaModal" name="iuranSukarela" />
                         </div>

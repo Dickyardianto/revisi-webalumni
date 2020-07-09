@@ -87,13 +87,14 @@ class Anggota extends MY_Controller
             $data['email'] = $email;
             $data['nama_foto'] = $upload_data['file_name'];
             $data['status_anggota'] = '0';
+            $data['role_id'] = 3;
 
             // echo json_encode($data);
             $sukses = $this->M_anggota->insertNewAnggota($data);
 
             if (!$sukses) {
-                flashMessage('success', 'Calon Anggota Baru berhasil di daftarkan. Silahkan verifikasi di Permohonan Calon Anggota');
-                redirect('anggota/Anggota/kelolaAnggota');
+                flashMessage('success', 'Calon Anggota Baru berhasil di daftarkan. Silahkan untuk melakukan pembayaran pada daftar di bawah ini.');
+                redirect('login/NotifRegisterForAnggota/notifForAnggota');
             } else {
                 flashMessage('error', 'Calon Anggota Baru gagal di daftarkan! Silahkan coba lagi');
                 redirect('anggota/Anggota/kelolaAnggota');

@@ -28,4 +28,12 @@ class NotifRegisterForAnggota extends MY_Controller
         $data['id_user'] = $this->LoginModel->getIdAnggota();
         $this->admin_render('admin/anggotaBayar', $data);
     }
+
+    function notifForAnggota()
+    {
+        $data['title'] = 'Menu Pembayaran';
+        $data['info'] = $this->M_anggota->findAnggota('*', array('tb_anggota.user_id' => $this->session->userdata('uid')));
+        $data['id_user'] = $this->LoginModel->getIdAnggota();
+        $this->anggota_render('anggota/anggotaBayar', $data);
+    }
 }

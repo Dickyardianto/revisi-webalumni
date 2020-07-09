@@ -86,6 +86,16 @@
                 </li>
 
                 <li class="xn-openable">
+                    <a href="#"><span class="fa fa-user"></span> <span class="xn-text">Alumni</span></a>
+                    <ul>
+                        <li><a href="<?= base_url('anggota/Anggota') ?>"><span class="fa fa-user"></span> Lihat
+                                Alumni</a></li>
+                        <li><a href="<?= base_url('anggota/Anggota/KelolaAnggota') ?>"><span class="fa fa-plus"></span>
+                                Tambah Alumni </a></li>
+                    </ul>
+                </li>
+
+                <li class="xn-openable">
                     <a href="#"><span class="fa fa-envelope-o"></span> <span class="xn-text">Berita</span></a>
                     <ul>
                         <li><a href="<?= base_url('anggota/Berita'); ?>"><span class="fa fa-align-left"></span> <span class="xn-text">Kelola Berita</span></a></li>

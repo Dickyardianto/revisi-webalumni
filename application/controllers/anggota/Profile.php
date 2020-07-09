@@ -105,7 +105,7 @@ class Profile extends MY_Controller
 
         $sukses = $this->M_anggota->updateAnggota($anggota, $idAnggota);
 
-        if (!$sukses) {
+        if ($sukses) {
             flashMessage('success', 'Data diri Anda berhasil diperbarui');
             redirect('anggota/Home');
         } else {
@@ -125,7 +125,7 @@ class Profile extends MY_Controller
 
         $sukses = $this->M_anggota->updateAnggota($data, $idAnggota);
 
-        if (!$sukses) {
+        if ($sukses) {
             flashMessage('success', 'Domisili Anda berhasil diperbarui');
             redirect('anggota/Home');
         } else {
@@ -146,7 +146,7 @@ class Profile extends MY_Controller
 
         $sukses = $this->M_anggota->updateAnggota($data, $idAnggota);
 
-        if (!$sukses) {
+        if ($sukses) {
             flashMessage('success', 'Profesi Anda berhasil diperbarui');
             redirect('anggota/Home');
         } else {
@@ -167,7 +167,7 @@ class Profile extends MY_Controller
 
         $sukses = $this->M_anggota->updateAnggota($data, $idAnggota);
 
-        if (!$sukses) {
+        if ($sukses) {
             flashMessage('success', 'Info program berhasil diperbarui');
             redirect('anggota/Home');
         } else {
@@ -186,7 +186,7 @@ class Profile extends MY_Controller
 
         $sukses = $this->M_anggota->updateAnggota($data, $idAnggota);
 
-        if (!$sukses) {
+        if ($sukses) {
             flashMessage('success', 'Keanggotaan Anda berhasil diperbarui');
             redirect('anggota/Home');
         } else {

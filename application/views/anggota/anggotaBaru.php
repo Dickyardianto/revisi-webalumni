@@ -86,7 +86,8 @@
                             <div class="panel-footer">
                                 <label class="text-muted">Catatan : </label>
                                 <ol>
-                                    <li>Anggota yang baru ditambahkan akan diverifikasi terlebih dahulu oleh admin agar terdaftar sebagai
+                                    <li>Anggota yang baru ditambahkan harap melakukan pembayaran pada tahap selanjutnya</li>
+                                    <li> Jika sudah melakukan pembayaran, maka tunggu akun diverifikasi terlebih dahulu oleh admin agar terdaftar sebagai
                                         anggota.</li>
                                     <li>Setelah di verifikasi, maka akun anggota dapat digunakan.</li>
                                 </ol>
