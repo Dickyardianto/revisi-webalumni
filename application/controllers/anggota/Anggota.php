@@ -55,6 +55,17 @@ class Anggota extends MY_Controller
         $this->anggota_render('anggota/anggotaBaru', $data);
     }
 
+    function lihatAlumni()
+    {
+        $data['title'] = 'Lihat Alumni';
+        $data['info'] = $this->M_anggota->findAnggota('*', array('tb_anggota.user_id = ' => $this->session->userdata('uid')));
+
+        $where = $this->session->userdata('uid');
+        $data['alumni'] = $this->M_anggota->findAnggotaByRoleAlumni($where);
+
+        $this->anggota_render('anggota/lihatAlumni', $data);
+    }
+
     public function tambahCalonAnggota()
     {
         $namaLengkap = $this->input->post('namaLengkap');
@@ -113,6 +124,17 @@ class Anggota extends MY_Controller
         }
     }
 
+    function detailAlumni($id)
+    {
+        $data['title'] = 'Detail Alumni';
+        $data['info'] = $this->M_anggota->findAnggota('*', array('tb_anggota.user_id = ' => $this->session->userdata('uid')));
+        $data['anggota'] = $this->M_anggota->findAnggota('*', array('tb_anggota.id_anggota = ' => $id));
+
+        if ($this->session->userdata('role') == 3) {
+            $this->anggota_render('anggota/detailAlumni', $data);
+        }
+    }
+
     function cariAnggota()
     {
         $data['title'] = 'Kelola Anggota';
@@ -135,5 +157,19 @@ class Anggota extends MY_Controller
         // echo json_encode($data);
         // echo '<br>';
         // echo json_encode($nama);
+    }
+
+    function cariAlumni()
+    {
+        $data['title'] = 'Cari Alumni';
+
+        $nama = $this->input->post('namaAnggota');
+        $where = $this->session->userdata('uid');
+
+        // $where = "tb_anggota.status_anggota != 0";
+        $data['alumni'] = $this->M_anggota->findAnggotaLikeNamaByRoleAlumni($nama, $where);
+        $data['info'] = $this->M_anggota->findAnggota('*', array('tb_anggota.user_id = ' => $this->session->userdata('uid')));
+
+        $this->anggota_render('anggota/lihatAlumni', $data);
     }
 }

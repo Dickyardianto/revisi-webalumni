@@ -88,9 +88,9 @@
                 <li class="xn-openable">
                     <a href="#"><span class="fa fa-user"></span> <span class="xn-text">Alumni</span></a>
                     <ul>
-                        <li><a href="<?= base_url('anggota/Anggota') ?>"><span class="fa fa-user"></span> Lihat
+                        <li><a href="<?= base_url('anggota/Anggota/lihatAlumni') ?>"><span class="fa fa-user"></span> Lihat
                                 Alumni</a></li>
-                        <li><a href="<?= base_url('anggota/Anggota/KelolaAnggota') ?>"><span class="fa fa-plus"></span>
+                        <li><a href="<?= base_url('anggota/Anggota/KelolaAlumni') ?>"><span class="fa fa-plus"></span>
                                 Tambah Alumni </a></li>
                     </ul>
                 </li>
