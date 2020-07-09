@@ -113,7 +113,7 @@
             <div class="mb-title">
                 <span class="fa fa-times"></span> Pembatalan <strong>Berita</strong>
             </div>
-            <form action="<?= base_url('alumni/Berita/hapusBerita'); ?>" class="form-horizontal" method="post">
+            <form action="<?= base_url('alumni/Berita/hapusBeritaNon'); ?>" class="form-horizontal" method="post">
                 <div class="mb-content">
                     <div class="panel-body">
                         <p>Anda yakin akan membatalkan ajuan berita dengan detail sebagai berikut :</p>

@@ -76,11 +76,11 @@
                 </li>
 
                 <li class="xn-openable">
-                    <a href="#"><span class="fa fa-user"></span> <span class="xn-text">Keanggotaan</span></a>
+                    <a href="#"><span class="fa fa-user"></span> <span class="xn-text">Alumni</span></a>
                     <ul>
                         <li><a href="<?= base_url('alumni/Anggota') ?>"><span class="fa fa-user"></span> Lihat
                                 Alumni</a></li>
-                        <li><a href="<?= base_url('alumni/Anggota/KelolaAnggota') ?>"><span class="fa fa-plus"></span>Tambah Anggota </a></li>
+                        <li><a href="<?= base_url('alumni/Anggota/KelolaAnggota') ?>"><span class="fa fa-plus"></span>Tambah Alumni</a></li>
                     </ul>
                 </li>
 

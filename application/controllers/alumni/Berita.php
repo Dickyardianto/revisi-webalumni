@@ -275,6 +275,30 @@ class Berita extends MY_Controller
             redirect('alumni/Berita');
         }
     }
+
+    public function hapusBeritaNon()
+    {
+        $this->load->model('M_berita');
+
+        $id = $this->input->post('idBeritaHapus');
+
+        // mengambil nama file foto dari database
+        $data = $this->M_berita->findBerita('foto', array('tb_berita.id_berita = ' => $id));
+
+        // menghapus berita di database
+        $deleteBerita = $this->M_berita->deleteBerita($id);
+
+        // menghapus file foto berita
+        unlink(FCPATH . 'uploads/content/berita/' . $data[0]->foto);
+
+        if (!$deleteBerita) {
+            flashMessage('success', 'Berita berhasil dihapus');
+            redirect('alumni/Berita/beritaNonaktif');
+        } else {
+            flashMessage('error', 'Berita gagal dihapus! Silahkan coba lagi');
+            redirect('alumni/Berita/beritaNonaktif');
+        }
+    }
     // ==================================================
     // --------------------- DELETE ---------------------
     // ==================================================

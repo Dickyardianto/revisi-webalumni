@@ -1,27 +1,22 @@
 <!-- START BREADCRUMB -->
 <ul class="breadcrumb">
-    <li>Keanggotaan</li>
-    <li class="active"><a href="<?= base_url('alumni/Anggota/KelolaAnggota'); ?>">Tambah Anggota</a></li>
+    <li> <a href="<?= base_url('alumni/Anggota') ?>">Alumni</a></li>
+    <li class="active">Tambah Alumni</a></li>
 </ul>
 <!-- END BREADCRUMB -->
 
 <div class="page-title">
-    <h2> Tambah Anggota</h2>
+    <h2> Tambah Alumni</h2>
 </div>
 
 <?= showFlashMessage(); ?>
-
 <div class="page-content-wrap">
-
     <div class="row">
         <div class="col-md-12">
-
             <div class="panel panel-default">
-
-
                 <div class="panel-body">
                     <div class="tab-pane active" id="tab-first">
-                        <p>Daftar Permohonan Calon Anggota IKASMA3BDG.</p>
+                        <p>Daftar Permohonan Calon Alumni IKASMA3BDG.</p>
 
                         <div class="form-group">
                             <form action="<?= base_url('alumni/Anggota/tambahCalonAnggota'); ?>" class="form-horizontal" id="form-tambah-anggota-validate" method="post" enctype="multipart/form-data">
@@ -88,9 +83,9 @@
                                 <div class="panel-footer">
                                     <label class="text-muted">Catatan : </label>
                                     <ol>
-                                        <li>Calon Anggota Baru harus diverifikasi terlebih dahulu agar terdaftar sebagai
-                                            anggota.</li>
-                                        <li>Setelah di verifikasi, maka akun anggota baru dapat digunakan.</li>
+                                        <li>Calon Alumni harus diverifikasi terlebih dahulu agar terdaftar sebagai
+                                            alumni aktif.</li>
+                                        <li>Setelah di verifikasi, maka akun alumni baru dapat digunakan.</li>
                                         <li>Akun secara default menggunakan nomor telepon untuk masuk.</li>
                                     </ol>
                                 </div>
