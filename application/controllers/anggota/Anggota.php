@@ -55,6 +55,21 @@ class Anggota extends MY_Controller
         $this->anggota_render('anggota/anggotaBaru', $data);
     }
 
+    public function kelolaAlumni()
+    {
+        $data['title'] = 'Tambah Alumni';
+        $data['info'] = $this->M_anggota->findAnggota('*', array('tb_anggota.user_id = ' => $this->session->userdata('uid')));
+        $angkatan = $data['info'][0]->angkatan;
+
+        $where = array(
+            'tb_anggota.angkatan' => $angkatan,
+            'tb_anggota.status_anggota = ' => '1',
+            'tb_anggota.user_id != ' => $this->session->userdata('uid')
+        );
+        $data['anggota'] = $this->M_anggota->findAnggota('*', $where);
+        $this->anggota_render('anggota/kelolaAlumni', $data);
+    }
+
     function lihatAlumni()
     {
         $data['title'] = 'Lihat Alumni';
@@ -109,6 +124,53 @@ class Anggota extends MY_Controller
             } else {
                 flashMessage('error', 'Calon Anggota Baru gagal di daftarkan! Silahkan coba lagi');
                 redirect('anggota/Anggota/kelolaAnggota');
+            }
+        }
+    }
+
+    public function tambahCalonAlumni()
+    {
+        $namaLengkap = $this->input->post('namaLengkap');
+        $namaPanggilan = $this->input->post('namaPanggilanAlias');
+        $angkatan = $this->input->post('angkatan');
+        $noTelepon = $this->input->post('noTelepon');
+        $email = $this->input->post('email');
+
+        $filename = "anggota-" . $namaLengkap . "-" . time();
+
+        // Set preferences
+        $config['upload_path'] = './uploads/avatars';
+        $config['allowed_types'] = 'png|jpg|jpeg';
+        $config['file_name'] = $filename;
+
+        //load upload class library
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload('fileSaya')) {
+            flashMessage('error', 'Maaf, Upload gambar calon anggota gagal! Silahkan coba lagi');
+            redirect('anggota/Anggota/kelolaAlumni');
+        } else {
+            $upload_data = $this->upload->data();
+
+            $data['nama_lengkap'] = $namaLengkap;
+            $data['nama_panggilan_alias'] = $namaPanggilan;
+            $data['tanggal_lahir'] = $this->input->post('tglLahir');
+            $data['angkatan'] = $angkatan;
+            $data['no_telp'] = $noTelepon;
+            $data['email'] = $email;
+            $data['nama_foto'] = $upload_data['file_name'];
+            $data['status_anggota'] = '0';
+            $data['role_id'] = 4;
+
+            // echo json_encode($data);
+            $sukses = $this->M_anggota->insertNewAnggota($data);
+
+            if (!$sukses) {
+                flashMessage('success', 'Calon alumni berhasil di daftarkan. Silahkan untuk menunggu verifikasi dari pihak admin.');
+                redirect('anggota/Anggota/kelolaAlumni');
+            } else {
+                flashMessage('error', 'Calon alumni gagal di daftarkan! Silahkan coba lagi');
+                redirect('anggota/Anggota/kelolaAlumni');
             }
         }
     }

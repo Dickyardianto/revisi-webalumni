@@ -300,14 +300,14 @@ class Anggota extends MY_Controller
                 $this->sendEmailKeanggotaan();
 
                 if ($updateAnggota) {
-                    flashMessage('success', 'Calon Anggota berhasil di aktifkan dan dapat masuk menggunakan Username & Password sesuai yang tertera pada saat Aktivasi');
+                    flashMessage('success', 'Calon Alumni berhasil di aktifkan dan dapat masuk menggunakan Username & Password sesuai yang tertera pada saat Aktivasi');
                     redirect('admin/Anggota');
                 } else {
-                    flashMessage('error', 'Aktivasi Calon Anggota gagal! Silahkan coba lagi...');
+                    flashMessage('error', 'Aktivasi Calon Alumni gagal! Silahkan coba lagi...');
                     redirect('admin/Anggota');
                 }
             } else {
-                flashMessage('error', 'Maaf, Terjadi kesalahan pada saat proses pembuatan akun anggota baru');
+                flashMessage('error', 'Maaf, Terjadi kesalahan pada saat proses pembuatan akun alumni baru');
                 redirect('admin/Anggota');
             }
         } else {
