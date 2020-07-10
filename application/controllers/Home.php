@@ -93,4 +93,11 @@ class Home extends MY_Controller
 
         echo json_encode($data);
     }
+
+    function linkDownload()
+    {
+        $data['title'] = 'Link Download Berkas IKASMABDG';
+
+        $this->load->view('frontend/linkDownload', $data);
+    }
 }
