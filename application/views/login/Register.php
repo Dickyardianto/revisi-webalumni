@@ -1,8 +1,8 @@
 <div class="login-container">
 
     <div class="login-box animated fadeInDown">
-        <div class="login-logo"></div>
-        <div class="login-body">
+        <!-- <div class="login-logo"></div> -->
+        <div class="login-body" style="margin-top: 80px;">
             <strong><?= showFlashMessage(); ?></strong>
 
             <div class="login-title"><strong>Selamat Datang</strong>, Mohon isi formulir dibawah ini untuk mendaftar
@@ -10,7 +10,7 @@
             <form action="<?= base_url('login/Register/createRegisterAnggota'); ?>" class="form-horizontal" method="post" id="form-register-anggota-validate" enctype="multipart/form-data">
                 <div class="form-group">
                     <div class="col-md-12">
-                        <input type="text" class="form-control" placeholder="Nama Lengkap" name="namaLengkap" maxlength="100" required />
+                        <input type="text" class="form-control" placeholder="Nama Lengkap" name="namaLengkap" maxlength="100" required value="<?= set_value('namaLengkap'); ?>" />
                     </div>
                 </div>
 

@@ -1,8 +1,8 @@
         <div class="login-container lightmode">
 
             <div class="login-box animated fadeInDown">
-                <div class="login-logo"></div>
-                <div class="login-body">
+                <!-- <div class="login-logo"></div> -->
+                <div class="login-body" style="margin-top: 80px;">
                     <strong><?= showFlashMessage(); ?></strong>
 
                     <div class="login-title"><strong>Login</strong> dengan menggunakan akun Anda</div>
