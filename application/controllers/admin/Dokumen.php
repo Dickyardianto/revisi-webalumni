@@ -140,4 +140,14 @@ class Dokumen extends MY_Controller
             redirect('admin/Dokumen');
         }
     }
+
+    function lihatDokumen($id)
+    {
+        $data['title'] = 'Detail Dokumen';
+        $data['info'] = $this->M_anggota->findAnggota('*', array('tb_anggota.user_id = ' => $this->session->userdata('uid')));
+        $data['dokumen'] = $this->AdminDokumenModel->findSelectDocument('*', array('tb_dokumen.id_dokumen = ' => $id));
+        if ($this->session->userdata('role') == 1) {
+            $this->admin_render('admin/detailDokumen', $data);
+        }
+    }
 }

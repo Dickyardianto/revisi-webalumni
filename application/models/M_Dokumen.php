@@ -38,6 +38,13 @@ class M_Dokumen extends CI_Model
         return $this->db->get('tb_dokumen')->result();
     }
 
+    function findSelectDocument($select, $where)
+    {
+        $this->db->select($select);
+        $this->db->where($where);
+        return $this->db->get('tb_dokumen')->result();
+    }
+
     function hapusDokumen($id)
     {
         $this->db->where('id_dokumen', $id);

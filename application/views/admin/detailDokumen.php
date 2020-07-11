@@ -1,0 +1,1 @@
+<embed src="<?= base_url('uploads/berkas/') . $dokumen[0]->nama_file ?>">
