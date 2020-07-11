@@ -30,9 +30,15 @@
             <div class="col-md-8">
                 <h1>Download Berkas IKASMA3BDG</h1>
 
-                <ol>
-                    <li><a href="<?= base_url('uploads/berkas/cobain.pdf'); ?>">Algoritma A Star - Intelejensia Buatan(Baca: CONTOH)</a></li>
-                </ol>
+                <?php if ($berkas) : ?>
+                    <ol>
+                        <?php foreach ($berkas as $b) : ?>
+                            <li><a href="<?= base_url('uploads/berkas/' . $b->nama_file); ?>" target="blank"><?= $b->nama_dokumen; ?></a></li>
+                        <?php endforeach; ?>
+                    </ol>
+                <?php else : ?>
+                    <h3>Tidak Ada Dokumen</h3>
+                <?php endif; ?>
             </div>
         </div>
     </div>

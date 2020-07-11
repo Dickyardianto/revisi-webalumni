@@ -125,9 +125,10 @@
                     </ul>
                 </li>
 
-
-
-
+                <li>
+                    <a href="<?php echo base_url('koordinator/dokumen') ?>"><span class="fa fa-folder-open"></span>
+                        <span class="xn-text">Kelola Dokumen</span></a>
+                </li>
 
                 <li>
                     <a href="<?= base_url('koordinator/Pengaturan'); ?>"><span class="glyphicon glyphicon-cog"></span>

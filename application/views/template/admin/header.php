@@ -123,13 +123,9 @@
                     </ul>
                 </li>
 
-                <li class="xn-openable">
-                    <a href="#"><span class="fa fa-folder"></span> <span class="xn-text">Dokumen</span></a>
-                    <ul>
-                        <li><a href="<?= base_url('admin/dokumen'); ?>"><span class="fa fa-folder-open"></span> <span class="xn-text">Kelola Dokumen</span></a></li>
-                        <!-- <li><a href="<?= base_url('admin/dokumen'); ?>"><span class="fa fa-plus"></span> <span class="xn-text">Tambah Dokumen</span></a>
-                        </li> -->
-                    </ul>
+                <li>
+                    <a href="<?php echo base_url('admin/dokumen') ?>"><span class="fa fa-folder-open"></span>
+                        <span class="xn-text">Kelola Dokumen</span></a>
                 </li>
 
                 <li>

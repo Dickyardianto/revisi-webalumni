@@ -7,7 +7,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
  * Created by Dicky Ardianto
 */
 
-class AdminDokumenModel extends CI_Model
+class M_Dokumen extends CI_Model
 {
     public function getAllDokumen()
     {

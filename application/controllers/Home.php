@@ -14,6 +14,7 @@ class Home extends MY_Controller
     {
         parent::__construct();
         $this->load->model('FrontPageModel');
+        $this->load->model('M_Dokumen');
         $this->load->model('KoordinatorAnggotaModel');
         $this->load->model('M_anggota');
     }
@@ -98,6 +99,7 @@ class Home extends MY_Controller
     {
         $data['title'] = 'Download Berkas IKASMABDG';
         $data['info'] = $this->FrontPageModel->getInfoBySessionId();
+        $data['berkas'] = $this->M_Dokumen->getAllDokumen();
 
         $this->frontend_render('frontend/downloadBerkas', $data);
     }

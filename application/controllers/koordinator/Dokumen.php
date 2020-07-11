@@ -3,7 +3,7 @@
 if (defined('BASEPATH') or exit('No direct script access allowed'));
 
 /*
- * class Dokumen Admin
+ * class Dokumen Koordinator
  * Created by 
  *      Adhy Wiranto Sudjana
  *      Dicky Ardianto
@@ -31,8 +31,8 @@ class Dokumen extends MY_Controller
 
         if ($this->session->userdata('logged_in') == '' && $this->session->userdata('username') == '' && $this->session->userdata('role') == '') {
             redirect('login');
-        } elseif ($this->session->userdata('logged_in') == 'Sudah Login' && $this->session->userdata('role') == '2') {
-            redirect('koordinator');
+        } elseif ($this->session->userdata('logged_in') == 'Sudah Login' && $this->session->userdata('role') == '1') {
+            redirect('admin');
         } elseif ($this->session->userdata('logged_in') == 'Sudah Login' && $this->session->userdata('role') == '3') {
             redirect('anggota');
         } elseif ($this->session->userdata('logged_in') == 'Sudah Login' && $this->session->userdata('role') == '4') {
@@ -50,8 +50,8 @@ class Dokumen extends MY_Controller
 
         $data['info'] = $this->M_anggota->findAnggota('*', array('tb_anggota.user_id' => $this->session->userdata('uid')));
 
-        if ($this->session->userdata('role') == 1) {
-            $this->admin_render('admin/dokumen', $data);
+        if ($this->session->userdata('role') == 2) {
+            $this->admin_render('koordinator/dokumen', $data);
         }
     }
 
@@ -69,7 +69,7 @@ class Dokumen extends MY_Controller
 
         if (!$this->upload->do_upload('fileSaya')) {
             flashMessage('error', 'Maaf, Upload Dokumen Gagal! Silahkan coba lagi');
-            redirect('admin/Dokumen');
+            redirect('koordinator/Dokumen');
         } else {
             $upload_data = $this->upload->data();
             $data['nama_file'] = $upload_data['file_name'];
@@ -77,10 +77,10 @@ class Dokumen extends MY_Controller
             $sukses = $this->M_Dokumen->insertNewDokumen($data);
             if (!$sukses) {
                 flashMessage('success', 'Tambah Dokumen berhasil. ');
-                redirect('admin/Dokumen');
+                redirect('koordinator/Dokumen');
             } else {
                 flashMessage('error', 'Tambah Dokumen gagal! Silahkan coba lagi.');
-                redirect('admin/Dokumen');
+                redirect('koordinator/Dokumen');
             }
         }
     }
@@ -107,7 +107,7 @@ class Dokumen extends MY_Controller
 
         if (!$this->upload->do_upload('fileSaya')) {
             flashMessage('error', 'Maaf, Upload Dokumen Gagal! Silahkan coba lagi');
-            redirect('admin/Dokumen');
+            redirect('koordinator/Dokumen');
         } else {
             $upload_data = $this->upload->data();
             $data['nama_file'] = $upload_data['file_name'];
@@ -117,10 +117,10 @@ class Dokumen extends MY_Controller
 
             if ($sukses) {
                 flashMessage('success', 'Dokumen berhasil di ubah.');
-                redirect('admin/Dokumen');
+                redirect('koordinator/Dokumen');
             } else {
                 flashMessage('error', 'Dokumen gagal di ubah! Silahkan coba lagi');
-                redirect('admin/Dokumen');
+                redirect('koordinator/Dokumen');
             }
         }
     }
@@ -134,10 +134,10 @@ class Dokumen extends MY_Controller
 
         if (!$hapusDokumen) {
             flashMessage('success', 'Dokumen berhasil dihapus');
-            redirect('admin/Dokumen');
+            redirect('koordinator/Dokumen');
         } else {
             flashMessage('error', 'Dokumen gagal dihapus! Silahkan coba lagi');
-            redirect('admin/Dokumen');
+            redirect('koordinator/Dokumen');
         }
     }
 }

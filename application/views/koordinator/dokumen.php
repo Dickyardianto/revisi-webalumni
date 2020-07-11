@@ -78,7 +78,7 @@
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                 <h4 class="modal-title" id="defModalHead">Tambah Dokumen</h4>
             </div>
-            <form action="<?= base_url('admin/dokumen/tambahDokumen'); ?>" class="form-horizontal" id="add-jenis-validate" method="post" enctype="multipart/form-data">
+            <form action="<?= base_url('koordinator/dokumen/tambahDokumen'); ?>" class="form-horizontal" id="add-jenis-validate" method="post" enctype="multipart/form-data">
                 <div class="modal-body">
                     <div class="form-group">
                         <label class="col-md-3 control-label">* Nama Dokumen :</label>
@@ -121,7 +121,7 @@
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                 <h4 class="modal-title" id="defModalHead">Ubah Dokumen</h4>
             </div>
-            <form action="<?= base_url('admin/Dokumen/ubahDokumen'); ?>" class="form-horizontal" id="update-jenis-validate" method="post" enctype="multipart/form-data">
+            <form action="<?= base_url('koordinator/Dokumen/ubahDokumen'); ?>" class="form-horizontal" id="update-jenis-validate" method="post" enctype="multipart/form-data">
                 <div class="modal-body">
                     <div class="form-group hidden">
                         <div class="col-md-9">
@@ -169,7 +169,7 @@
             <div class="mb-title">
                 <span class="fa fa-times"></span> Hapus <strong>Dokumen</strong>
             </div>
-            <form action="<?= base_url('admin/Dokumen/hapusDokumen'); ?>" class="form-horizontal" method="post">
+            <form action="<?= base_url('koordinator/Dokumen/hapusDokumen'); ?>" class="form-horizontal" method="post">
                 <div class="mb-content">
                     <div class="panel-body">
                         <p style="font-size: 16px;">Anda yakin akan menghapus Dokumen <label class="control-label" id="namaDokumenss"></label> ?</p>
@@ -216,7 +216,7 @@
         console.log(this.id);
         var idDokumen = this.id;
 
-        $.post("<?= base_url('admin/Dokumen/getDokumenById/') ?>", {
+        $.post("<?= base_url('koordinator/Dokumen/getDokumenById/') ?>", {
                 id: idDokumen
             },
             function(data, success) {
@@ -234,7 +234,7 @@
         console.log(this.id);
         var idDokumen = this.id;
 
-        $.post("<?= base_url('admin/Dokumen/getDokumenById') ?>", {
+        $.post("<?= base_url('koordinator/Dokumen/getDokumenById') ?>", {
                 id: idDokumen
             },
             function(data, success) {
