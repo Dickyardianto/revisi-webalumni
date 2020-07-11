@@ -187,7 +187,7 @@
                     <h2 class="section-heading">Link Download</h2>
                     <hr class="primary">
                     <p>Berkas AD/ART dll.</p>
-                    <a class="btn btn-primary btn-xl" href="<?= base_url('home/linkDownload'); ?>">Lihat</a>
+                    <a class="btn btn-primary btn-xl" href="<?= base_url('downloadBerkas'); ?>">Lihat</a>
                 </div>
             </div>
         </div>

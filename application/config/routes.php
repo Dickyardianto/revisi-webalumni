@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------------
@@ -60,3 +60,4 @@ $route['login'] = 'login/Login/loginPage';
 $route['register'] = 'login/Register';
 $route['auth'] = 'login/Login/auth';
 $route['logout'] = 'login/Logout';
+$route['downloadBerkas'] = 'home/downloadBerkas';

@@ -94,10 +94,11 @@ class Home extends MY_Controller
         echo json_encode($data);
     }
 
-    function linkDownload()
+    function downloadBerkas()
     {
-        $data['title'] = 'Link Download Berkas IKASMABDG';
+        $data['title'] = 'Download Berkas IKASMABDG';
+        $data['info'] = $this->FrontPageModel->getInfoBySessionId();
 
-        $this->load->view('frontend/linkDownload', $data);
+        $this->frontend_render('frontend/downloadBerkas', $data);
     }
 }
