@@ -171,23 +171,23 @@
         </div>
     </section>
 
-    <aside class="bg-dark">
+    <aside class="bg-light">
         <div class="container text-center">
             <div class="call-to-action">
                 <h2>Temukan teman anda disini</h2>
-                <a href="<?= base_url('Home/cariTeman'); ?>" class="btn btn-default btn-xl sr-button">Cari sekarang</a>
+                <a href="<?= base_url('Home/cariTeman'); ?>" class="btn btn-primary btn-xl sr-button">Cari sekarang</a>
             </div>
         </div>
     </aside>
 
-    <section class=" bg-danger" id="link-download">
+    <section class="bg-primary" id="link-download">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">Link Download</h2>
-                    <hr class="primary">
+                    <hr class="light">
                     <p>Berkas AD/ART dll.</p>
-                    <a class="btn btn-primary btn-xl" href="<?= base_url('downloadBerkas'); ?>">Lihat</a>
+                    <a class="btn btn btn-default btn-xl sr-button" href="<?= base_url('downloadBerkas'); ?>">Lihat</a>
                 </div>
             </div>
         </div>
