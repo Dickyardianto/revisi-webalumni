@@ -47,9 +47,14 @@
                                         <tr>
                                             <td><?= $no++; ?></td>
                                             <!-- <td><strong><?= $dk->nama_file; ?></strong></td> -->
-                                            <td><strong><?= $dk->nama_dokumen; ?></strong><br><a class="btn btn-primary" href="<?= base_url('uploads/berkas/' . $dk->nama_file); ?>" target="blank">Lihat</a></td>
+                                            <td><strong><?= $dk->nama_dokumen; ?></strong></td>
                                             <td class="text-center" style="vertical-align: middle;">
-                                                <button type="button" class="btn btn-info btn-rounded btn-ubah-dokumen" id="<?= $dk->id_dokumen; ?>" title="Ubah" data-toggle="modal" data-target="#ubahdokumen" id="<?= $dk->id_dokumen; ?>"><i class="fa fa-pencil"></i></button>
+
+                                                <a class="btn btn-info btn-rounded" href="<?= base_url('uploads/berkas/' . $dk->nama_file); ?>" title="Lihat Dokumen" target="blank"><i class="fa fa-folder"></i></a>
+
+
+                                                <button type="button" class="btn btn-warning btn-rounded btn-ubah-dokumen" id="<?= $dk->id_dokumen; ?>" title="Ubah" data-toggle="modal" data-target="#ubahdokumen" id="<?= $dk->id_dokumen; ?>"><i class="fa fa-pencil"></i></button>
+
                                                 <button type="button" class="btn btn-danger btn-rounded mb-control btn-hapus-dokumen" id="<?= $dk->id_dokumen; ?>" title="Hapus" data-box="#hapusDokumen" id="<?= $dk->id_dokumen; ?>"><i class="fa fa-times"></i></button>
                                             </td>
                                         </tr>
